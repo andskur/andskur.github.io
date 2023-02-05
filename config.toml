@@ -1,0 +1,84 @@
+######################## default configuration ####################
+baseURL = "https://andskur.github.io"
+title = "Andskur"
+theme = "port-hugo"
+
+############################# Plugins ##############################
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+[[params.plugins.css]]
+link = "https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+[[params.plugins.css]]
+link = "https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css"
+[[params.plugins.css]]
+link = "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap"
+[[params.plugins.css]]
+link = "plugins/text-animation/text-animation.css"
+[[params.plugins.css]]
+link = "plugins/hugrid/hugrid.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "https://code.jquery.com/jquery-3.5.1.min.js"
+[[params.plugins.js]]
+link = "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
+[[params.plugins.js]]
+link = "plugins/text-animation/text-animation.js"
+[[params.plugins.js]]
+link = "plugins/hugrid/hugrid.min.js"
+
+
+############################## navigation ###############################
+
+[[menu.main]]
+name = "About me"
+URL = "#about"
+weight = 2
+
+[[menu.main]]
+name = "Contact"
+URL = "#contact"
+weight = 2
+
+
+#################### default parameters ################################
+[params]
+copyright = "Copyright Andrew Skurlatov &copy;"
+# Meta data
+description = "Personal Web-Site"
+author = "Andrew Skurlatov"
+favicon = "images/favicon.ico"
+logo_light= "images/logo.svg"
+logo_dark= "images/logo-dark.svg"
+
+
+# Preloader
+[params.preloader]
+enable = true
+preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
+
+############################# social site ########################
+
+[[params.social]]
+icon = "fab fa-github"
+link = "https://github.com/andskur"
+
+[[params.social]]
+icon = "fab fa-linkedin"
+link = "https://www.linkedin.com/in/andrew-skurlatov/"
+
+[[params.social]]
+icon = "fas fa-envelope"
+link = "mailto:a.skurlatov@gmail.com"
+
+[[params.social]]
+icon = "fab fa-twitter"
+link = "https://twitter.com/Andskur1/"
+
+
+
+contentDir = "content/english"
+weight = 1
+home = "Home"

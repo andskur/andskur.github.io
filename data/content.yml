@@ -1,0 +1,94 @@
+########################## hero area ##########################
+hero:
+  title: "I'm Andrew Skurlatov"
+
+  # animated text loop
+  occupations:
+    - 'Software Architect'
+    - 'Blockchain Developer'
+    - 'Mountains Lover'
+    - 'Web3 Builder'
+    - 'Team Lead'
+    - 'Father'
+
+  # hero background image
+  bg_image: 'images/background.jpeg'
+  # optional mobile breakpoint background
+  mobile_bg_image: 'images/background-small.jpg'
+
+########################### About ##################################
+about:
+  enable: true
+  image: 'images/photo.png'
+  title: 'Hello!'
+  content: As a lead developer and architect, I bring extensive expertise to delivering high-performance and scalable blockchain solutions. Currently, I serve as Go Team Lead at Gateway.fm and Technical Lead and Co-Founder of Uddug Team, where I lead teams in building efficient and reliable blockchain solutions. I am passionate about staying current with the latest advancements in blockchain technology. In my free time, I enjoy exploring mountains and history, and am proud to be a father of two. If you have any questions feel free to reach out on [LinkedIn, Github, or by email](#contact)!
+  button:
+    enable: false
+    label: 'DOWNLOAD MY RESUME'
+    link: #
+    icon: 'fa-download'
+
+###########################3 Experience ##############################
+experience:
+  enable: true
+  title: 'EXPERIENCE'
+  experience_list:
+    - name: Go Team Lead
+      company: gateway.fm
+      duration: '2021-Current'
+      content: Leading a team of developers to build high-performance, reliable, and scalable blockchain proxies.
+
+    - name: Technical Lead
+      company: uddug.com
+      duration: '2018-Current'
+      content: Leading and co-founding Uddug, providing full-cycle web3 development services for startups, utilizing open-source projects and leading a team in web3 and blockchain development.
+
+    - name: Technical Lead / CTO / Lead Developer
+      company: web3 startups
+      duration: '2012-2020'
+      content: I have extensive experience in leading the development of various startups, with a focus on web3 technology.
+
+############################### Skill #################################
+skill:
+  enable: true
+  title: 'SKILLS'
+  showpercent: false
+  skill_list:
+    - name: 'Software Architecture'
+      percentage: '97%'
+
+    - name: 'Blockchain & Web3'
+      percentage: '95%'
+
+    - name: 'Golang'
+      percentage: '99%'
+
+    - name: 'Team Leadership'
+      percentage: '83%'
+
+######################### funfacts #############################3
+funfacts:
+  enable: true
+  funfacts_list:
+    - name: 'KIDS'
+      image: 'images/icons/kids.png'
+      count: '2'
+
+    - name: 'DEV EXPIRIENCE (years)'
+      image: 'images/icons/software-development.png'
+      count: '12'
+
+    - name: 'MOUNTAINS'
+      image: 'images/icons/mountains.png'
+      count: '12'
+
+############################# portfolio ################################
+portfolio:
+  enable: false
+  title: 'MY WORK'
+  portfolio_list:
+    - name: Hugo
+      image: 'images/portfolio/hugo.png'
+      url: https://gohugo.io
+      description: Commodo non mollit commodo esse. Quis ad Lorem eiusmod ad velit Lorem sint elit. Anim magna duis et duis pariatur eiusmod laboris esse. Sit duis labore sit esse enim laborum nisi sunt magna sint labore tempor. Sit sit sint eu laboris officia et sunt consequat sit excepteur nostrud eu. Fugiat aliqua id et pariatur quis commodo aute aliqua et magna officia eu cillum mollit. Sint culpa excepteur culpa culpa sint est eu dolore culpa duis adipisicing proident.
+
