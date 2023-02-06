@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://andskur.github.io"
+baseURL = "https://andskur.github.io/"
 title = "Andskur"
 theme = "port-hugo"
 
