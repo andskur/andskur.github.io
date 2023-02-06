@@ -1,0 +1,15 @@
+<div class="footer container text-center" id="contact">
+  <ul class="footer-icons list-inline">
+    {{ range $.Site.Params.social }}
+      <li>
+        <a href="{{ .link | safeURL }}" target="_blank" rel="noreferrer"
+          ><i class="{{ .icon }} footer-icon fa-3x" aria-label="{{ .alt }}"></i
+        ></a>
+      </li>
+    {{ end }}
+  </ul>
+  <div class="credit">
+    {{ $.Site.Params.copyright | markdownify }}
+    <span id="current-year"></span>
+  </div>
+</div>
