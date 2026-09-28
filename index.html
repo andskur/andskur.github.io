@@ -2313,13 +2313,19 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
     var reduce = false;
     try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
     var ctx = cvs && cvs.getContext ? cvs.getContext('2d') : null;
-    if (reduce || !ctx || !('filter' in ctx)) { finish(); return; }
+    if (reduce || !ctx) { finish(); return; }
     var dpr = window.devicePixelRatio || 1;
     var px = Math.max(64, Math.round(box * window.__AS.Z * dpr));
     cvs.width = px; cvs.height = px;
-    var buf = document.createElement('canvas');
-    buf.width = px; buf.height = px;
-    var bx = buf.getContext('2d');
+    // Blur is a canvas shadow (every browser has it; Safari has no canvas filter): the strokes
+    // go in the left half of a double-width buffer and their shadow, offset by one width, lands
+    // in the right half, which is what gets drawn. The wide soft glows work at quarter size.
+    var mk = function (w) {
+      var c = document.createElement('canvas');
+      c.width = w * 2; c.height = w;
+      return { c: c, x: c.getContext('2d'), w: w };
+    };
+    var full = mk(px), quarter = mk(Math.max(32, Math.round(px / 4)));
     var S = px / 1280;
     var bez = function (x1, y1, x2, y2) {
       var cx = 3 * x1, bxx = 3 * (x2 - x1) - cx, ax = 1 - cx - bxx;
@@ -2360,9 +2366,11 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
       }
       return out;
     };
-    var layer = function (st, kind, width, colour, cap, blur, alpha) {
+    var layer = function (st, kind, width, colour, cap, blur, alpha, low) {
+      var B = low ? quarter : full, bx = B.x, w = B.w, k = S * w / px;
+      bx.shadowColor = 'transparent';
       bx.globalAlpha = 1;
-      bx.clearRect(0, 0, px, px);
+      bx.clearRect(0, 0, w * 2, w);
       var any = false;
       for (var i = 0; i < 4; i++) {
         var L = LN[i], s = st[i];
@@ -2372,18 +2380,20 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
         any = true;
         bx.globalAlpha = al;
         bx.lineCap = cap || L[4];
-        bx.lineWidth = width * S;
+        bx.lineWidth = width * k;
         bx.strokeStyle = colour;
+        bx.shadowColor = colour;
+        bx.shadowBlur = 2 * blur * k;
+        bx.shadowOffsetX = w;
+        bx.shadowOffsetY = 0;
         bx.beginPath();
-        bx.moveTo((L[0] + (L[2] - L[0]) * a) * S, (L[1] + (L[3] - L[1]) * a) * S);
-        bx.lineTo((L[0] + (L[2] - L[0]) * b) * S, (L[1] + (L[3] - L[1]) * b) * S);
+        bx.moveTo((L[0] + (L[2] - L[0]) * a) * k, (L[1] + (L[3] - L[1]) * a) * k);
+        bx.lineTo((L[0] + (L[2] - L[0]) * b) * k, (L[1] + (L[3] - L[1]) * b) * k);
         bx.stroke();
       }
       if (!any) { return; }
       ctx.globalAlpha = alpha;
-      ctx.filter = 'blur(' + (blur * S).toFixed(2) + 'px)';
-      ctx.drawImage(buf, 0, 0);
-      ctx.filter = 'none';
+      ctx.drawImage(B.c, w, 0, w, w, 0, 0, px, px);
       ctx.globalAlpha = 1;
     };
     var t0 = null;
@@ -2393,11 +2403,11 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
       if (t >= 4.8) { finish(); return; }
       ctx.clearRect(0, 0, px, px);
       var st = state(t);
-      layer(st, 'cut', 170, '#8db4dc', 'square', 36, 1);
-      layer(st, 'cut', 120, '#bcd4ea', null, 2.4, 1);
-      layer(st, 'hot', 124, '#ffffff', null, 4.4, 1);
-      layer(st, 'head', 240, '#8db4dc', 'round', 36, .6);
-      layer(st, 'head', 140, '#ffffff', 'round', 4.4, 1);
+      layer(st, 'cut', 170, '#8db4dc', 'square', 36, 1, true);
+      layer(st, 'cut', 120, '#bcd4ea', null, 2.4, 1, false);
+      layer(st, 'hot', 124, '#ffffff', null, 4.4, 1, false);
+      layer(st, 'head', 240, '#8db4dc', 'round', 36, .6, true);
+      layer(st, 'head', 140, '#ffffff', 'round', 4.4, 1, false);
       requestAnimationFrame(frame);
     };
     requestAnimationFrame(frame);
