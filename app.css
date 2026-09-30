@@ -329,8 +329,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 .page .social a{display:flex;flex-direction:column;gap:3px;padding:12px 0 12px;border-top:1px solid var(--rule-soft);text-decoration:none;color:var(--text)}
 .page .social .sl{font-size:var(--fs-body);line-height:var(--tag-h);font-weight:600}
 .page .social .sh{font-family:var(--font-mono);font-size:var(--fs-micro);line-height:var(--lh-micro-tight);font-weight:500;letter-spacing:.02em;color:var(--text-secondary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.page .flinks a,.page .plinks a{font-size:var(--fs-btn);line-height:var(--tag-h);font-weight:500;color:var(--text);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 60%,transparent);padding-bottom:2px}
-.page .plinks a{color:var(--accent)}
+.page .flinks a{font-size:var(--fs-btn);line-height:var(--tag-h);font-weight:500;color:var(--text);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 60%,transparent);padding-bottom:2px}
 .page .fmark{position:absolute;right:-30px;top:24px;width:var(--mark-lg);height:var(--mark-lg);opacity:.05;pointer-events:none}
 .page .fmark{right:9px;top:350px;width:var(--mark-sm);height:var(--mark-sm)}
 /* =====================================================================
@@ -441,7 +440,6 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
   .page #contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 380px); column-gap: var(--sp-64); align-items: start; }
   .page #contact > .rv:first-child { grid-column: 1 / -1; }
   .page #contact > form { grid-column: 1; max-width: 600px; }
-  .page #contact > .plinks { grid-column: 2; grid-row: 2; }
 
   /* ---- footer ---- */
   .page .foot .social { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--sp-24); }
@@ -612,7 +610,6 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
   .page #contact { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .page #contact > form { grid-column: 1; grid-row: 2; max-width: none; }
   .page #contact > .cvis { grid-column: 2; grid-row: 2; }
-  .page #contact > .plinks { grid-column: 1; grid-row: 3; margin-top: var(--sp-32); }
 }
 
 /* =====================================================================
