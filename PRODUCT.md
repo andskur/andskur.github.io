@@ -62,7 +62,7 @@ Every engagement runs four steps: a 30-minute first call to agree what needs doi
 
 The three offers sit in one selector that steps through them as the page scrolls. Each shows the buyer, the trigger, the work, the shape and the price.
 
-Contact has two doors. The form is one field, "What needs doing", which opens the visitor's email app addressed to Andrew, plus the email address shown. Beside it the blueprint panel offers "Pick a time", which loads the Calendly 30-minute event inline. Calendly's script and cookies load only when that button is pressed, so a visitor who never books makes no third-party request.
+Contact has two doors. The form is one field, "What needs doing", which opens the visitor's email app addressed to Andrew, plus the email address shown. Beside it the blueprint panel offers "Pick a time", which loads the Calendly 30-minute event inline. The calendar opens by itself as the contact section comes within reach, so nobody has to press anything; the button remains for browsers without an IntersectionObserver, and as the no-JavaScript fallback. Calendly's script and cookies load only at that point, so a visitor who never scrolls to contact makes no third-party request.
 
 ## Brand Commitments
 

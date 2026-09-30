@@ -918,3 +918,26 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 /* the mark rides higher now that the panel's lower band carries the ask */
 .page .cvis img { top: 36%; }
 .page .cvis .cglow { top: 36%; }
+
+/* =====================================================================
+   Contact, balanced. The calendar cannot go below about 700 without
+   clipping its own month, so the form grows to meet it instead: the two
+   columns stretch to the same height and the textarea takes up the slack.
+   The panel reserves that height from the start, so nothing reflows when
+   the widget arrives.
+   ===================================================================== */
+@media (min-width: 1000px) {
+  .page #contact { align-items: start; }
+
+  /* the form grows toward the calendar without the textarea becoming absurd:
+     "one or two sentences are enough" should not be a half-screen box */
+  .page #contact > form { gap: var(--sp-20); margin-top: var(--sp-32); }
+  .page #contact > form textarea { height: 260px; }
+  .page #contact > form .btn { align-self: flex-start; }
+
+  /* the panel reserves the widget's height from the start, so the column
+     does not jump when the calendar arrives */
+  .page .cvis { min-height: 700px; margin-top: var(--sp-32); }
+  .page .cvis.booking { height: 700px; }
+}
+}

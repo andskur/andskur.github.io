@@ -714,14 +714,33 @@ function headerOffset() {
     document.head.appendChild(s);
   }
 
-  link.addEventListener('click', function (ev) {
-    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) { return; }
-    ev.preventDefault();
+  var opened = false;
+  function open() {
+    if (opened) { return; }
+    opened = true;
     panel.classList.add('loading');
     load(function () {
       panel.classList.remove('loading');
       panel.classList.add('booking');
       window.Calendly.initInlineWidget({ url: embedUrl(), parentElement: panel });
     });
+  }
+
+  link.addEventListener('click', function (ev) {
+    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) { return; }
+    ev.preventDefault();
+    open();
   });
+
+  /* Open it as the contact section comes within reach, so nobody has to press
+     anything, without loading a third party for the many who never scroll
+     this far. The button stays as the fallback when there is no observer. */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) { io.disconnect(); open(); return; }
+      }
+    }, { rootMargin: '600px 0px' });
+    io.observe(panel);
+  }
 })();
