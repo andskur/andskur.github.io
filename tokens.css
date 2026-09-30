@@ -1,0 +1,137 @@
+/* andskur design tokens.
+   The single source of truth for colour, type, space, form and motion.
+   Documented in DESIGN.md. Values are fixed: type does not scale with the
+   viewport, the layout reflows instead. */
+
+:root {
+  /* ---- colour ------------------------------------------------------- */
+  --bg: #17140f;                 /* Night Ground */
+  --surface: #1f1b15;            /* Surface Raised */
+  --line: #2f2921;               /* Hairline */
+  --line-strong: #75695b;        /* Hairline Strong, the drawn line */
+  --text: #ede7db;               /* Warm Chalk */
+  --text-secondary: #a89e90;     /* Chalk Dim */
+  --accent: #8db4dc;             /* Starlight */
+  --accent-hover: #a8c7e8;       /* Starlight Bright */
+  --on-accent: #17140f;
+  --blueprint: #0f3556;          /* Deep Nebula */
+  --blueprint-line: #2f5379;     /* Nebula Line */
+  --on-blueprint: #e8f0f8;
+
+  /* rules and dividers, derived from Warm Chalk */
+  --rule-faint: color-mix(in srgb, var(--text) 10%, transparent);
+  --rule-track: color-mix(in srgb, var(--text) 12%, transparent);
+  --rule-soft: color-mix(in srgb, var(--text) 14%, transparent);
+  --rule-nav: color-mix(in srgb, var(--text) 10%, transparent);
+  --rule-nav-scrolled: color-mix(in srgb, var(--text) 8%, transparent);
+
+  /* atmosphere */
+  --sky-1: #0b0d14;  --sky-2: #110f12;  --sky-3: #0a0b12;
+  --sky-4: #0f0e12;  --sky-5: #141210;  --sky-6: #151310;
+  --sky-7: #100e12;
+  --star: #bcd4ea;
+  --vignette: color-mix(in srgb, #000 50%, transparent);
+  --nav-veil: color-mix(in srgb, var(--bg) 74%, transparent);
+  --nav-veil-phone: color-mix(in srgb, var(--bg) 70%, transparent);
+  --grid-ink: color-mix(in srgb, var(--blueprint-line) 40%, transparent);
+  --grid-ink-strong: color-mix(in srgb, var(--blueprint-line) 45%, transparent);
+
+  /* ---- type --------------------------------------------------------- */
+  --font-serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  --fs-display: 32px;   --lh-display: 38px;
+  --fs-h2: 28px;        --lh-h2: 34px;
+  --fs-h3: 22px;        --lh-h3: 28px;
+  --fs-num: 36px;       --lh-num: 44px;
+  --fs-lead: 19px;      --lh-lead: 27px;
+  --fs-route: 15px;     --lh-route: 24px;
+  --fs-body: 16px;      --lh-body: 26px;
+  --fs-sm: 14px;        --lh-sm: 22px;
+  --fs-lab: 12px;       --lh-lab: 16px;
+  --fs-micro: 11px;     --lh-micro: 16px;
+
+  --fs-title: 20px;     --lh-title: 28px;   /* sans subhead: steps, system areas */
+  --fs-menu: 17px;      --lh-menu: 26px;    /* phone disclosure menu */
+  --fs-btn: 15px;                            /* control label */
+  --fs-amt: 30px;       --lh-amt: 36px;     /* price figure */
+  --fs-suf: 24px;                            /* numeral suffix: k+, B+, M+ */
+  --fs-alt: 13px;       --lh-alt: 20px;     /* price footnote */
+  --fs-dg: 15px;                             /* diagram node label */
+  --lh-micro-tight: 14px;
+
+  --tracking-tight: -0.01em;
+  --tracking-btn: -0.005em;
+  --tracking-mono: 0.02em;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semi: 600;
+
+  /* ---- space -------------------------------------------------------- */
+  --sp-2: 2px;   --sp-4: 4px;   --sp-5: 5px;   --sp-6: 6px;
+  --sp-8: 8px;   --sp-10: 10px; --sp-12: 12px; --sp-14: 14px;
+  --sp-16: 16px; --sp-18: 18px; --sp-20: 20px; --sp-22: 22px;
+  --sp-24: 24px; --sp-28: 28px; --sp-32: 32px; --sp-36: 36px;
+  --sp-40: 40px; --sp-48: 48px; --sp-56: 56px; --sp-64: 64px;
+  --sp-72: 72px; --sp-80: 80px; --sp-96: 96px;
+
+  --gutter: var(--sp-24);
+  --section-gap: var(--sp-72);
+  --container: 1440px;
+  --measure: 62ch;
+
+  /* ---- form --------------------------------------------------------- */
+  --r-edge: 3px;
+  --r-round: 50%;
+  --bw: 1px;
+  --control-h: 48px;
+  --field-h: 44px;
+  --tag-h: 22px;
+  --nav-h: 64px;
+  --node: 9px;
+  --node-lg: 13px;
+  --mark-sm: 64px;
+  --mark-lg: 180px;
+  --hero-mark: 220px;
+  --grid-pitch: 40px;
+  --grain-tile: 96px;
+
+  /* ---- depth: light, not shadow ------------------------------------- */
+  --glow-node: 0 0 18px color-mix(in srgb, var(--accent) 60%, transparent);
+  --glow-node-sm: 0 0 12px color-mix(in srgb, var(--accent) 50%, transparent);
+  --bloom: 0 14px 40px -12px color-mix(in srgb, var(--accent) 65%, transparent);
+  --bloom-hover: 0 22px 54px -12px color-mix(in srgb, var(--accent) 85%, transparent);
+  --ring-focus: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent);
+  --shadow-deep: 0 40px 80px -50px rgba(0, 0, 0, 0.9);
+  --shadow-pane: 0 30px 60px -40px rgba(0, 0, 0, 0.9);
+
+  /* ---- motion ------------------------------------------------------- */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-control: 0.35s;
+  --dur-field: 0.3s;
+  --dur-link: 0.3s;
+  --dur-route: 0.4s;
+  --dur-reveal: 0.9s;
+  --dur-draw: 1.1s;
+  --dur-fill: 2.6s;
+}
+
+/* Desktop steps up the display scale and the gutter. Everything else holds. */
+@media (min-width: 1000px) {
+  :root {
+    --fs-display: 56px;  --lh-display: 60px;
+    --fs-h2: 40px;       --lh-h2: 46px;
+    --fs-h3: 26px;       --lh-h3: 32px;
+    --fs-num: 48px;      --lh-num: 56px;
+    --fs-lead: 20px;     --lh-lead: 28px;
+    --fs-route: 17px;    --lh-route: 26px;
+    --fs-title: 22px;    --lh-title: 30px;
+    --fs-amt: 34px;      --lh-amt: 40px;
+
+    --gutter: var(--sp-80);
+    --section-gap: var(--sp-96);
+    --nav-h: 72px;
+    --hero-mark: 620px;
+  }
+}
