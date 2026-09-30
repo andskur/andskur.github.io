@@ -696,6 +696,10 @@ function headerOffset() {
     };
     var q = url.indexOf('?') > -1 ? '&' : '?';
     return url + q + 'hide_gdpr_banner=1' +
+      /* the page already says whose call it is and that it runs 30 minutes,
+         so Calendly's own event header is repetition that costs height */
+      '&hide_event_type_details=1' +
+      '&hide_landing_page_details=1' +
       '&background_color=' + hex('--bg', '17140f') +
       '&text_color=' + hex('--text', 'ede7db') +
       '&primary_color=' + hex('--accent', '8db4dc');
