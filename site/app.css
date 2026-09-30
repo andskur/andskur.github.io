@@ -2,6 +2,11 @@
    rather than a colour. Every design value lives in tokens.css. */
 /* global preamble */
 .page { position: relative; }
+/* Section rhythm, at every width. The canvas carried it as an inline
+   padding-top on each section, which the rebuild stripped; it was then
+   restated only inside the desktop layer, so phone had no gap at all
+   between one section and the next. */
+.page .sec + .sec { margin-top: var(--section-gap); }
 .page .sec, .page .hero { scroll-margin-top: calc(var(--nav-h) + var(--sp-24)); }
 html, body { overflow-x: clip; }
 html { background: var(--bg); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
@@ -340,7 +345,6 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 
   /* ---- shell ---- */
   .page .sec { padding-inline: var(--gutter); max-width: var(--container); margin-inline: auto; }
-  .page .sec + .sec { margin-top: var(--section-gap); }
 
   /* ---- header: the disclosure menu becomes the bar ---- */
   .page .nav { height: var(--nav-h); padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))); }
