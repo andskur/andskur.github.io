@@ -977,18 +977,45 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 .page .cvis .calendly-spinner { display: none !important; }
 
 /* Form states. The confirmation replaces the fields in place, so nobody is
-   bounced out of the page at the moment they have just got in touch. */
-.page form[data-form] .fmsg {
-  margin: 0; font-size: var(--fs-sm); line-height: var(--lh-sm);
-}
-.page form[data-form] .fmsg.ok { color: var(--accent); }
+   bounced out of the page at the moment they have just got in touch, and it
+   holds the column rather than collapsing it: the same frame and blueprint
+   grid as the booking panel beside it, so the two still read as a pair. */
+.page form[data-form] .fmsg { margin: 0; font-size: var(--fs-sm); line-height: var(--lh-sm); }
 .page form[data-form] .fmsg.bad { color: var(--text); }
 .page form[data-form] .fmsg.bad a { color: var(--accent); }
+.page form[data-form] .btn[disabled] { opacity: .6; cursor: default; }
+
+.page form[data-form].sent {
+  position: relative; overflow: hidden;
+  border: var(--bw) solid var(--line); border-radius: var(--r-edge);
+  background: linear-gradient(160deg,
+    color-mix(in srgb, var(--surface) 94%, transparent) 0%,
+    color-mix(in srgb, var(--surface) 70%, transparent) 55%,
+    color-mix(in srgb, var(--blueprint) 26%, transparent) 100%);
+  box-shadow: var(--shadow-pane);
+  display: flex; align-items: center; justify-content: center;
+  padding: var(--sp-40) var(--sp-32); gap: 0;
+  min-height: 340px;
+}
+.page form[data-form].sent::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid-ink) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-ink) 1px, transparent 1px);
+  background-size: var(--grid-pitch) var(--grid-pitch); background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 75% at 50% 50%, #000 15%, transparent 72%);
+  mask-image: radial-gradient(ellipse 70% 75% at 50% 50%, #000 15%, transparent 72%);
+  opacity: .7;
+}
 .page form[data-form].sent .fld,
 .page form[data-form].sent .btn { display: none; }
 .page form[data-form].sent .fmsg {
+  position: relative; max-width: 24ch; text-align: center;
   font-family: var(--font-serif); font-size: var(--fs-h3); line-height: var(--lh-h3);
   font-weight: var(--weight-medium); color: var(--text);
-  padding: var(--sp-24) 0;
 }
-.page form[data-form] .btn[disabled] { opacity: .6; cursor: default; }
+
+@media (min-width: 1000px) {
+  /* stand to the same height as the calendar beside it */
+  .page #contact > form.sent { align-self: stretch; min-height: 0; }
+}
