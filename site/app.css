@@ -958,3 +958,20 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
   0%, 80%, 100% { transform: scale(.55); opacity: .4; }
   40% { transform: scale(1); opacity: .95; }
 }
+
+/* The cover over Calendly's own white loading document. Ours, in our colours,
+   removed when Calendly reports the event type is on screen. */
+.page .cvis .calcover {
+  position: absolute; inset: 0; z-index: 3; background: var(--bg);
+  display: flex; align-items: center; justify-content: center; gap: var(--sp-6);
+  opacity: 1; transition: opacity .35s var(--ease);
+}
+.page .cvis .calcover.gone { opacity: 0; pointer-events: none; }
+.page .cvis .calcover span {
+  width: 9px; height: 9px; border-radius: var(--r-round); background: var(--accent);
+  animation: calbounce 1.2s ease-in-out infinite both;
+}
+.page .cvis .calcover span:nth-child(2) { animation-delay: .16s; }
+.page .cvis .calcover span:nth-child(3) { animation-delay: .32s; }
+/* Calendly's own spinner is redundant behind our cover */
+.page .cvis .calendly-spinner { display: none !important; }
