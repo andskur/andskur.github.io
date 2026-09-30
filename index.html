@@ -421,12 +421,14 @@
       <h2 class="h2" id="contact-h">Book a call.</h2>
       <p class="sec2">Tell me what needs doing. The first step is a 30-minute call.</p>
     </div>
-    <form class="rv t1" action="mailto:a.skurlatov@gmail.com" method="post" enctype="text/plain" data-mail style="display: flex; flex-direction: column; gap: 18px; margin-top: 32px">
-      <div class="fld"><label for="decision">What needs doing</label><textarea id="decision" name="decision" required></textarea><span class="hint">One or two sentences are enough.</span></div>
-      <div class="fld"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
-      <input type="text" name="company_site" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0">
-      <button class="btn btn-primary" type="submit">Book a call</button>
-    </form>
+    <form class="rv t1" action="https://formspree.io/f/mnpnrwgw" method="POST" data-form style="display: flex; flex-direction: column; gap: 18px; margin-top: 32px">
+<div class="fld"><label for="decision">What needs doing</label><textarea id="decision" name="message" required></textarea><span class="hint">One or two sentences are enough.</span></div>
+<div class="fld"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<input type="hidden" name="_subject" value="andskur.com: what needs doing">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0">
+<button class="btn btn-primary" type="submit">Send</button>
+<p class="fmsg" role="status" aria-live="polite" hidden></p>
+</form>
 <div class="cvis rv t2" id="booking"><div class="cgrid" aria-hidden="true"></div><div class="cglow" aria-hidden="true"></div><img src="/assets/as-mark-reversed.svg" alt="" width="200" height="200" aria-hidden="true"><div class="cbook"><p class="chint">Know what you need? Pick a time and skip the form.</p><a class="btn btn-primary bookbtn" data-calendly href="https://calendly.com/and-skur/30min" target="_blank" rel="noopener noreferrer">Pick a time</a></div></div>
 
     <p class="rv t3 plinks" style="margin-top: 24px"><a href="mailto:a.skurlatov@gmail.com">a.skurlatov@gmail.com</a></p>
