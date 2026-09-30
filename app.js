@@ -536,6 +536,13 @@ function headerOffset() {
 
   function wire(f) {
     var msg = f.querySelector('.fmsg');
+    /* Coming back from a native post: show the same confirmation rather than
+       leaving the visitor on a bare form they have already sent. */
+    if (/[?&]sent=1(&|$)/.test(window.location.search)) {
+      f.classList.add('sent');
+      var m0 = f.querySelector('.fmsg');
+      if (m0) { m0.textContent = 'Sent. I will reply to the address you gave.'; m0.className = 'fmsg ok'; m0.hidden = false; }
+    }
     var btn = f.querySelector('button[type="submit"]');
     var endpoint = f.getAttribute('action') || '';
     /* Until a real endpoint is set, keep the old behaviour rather than ship a

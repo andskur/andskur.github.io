@@ -72,8 +72,8 @@
 <link rel="preload" href="/assets/fonts/plex-serif-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/tokens.css">
-<link rel="stylesheet" href="/app.css">
+<link rel="stylesheet" href="/tokens.css?v=25f26673">
+<link rel="stylesheet" href="/app.css?v=60661f00">
 </head>
 <body>
 <div class="page">
@@ -425,6 +425,9 @@
 <div class="fld"><label for="decision">What needs doing</label><textarea id="decision" name="message" required></textarea><span class="hint">One or two sentences are enough.</span></div>
 <div class="fld"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
 <input type="hidden" name="_subject" value="andskur.com: what needs doing">
+<!-- where Formspree sends a visitor whose browser posted the form natively,
+     i.e. no JavaScript. Absolute by necessity; change it with the domain. -->
+<input type="hidden" name="_next" value="https://andskur.github.io/?sent=1#contact">
 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0">
 <button class="btn btn-primary" type="submit">Send</button>
 <p class="fmsg" role="status" aria-live="polite" hidden></p>
@@ -454,6 +457,6 @@
     </div>
   </footer>
 </div>
-<script src="/app.js" defer></script>
+<script src="/app.js?v=07f452b8" defer></script>
 </body>
 </html>
