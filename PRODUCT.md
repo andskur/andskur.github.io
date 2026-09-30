@@ -16,7 +16,7 @@ Technical constraints on the surface itself:
 
 - Single-page static site, no backend, no analytics, no CMS.
 - The page is **one responsive tree** (`site/index.html`) with its tokens in `site/tokens.css`, layout in `site/app.css` and behaviour in `site/app.js`. Desktop and phone differences are CSS only. Rebuilt from the canvas export on 29 September 2026; the original is kept at `site/index.canvas.html.bak`.
-- No scheduling integration exists. Every "Book a call" CTA resolves to the on-page contact form.
+- Scheduling is live: Calendly at `https://calendly.com/and-skur/30min`, embedded in the contact panel and loaded only on click. Every "Book a call" CTA still resolves to the contact section, where the form and the booking panel sit side by side.
 - Deploy is unresolved (see `## Stack`). Nothing currently publishes to `andskur.com`.
 - Not on the site yet, and to be added under Offers or as a fifth navigation item when they exist: the public DD framework download and the redacted DD sample. **Do not add a separate proof page.**
 
@@ -62,7 +62,7 @@ Every engagement runs four steps: a 30-minute first call to agree what needs doi
 
 The three offers sit in one selector that steps through them as the page scrolls. Each shows the buyer, the trigger, the work, the shape and the price.
 
-Contact is one field, "What needs doing", which opens the visitor's email app addressed to Andrew, plus the email address shown. This is the specified behaviour, not an oversight. Calendar booking comes later, once a booking page exists; do not design flows that assume it is live.
+Contact has two doors. The form is one field, "What needs doing", which opens the visitor's email app addressed to Andrew, plus the email address shown. Beside it the blueprint panel offers "Pick a time", which loads the Calendly 30-minute event inline. Calendly's script and cookies load only when that button is pressed, so a visitor who never books makes no third-party request.
 
 ## Brand Commitments
 

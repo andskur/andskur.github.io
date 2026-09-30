@@ -676,3 +676,52 @@ function headerOffset() {
     requestAnimationFrame(function () { sync(); ticking = false; });
   }, { passive: true });
 })();
+
+/* Calendly, loaded on demand. The link is a real link: with no JavaScript,
+   or if the script fails, it opens the booking page in a new tab. On click
+   we load the widget once and hand the panel over to it instead. */
+(function () {
+  var link = document.querySelector('.page [data-calendly]');
+  if (!link) { return; }
+  var panel = link.closest('.cvis');
+  var url = link.getAttribute('href');
+  if (!panel || !url || url.indexOf('REPLACE-ME') > -1) { return; }
+
+  /* the widget in the practice's own colours */
+  function embedUrl() {
+    var css = getComputedStyle(document.documentElement);
+    var hex = function (name, fallback) {
+      var v = (css.getPropertyValue(name) || '').trim().replace('#', '');
+      return v || fallback;
+    };
+    var q = url.indexOf('?') > -1 ? '&' : '?';
+    return url + q + 'hide_gdpr_banner=1' +
+      '&background_color=' + hex('--bg', '17140f') +
+      '&text_color=' + hex('--text', 'ede7db') +
+      '&primary_color=' + hex('--accent', '8db4dc');
+  }
+
+  var loading = false;
+  function load(cb) {
+    if (window.Calendly) { cb(); return; }
+    if (loading) { return; }
+    loading = true;
+    var s = document.createElement('script');
+    s.src = 'https://assets.calendly.com/assets/external/widget.js';
+    s.async = true;
+    s.onload = function () { cb(); };
+    s.onerror = function () { loading = false; panel.classList.remove('loading'); window.open(url, '_blank', 'noopener'); };
+    document.head.appendChild(s);
+  }
+
+  link.addEventListener('click', function (ev) {
+    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) { return; }
+    ev.preventDefault();
+    panel.classList.add('loading');
+    load(function () {
+      panel.classList.remove('loading');
+      panel.classList.add('booking');
+      window.Calendly.initInlineWidget({ url: embedUrl(), parentElement: panel });
+    });
+  });
+})();
