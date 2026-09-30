@@ -861,3 +861,12 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
   .page .n4 { animation: nebB 70s ease-in-out infinite; }
   .page .n6 { animation: nebB 92s ease-in-out infinite; }
 }
+
+/* The Background text block carried an inline margin-top of -40px: a phone
+   tightening for when the portrait sits directly above it. On desktop the
+   portrait is a side column, so the negative margin only pulled the section's
+   eyebrow up out of its own box and under the fixed header on an anchor jump.
+   Phone keeps the tightening; desktop does not. */
+@media (max-width: 999.98px) {
+  .page #background > .bgtext { margin-top: -40px; }
+}
