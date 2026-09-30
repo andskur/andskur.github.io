@@ -1,2 +1,9 @@
 public/
 node_modules/
+
+# local tooling and design-skill state
+.claude/
+.impeccable/
+
+# screenshot archive from the rebuild; large and reproducible
+audit/shots/

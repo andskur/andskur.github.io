@@ -1,0 +1,587 @@
+Need to install the following packages:
+impeccable@4.1.0
+Ok to proceed? (y) [
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1.1:1 (need 4.5:1) — text #000000 on #17140f"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": ":hover state 1.2:1 (need 4.5:1) — text #a8c7e8 on #8db4dc"
+  },
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": ":hover state 1.2:1 (need 4.5:1) — text #a8c7e8 on #8db4dc"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Colored box-shadow glow (#8db4dc) on dark background"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Colored box-shadow glow (#8db4dc) on dark background"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Zero-offset box-shadow glow (#8db4dc)"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Zero-offset box-shadow glow (#8db4dc)"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Zero-offset box-shadow glow (#8db4dc)"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Zero-offset box-shadow glow (#8db4dc)"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Zero-offset box-shadow glow (#8db4dc)"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Colored box-shadow glow (#8db4dc) on dark background"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Colored box-shadow glow (#8db4dc) on dark background"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Colored box-shadow glow (#8db4dc) on dark background"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Zero-offset box-shadow glow (#8db4dc)"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Colored box-shadow glow (#8db4dc) on dark background"
+  },
+  {
+    "antipattern": "bounce-easing",
+    "name": "Bounce or elastic easing",
+    "description": "Bounce and elastic easing feel dated and tacky. Real objects decelerate smoothly — use exponential easing (ease-out-quart/quint/expo) instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "cubic-bezier(.2, .7, .2, 1.25)"
+  },
+  {
+    "antipattern": "bounce-easing",
+    "name": "Bounce or elastic easing",
+    "description": "Bounce and elastic easing feel dated and tacky. Real objects decelerate smoothly — use exponential easing (ease-out-quart/quint/expo) instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "cubic-bezier(.2, .7, .2, 1.25)"
+  },
+  {
+    "antipattern": "buried-raster",
+    "name": "Raster buried under a wash or opacity",
+    "description": "A background image under a near-opaque gradient wash, or a raster on an element at near-zero opacity, never reaches the screen: the page shows the wash, and the produced texture or photo ships as a compliance token. Let the material show (a tint under 0.9 alpha, a blend mode, an opacity you can see) or remove the file.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<img> at opacity 0"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<ul> \"routes\": children flush against border-top on top (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<div> \"panel\": children flush against border+bg on all sides (no inset)"
+  },
+  {
+    "antipattern": "buried-raster",
+    "name": "Raster buried under a wash or opacity",
+    "description": "A background image under a near-opaque gradient wash, or a raster on an element at near-zero opacity, never reaches the screen: the page shows the wash, and the produced texture or photo ships as a compliance token. Let the material show (a tint under 0.9 alpha, a blend mode, an opacity you can see) or remove the file.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<img> at opacity 0"
+  },
+  {
+    "antipattern": "buried-raster",
+    "name": "Raster buried under a wash or opacity",
+    "description": "A background image under a near-opaque gradient wash, or a raster on an element at near-zero opacity, never reaches the screen: the page shows the wash, and the produced texture or photo ships as a compliance token. Let the material show (a tint under 0.9 alpha, a blend mode, an opacity you can see) or remove the file.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<img> at opacity 0"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<ul> \"routes\": children flush against border-top on top (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<div> \"dgbox\": children flush against border+bg on all sides (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<div> \"dgbox\": children flush against border+bg on all sides (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<div> \"dgbox\": children flush against border+bg on all sides (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<div> \"dgbox\": children flush against border+bg on all sides (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<div> \"dgbox\": children flush against border+bg on all sides (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<div> \"dgbox\": children flush against border+bg on all sides (no inset)"
+  },
+  {
+    "antipattern": "cramped-padding",
+    "name": "Cramped padding",
+    "description": "Text is too close to the edge of its container. Two shapes: (1) an element with its own text where the padding is too low for the font size, and (2) a wrapper with text-bearing children and near-zero padding against a visible boundary (border, outline, or non-transparent background) — children land flush against the boundary line. Add at least 8px (ideally 12–16px) of padding inside bordered, outlined, or colored containers.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<div> \"dgbox\": children flush against border+bg on all sides (no inset)"
+  },
+  {
+    "antipattern": "buried-raster",
+    "name": "Raster buried under a wash or opacity",
+    "description": "A background image under a near-opaque gradient wash, or a raster on an element at near-zero opacity, never reaches the screen: the page shows the wash, and the produced texture or photo ships as a compliance token. Let the material show (a tint under 0.9 alpha, a blend mode, an opacity you can see) or remove the file.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "<img> at opacity 0"
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 40px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 40px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 80px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 80px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 40px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 80px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 40px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 40px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 60px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 60px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 60px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "gpt-thin-border-wide-shadow",
+    "name": "Hairline border with wide shadow",
+    "description": "A hairline border paired with a wide, diffuse shadow is a recurring generated-UI signature. Commit to one — a defined edge or a soft elevation — rather than both at once.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "1px border + 40px shadow blur",
+    "advisory": true
+  },
+  {
+    "antipattern": "radial-spotlight-glow",
+    "name": "Decorative radial spotlight glow",
+    "description": "A soft, low-opacity accent-colored radial gradient fading to transparent, dropped behind a hero or section as a \"spotlight.\" It is a reflex AI decoration — the translucent cousin of the saturated radial halo. Let the surface stand on its own, or light the composition with a deliberate material accent rather than a floating colored haze.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "radial-gradient spotlight glow \"neb\" (#0f3556 a0.40 → transparent) on 1300x1000 surface"
+  },
+  {
+    "antipattern": "radial-spotlight-glow",
+    "name": "Decorative radial spotlight glow",
+    "description": "A soft, low-opacity accent-colored radial gradient fading to transparent, dropped behind a hero or section as a \"spotlight.\" It is a reflex AI decoration — the translucent cousin of the saturated radial halo. Let the surface stand on its own, or light the composition with a deliberate material accent rather than a floating colored haze.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "radial-gradient spotlight glow \"neb\" (#0f3556 a0.22 → transparent) on 1100x800 surface"
+  },
+  {
+    "antipattern": "radial-spotlight-glow",
+    "name": "Decorative radial spotlight glow",
+    "description": "A soft, low-opacity accent-colored radial gradient fading to transparent, dropped behind a hero or section as a \"spotlight.\" It is a reflex AI decoration — the translucent cousin of the saturated radial halo. Let the surface stand on its own, or light the composition with a deliberate material accent rather than a floating colored haze.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "radial-gradient spotlight glow \"shaft\" (#8db4dc a0.12 → transparent) on 420x1140 surface"
+  },
+  {
+    "antipattern": "radial-spotlight-glow",
+    "name": "Decorative radial spotlight glow",
+    "description": "A soft, low-opacity accent-colored radial gradient fading to transparent, dropped behind a hero or section as a \"spotlight.\" It is a reflex AI decoration — the translucent cousin of the saturated radial halo. Let the surface stand on its own, or light the composition with a deliberate material accent rather than a floating colored haze.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "radial-gradient spotlight glow \"fog\" (#8db4dc a0.10 → transparent) on 760x420 surface"
+  },
+  {
+    "antipattern": "radial-spotlight-glow",
+    "name": "Decorative radial spotlight glow",
+    "description": "A soft, low-opacity accent-colored radial gradient fading to transparent, dropped behind a hero or section as a \"spotlight.\" It is a reflex AI decoration — the translucent cousin of the saturated radial halo. Let the surface stand on its own, or light the composition with a deliberate material accent rather than a floating colored haze.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "radial-gradient spotlight glow \"pool\" (#8db4dc a0.14 → transparent) on 760x220 surface"
+  },
+  {
+    "antipattern": "radial-spotlight-glow",
+    "name": "Decorative radial spotlight glow",
+    "description": "A soft, low-opacity accent-colored radial gradient fading to transparent, dropped behind a hero or section as a \"spotlight.\" It is a reflex AI decoration — the translucent cousin of the saturated radial halo. Let the surface stand on its own, or light the composition with a deliberate material accent rather than a floating colored haze.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "radial-gradient spotlight glow \"neb\" (#0f3556 a0.44 → transparent) on 700x600 surface"
+  },
+  {
+    "antipattern": "radial-spotlight-glow",
+    "name": "Decorative radial spotlight glow",
+    "description": "A soft, low-opacity accent-colored radial gradient fading to transparent, dropped behind a hero or section as a \"spotlight.\" It is a reflex AI decoration — the translucent cousin of the saturated radial halo. Let the surface stand on its own, or light the composition with a deliberate material accent rather than a floating colored haze.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "radial-gradient spotlight glow \"neb\" (#0f3556 a0.30 → transparent) on 700x600 surface"
+  },
+  {
+    "antipattern": "radial-spotlight-glow",
+    "name": "Decorative radial spotlight glow",
+    "description": "A soft, low-opacity accent-colored radial gradient fading to transparent, dropped behind a hero or section as a \"spotlight.\" It is a reflex AI decoration — the translucent cousin of the saturated radial halo. Let the surface stand on its own, or light the composition with a deliberate material accent rather than a floating colored haze.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "radial-gradient spotlight glow \"neb\" (#0f3556 a0.34 → transparent) on 700x600 surface"
+  },
+  {
+    "antipattern": "radial-spotlight-glow",
+    "name": "Decorative radial spotlight glow",
+    "description": "A soft, low-opacity accent-colored radial gradient fading to transparent, dropped behind a hero or section as a \"spotlight.\" It is a reflex AI decoration — the translucent cousin of the saturated radial halo. Let the surface stand on its own, or light the composition with a deliberate material accent rather than a floating colored haze.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "radial-gradient spotlight glow \"neb\" (#0f3556 a0.16 → transparent) on 700x600 surface"
+  },
+  {
+    "antipattern": "overused-font",
+    "name": "Overused font",
+    "description": "Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Primary font: geist"
+  },
+  {
+    "antipattern": "overused-font",
+    "name": "Overused font",
+    "description": "Inter, Roboto, Fraunces, Geist, Plus Jakarta Sans, and Space Grotesk are used on so many sites they no longer feel distinctive. Each new wave of AI-generated UIs converges on the same handful of faces. Choose a face that gives your interface personality.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Primary font: geist mono"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "Colored box-shadow glow (#8db4dc) on dark page"
+  },
+  {
+    "antipattern": "radial-halo",
+    "name": "Radial-gradient background halo",
+    "description": "A chromatic radial-gradient wash — saturated at the center, fading to transparent — used as a decorative background glow on a dark page. Same tell as glowing shadows, drawn with a gradient instead of a shadow. Ground the surface with a solid or subtly shifted background instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "radial-gradient halo (#0f3556 → transparent) on dark page"
+  },
+  {
+    "antipattern": "codex-grid-background",
+    "name": "Decorative grid-line background",
+    "description": "A decorative grid or line-field background drawn with hairline linear-gradient layers tiled by a fixed pixel cell is a recurring generated-UI signature. Reserve grid overlays for actual canvas, map, blueprint, or measurement surfaces; elsewhere use product structure or a plain surface.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/an/Code/andskur.github.io/site/index.html",
+    "line": 0,
+    "snippet": "two-axis grid-line gradient background",
+    "advisory": true
+  }
+]

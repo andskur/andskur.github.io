@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>andskur type options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@400..700&family=Martian+Mono:wght@400;500&family=IBM+Plex+Serif:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif&family=Inter+Tight:wght@400..600&family=Fragment+Mono&family=Spectral:wght@400;500;600&family=Azeret+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#17140f;--surface:#1f1b15;--line:#2f2921;--line-strong:#75695b;--text:#ede7db;--dim:#a89e90;--accent:#8db4dc}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-variant-numeric:tabular-nums lining-nums}
+.opt{padding:56px 80px;border-bottom:1px solid var(--line)}
+.tag{display:inline-flex;align-items:center;height:22px;padding:0 8px;border:1px solid var(--accent);border-radius:3px;color:var(--accent);font-size:12px;letter-spacing:.02em;font-weight:500;margin-bottom:28px}
+.name{font-family:var(--m);font-size:12px;letter-spacing:.02em;color:var(--dim);text-transform:uppercase;margin-bottom:6px}
+h1{margin:0 0 18px;font-family:var(--s);font-size:56px;line-height:60px;font-weight:500;letter-spacing:-.01em;max-family:none}
+p.lede{margin:0 0 26px;font-family:var(--s);font-size:20px;line-height:28px;font-weight:400;color:var(--dim);max-width:640px}
+.row{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid rgba(237,231,219,.14);max-width:640px;font-family:var(--b);font-size:17px}
+.row b{font-family:var(--m);font-size:12px;font-weight:500;letter-spacing:.02em;color:var(--dim);min-width:150px}
+.grid{display:flex;gap:64px;align-items:flex-end;margin-top:30px;flex-wrap:wrap}
+.num{font-family:var(--m);font-size:48px;line-height:56px;font-weight:500;letter-spacing:-.01em}
+.num i{font-size:24px;font-style:normal;color:var(--dim)}
+.cap{font-family:var(--b);font-size:14px;line-height:22px;color:var(--dim);max-width:200px;margin-top:8px}
+h3{margin:0 0 8px;font-family:var(--s);font-size:26px;line-height:32px;font-weight:500}
+.body{font-family:var(--b);font-size:16px;line-height:26px;color:var(--dim);max-width:520px}
+.lab{font-family:var(--m);font-size:12px;letter-spacing:.02em;color:var(--dim);display:block;margin-bottom:4px}
+.card{border:1px solid var(--line);border-radius:3px;padding:26px;background:rgba(31,27,21,.55);max-width:400px;margin-top:30px}
+.A{--s:"EB Garamond",serif;--b:"Public Sans",sans-serif;--m:"IBM Plex Mono",monospace}
+.B{--s:"Fraunces",serif;--b:"Archivo",sans-serif;--m:"Martian Mono",monospace}
+.C{--s:"IBM Plex Serif",serif;--b:"IBM Plex Sans",sans-serif;--m:"IBM Plex Mono",monospace}
+.D{--s:"Instrument Serif",serif;--b:"Inter Tight",sans-serif;--m:"Fragment Mono",monospace}
+.E{--s:"Spectral",serif;--b:"Archivo",sans-serif;--m:"Azeret Mono",monospace}
+</style></head><body>
+<script>
+const opts=[
+ ['A','Classical','EB Garamond · Public Sans · IBM Plex Mono'],
+ ['B','Editorial','Fraunces · Archivo · Martian Mono'],
+ ['C','Engineering','IBM Plex Serif · IBM Plex Sans · IBM Plex Mono'],
+ ['D','High contrast','Instrument Serif · Inter Tight · Fragment Mono'],
+ ['E','Current','Spectral · Archivo · Azeret Mono'],
+];
+document.write(opts.map(([k,n,f])=>`
+<section class="opt ${k}">
+  <span class="tag">${k} &nbsp;${n}</span>
+  <div class="name">${f}</div>
+  <h1>Independent CTO and<br>technical due diligence<br>for complex systems.</h1>
+  <p class="lede">I have built systems like yours, from RPC at 140k+ RPS to a live card-programme chain, and I know which early decisions will cost you a year later.</p>
+  <div class="row"><b>Funds and acquirers:</b> technical due diligence in ten business days</div>
+  <div class="grid">
+    <div><div class="num">140<i>k+</i></div><div class="cap">requests per second, the RPC proxy in production</div></div>
+    <div><div class="num">$1<i>B+</i></div><div class="cap">locked in staking on infrastructure my department ran</div></div>
+    <div><div class="num">$8k to $12k</div><div class="cap">a month, one day a week</div></div>
+  </div>
+  <div class="card">
+    <span class="lab">02&nbsp;&nbsp;For funds and acquirers</span>
+    <h3>Technical due diligence</h3>
+    <div class="body">A two-page decision brief first, then the investment-committee memo, the evidence annex and the cost to remediate in engineer-weeks and money.</div>
+  </div>
+</section>`).join(''));
+</script>
+</body></html>
