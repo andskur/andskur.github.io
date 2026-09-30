@@ -1,3 +1,12 @@
+/* How far a section must clear the fixed bar. The bar is 72 high on
+   desktop and 64 on phone, and the section wants air above it either way.
+   Was hardcoded to the phone value, so desktop anchors landed under it. */
+function headerOffset() {
+  var bar = document.querySelector('.page .nav');
+  var h = bar ? Math.round(bar.getBoundingClientRect().height) : 64;
+  return h + 24;
+}
+
 /* andskur. One responsive tree: no zoom, no canvas fitting. */
 (function () {
   window.__AS = { mode: 'one', Z: 1, fit: function () {}, mq: '(min-width: 1000px)' };
@@ -108,7 +117,7 @@
               if (!scrollable()) { return; }
               var r = el.getBoundingClientRect();
               var y = r.top + (window.scrollY || 0);
-              var top = this.classList.contains('cue') ? y + r.height / 2 - window.innerHeight / 2 : y - 64 * Z();
+              var top = y - headerOffset();
               window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
             });
           }
@@ -166,7 +175,7 @@
               ev.preventDefault();
               if (!scrollable()) { return; }
               var r = el.getBoundingClientRect();
-              window.scrollTo({ top: Math.max(0, r.top + (window.scrollY || 0) - 64 * Z()), behavior: 'smooth' });
+              window.scrollTo({ top: Math.max(0, r.top + (window.scrollY || 0) - headerOffset()), behavior: 'smooth' });
             });
           }
           var revealables = root.querySelectorAll('.rv, .rvsec');
@@ -575,7 +584,7 @@
     if (lights) { lights.style.opacity = ''; }
     if (shafts) { shafts.style.opacity = ''; shafts.style.transform = ''; }
     if (col) { col.style.transform = ''; col.style.opacity = ''; }
-    if (cue) { cue.style.opacity = ''; cue.style.pointerEvents = ''; }
+    if (cue) { cue.style.removeProperty('opacity'); cue.style.pointerEvents = ''; }
   }
 
   function measure() {
@@ -625,7 +634,8 @@
     }
     if (cue) {
       var co = clamp(1 - e * 5, 0, 1);
-      cue.style.opacity = co.toFixed(3);
+      /* important, or the first-screen entrance animation's fill keeps winning */
+      cue.style.setProperty('opacity', co.toFixed(3), 'important');
       cue.style.pointerEvents = co < 0.05 ? 'none' : '';
     }
   }
