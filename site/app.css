@@ -900,14 +900,14 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 /* Calendly injects its iframe as a direct child of the parent element, with
    no .calendly-inline-widget wrapper, so the frame is what must be sized.
    The panel sets the height; the iframe fills it. */
-.page .cvis.booking { min-height: 0; height: 680px; border-color: var(--line); overflow: hidden; }
+.page .cvis.booking { min-height: 0; height: 560px; border-color: var(--line); overflow: hidden; }
 .page .cvis.booking > iframe {
   position: absolute; inset: 0; display: block;
   width: 100% !important; height: 100% !important; min-width: 0 !important; border: 0;
 }
 .page .cvis.booking .calendly-spinner { position: absolute; inset: 0; }
 @media (min-width: 1000px) {
-  .page .cvis.booking { height: 740px; }
+
 }
 .page .cvis.loading .btn.bookbtn { opacity: .6; pointer-events: none; }
 
@@ -937,7 +937,24 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 
   /* the panel reserves the widget's height from the start, so the column
      does not jump when the calendar arrives */
-  .page .cvis { min-height: 700px; margin-top: var(--sp-32); }
-  .page .cvis.booking { height: 700px; }
+  .page .cvis { min-height: 560px; margin-top: var(--sp-32); }
+  .page .cvis.booking { height: 560px; }
 }
+}
+
+/* The frame paints white until Calendly's document arrives; give it the
+   page's own ground so the wait is dark, and put the spinner in Starlight
+   instead of Calendly's grey. */
+.page .cvis.booking > iframe { background: var(--bg); color-scheme: dark; }
+.page .cvis .calendly-spinner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: var(--sp-6); background: var(--bg); }
+.page .cvis .calendly-spinner > div {
+  width: 9px !important; height: 9px !important; border-radius: var(--r-round);
+  background: var(--accent) !important; opacity: .85; float: none !important;
+  animation: calbounce 1.2s ease-in-out infinite both;
+}
+.page .cvis .calendly-spinner > div:nth-child(2) { animation-delay: .16s; }
+.page .cvis .calendly-spinner > div:nth-child(3) { animation-delay: .32s; }
+@keyframes calbounce {
+  0%, 80%, 100% { transform: scale(.55); opacity: .4; }
+  40% { transform: scale(1); opacity: .95; }
 }
