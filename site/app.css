@@ -607,6 +607,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 
 @media (min-width: 1000px) {
   .page .cvis { min-height: 440px; }
+
   .page .cvis img { width: 200px; height: 200px; margin: -100px 0 0 -100px; }
   .page #contact { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .page #contact > form { grid-column: 1; grid-row: 2; max-width: none; }
@@ -870,3 +871,50 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 @media (max-width: 999.98px) {
   .page #background > .bgtext { margin-top: -40px; }
 }
+
+/* =====================================================================
+   Booking. The blueprint panel holds its design until someone asks to
+   book: the link works with no JavaScript at all, and only on click does
+   Calendly's script load and take the panel over. Nothing third-party is
+   requested, and no cookie is set, for a visitor who never books.
+   ===================================================================== */
+.page .cvis .cbook {
+  position: absolute; inset: auto 0 0 0; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: var(--sp-16);
+  padding: 0 var(--sp-24) var(--sp-32);
+}
+.page .cvis .chint {
+  margin: 0; max-width: 30ch; text-align: center;
+  font-size: var(--fs-sm); line-height: var(--lh-sm); color: var(--text-secondary);
+}
+.page .cvis .btn.bookbtn { width: auto; padding-inline: var(--sp-24); flex: none; }
+
+/* once Calendly is in, the panel is a frame around it */
+.page .cvis.booking { background: var(--surface); }
+.page .cvis.booking .cgrid,
+.page .cvis.booking .cglow,
+.page .cvis.booking img,
+.page .cvis.booking .cbook { display: none; }
+/* Calendly sizes itself; forcing the iframe to fill a fixed frame left a
+   white band below its content. The panel grows to whatever the widget needs. */
+/* Calendly injects its iframe as a direct child of the parent element, with
+   no .calendly-inline-widget wrapper, so the frame is what must be sized.
+   The panel sets the height; the iframe fills it. */
+.page .cvis.booking { min-height: 0; height: 680px; border-color: var(--line); overflow: hidden; }
+.page .cvis.booking > iframe {
+  position: absolute; inset: 0; display: block;
+  width: 100% !important; height: 100% !important; min-width: 0 !important; border: 0;
+}
+.page .cvis.booking .calendly-spinner { position: absolute; inset: 0; }
+@media (min-width: 1000px) {
+  .page .cvis.booking { height: 740px; }
+}
+.page .cvis.loading .btn.bookbtn { opacity: .6; pointer-events: none; }
+
+@media (min-width: 1000px) {
+  .page .cvis .cbook { padding-bottom: var(--sp-40); }
+}
+
+/* the mark rides higher now that the panel's lower band carries the ask */
+.page .cvis img { top: 36%; }
+.page .cvis .cglow { top: 36%; }
