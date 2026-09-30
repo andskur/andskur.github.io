@@ -67,3 +67,22 @@ Snark.art appears in the Timeline table as Jul 2019 to Jul 2020, technical lead,
 | # | Item | Tag | Evidence | Permission | Responsibility | Default wording, use now | Named wording, only at CLEAR | Public artefact | Do not say |
 |---|---|---|---|---|---|---|---|---|---|
 | 33 | Snark.art NFT launch platform | REAL | STATED | CHECK (employment, not a practice engagement; client-side consent not confirmed) | Technical lead, team of 5, on the launch platform for established artists | "I was technical lead on an NFT launch platform for established artists, running a team of five." | "... at Snark.art." | To confirm; Snark.art release pages carry the platform but not Andrew's role | Sales, raise or volume figures; the work as an Uddug or practice engagement, it was employment; folding it into the $100M+ aggregate in row 24, which is Uddug era and the sum of rows 21 to 23; any artist named without that artist's own row |
+
+## Applied to the live page, 30 September 2026
+
+The 2024 timeline chapter, at Andrew's direction. The chapter title already
+reads "Uddug acquired", so the description was repeating it and naming
+Gateway a second time.
+
+- was: `Gateway.fm acquires Uddug. I become VP of Platform and Yield, leading two departments, ~25 people.`
+- now: `Uddug has been acquired. I become VP of DLT, running ~25 people across two departments.`
+
+This also lands resolution 1 above: the register has VP of DLT from June 2024
+and VP of Platform and Yield only from October 2025. The companion half of
+that resolution, carrying the October 2025 promotion into the 2025 chapter,
+is NOT applied: the agreed wording named Gateway, which this edit removes.
+Open for Andrew.
+
+Gateway.fm still appears twice on the page and was left alone:
+- the Background paragraph, "Gateway.fm acquired it in 2024 and I ran two departments there";
+- the 2021 timeline chapter, whose title is "Gateway.fm".
