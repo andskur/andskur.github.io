@@ -718,6 +718,18 @@ function headerOffset() {
     document.head.appendChild(s);
   }
 
+  /* Our own cover, because the white belongs to Calendly's loading document
+     inside the frame, which no stylesheet of ours can reach. It sits over
+     the frame until Calendly says the event type is on screen. */
+  function cover() {
+    var el = document.createElement('div');
+    el.className = 'calcover';
+    el.setAttribute('aria-hidden', 'true');
+    el.innerHTML = '<span></span><span></span><span></span>';
+    panel.appendChild(el);
+    return el;
+  }
+
   var opened = false;
   function open() {
     if (opened) { return; }
@@ -726,7 +738,31 @@ function headerOffset() {
     load(function () {
       panel.classList.remove('loading');
       panel.classList.add('booking');
+      var veil = cover();
       window.Calendly.initInlineWidget({ url: embedUrl(), parentElement: panel });
+
+      /* Calendly reports the height its content needs and tells us when that
+         content is up. Take both: the panel is then exactly as tall as the
+         booking flow, so nothing scrolls inside the frame. */
+      window.addEventListener('message', function (e) {
+        if (!e.origin || e.origin.indexOf('calendly.com') < 0) { return; }
+        var d = e.data;
+        if (!d || typeof d !== 'object') { return; }
+        if (d.event === 'calendly.page_height' && d.payload && d.payload.height) {
+          var px = parseInt(d.payload.height, 10);
+          if (px > 300 && px < 1200) { panel.style.height = px + 'px'; }
+        }
+        if (d.event === 'calendly.event_type_viewed' && veil) {
+          veil.classList.add('gone');
+          var v = veil; veil = null;
+          setTimeout(function () { if (v.parentNode) { v.parentNode.removeChild(v); } }, 400);
+        }
+      });
+      /* never leave the cover up if that message never arrives */
+      setTimeout(function () {
+        if (veil) { veil.classList.add('gone'); var v = veil; veil = null;
+          setTimeout(function () { if (v.parentNode) { v.parentNode.removeChild(v); } }, 400); }
+      }, 8000);
     });
   }
 
