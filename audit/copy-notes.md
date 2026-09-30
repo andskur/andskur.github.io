@@ -86,3 +86,13 @@ Open for Andrew.
 Gateway.fm still appears twice on the page and was left alone:
 - the Background paragraph, "Gateway.fm acquired it in 2024 and I ran two departments there";
 - the 2021 timeline chapter, whose title is "Gateway.fm".
+
+## Structure change, 1 October 2026
+
+The standalone email link under the contact form was removed at Andrew's
+direction. It duplicated the footer's Email column, and with Calendly now
+in the panel the section had three routes to the same person.
+
+This departs from `brand-spine.md`, which records the contact section as
+"One field ... and the email address". The address is still on the page,
+in the footer and in the form's failure message. Reported, not patched.
