@@ -98,12 +98,16 @@ function headerOffset() {
           root.addEventListener('pointerdown', move);
 
           var mbtn = root.querySelector('.mbtn');
-          if (mbtn) {
-            mbtn.addEventListener('click', function () {
-              var open = root.classList.toggle('menu-open');
-              mbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            });
-          }
+  /* The export ran one init per phone root. Both now resolve to the same
+     element, so an unguarded bind attached this twice and the second
+     toggle undid the first: the menu opened and shut on the same tap. */
+  if (mbtn && !mbtn.getAttribute('data-wired')) {
+    mbtn.setAttribute('data-wired', '1');
+    mbtn.addEventListener('click', function () {
+      var open = root.classList.toggle('menu-open');
+      mbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
           var scrollable = function () { return document.documentElement.scrollHeight > window.innerHeight + 40; };
           var anchors = root.querySelectorAll('a[href^="#"]');
           for (var a2 = 0; a2 < anchors.length; a2++) {
@@ -157,12 +161,16 @@ function headerOffset() {
             if (grain) { grain.style.backgroundImage = 'url(' + gc.toDataURL() + ')'; }
           } catch (e) {}
           var mbtn = root.querySelector('.mbtn');
-          if (mbtn) {
-            mbtn.addEventListener('click', function () {
-              var open = root.classList.toggle('menu-open');
-              mbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            });
-          }
+  /* The export ran one init per phone root. Both now resolve to the same
+     element, so an unguarded bind attached this twice and the second
+     toggle undid the first: the menu opened and shut on the same tap. */
+  if (mbtn && !mbtn.getAttribute('data-wired')) {
+    mbtn.setAttribute('data-wired', '1');
+    mbtn.addEventListener('click', function () {
+      var open = root.classList.toggle('menu-open');
+      mbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
           var scrollable = function () { return document.documentElement.scrollHeight > window.innerHeight + 40; };
           var anchors = root.querySelectorAll('a[href^="#"]');
           for (var a2 = 0; a2 < anchors.length; a2++) {
