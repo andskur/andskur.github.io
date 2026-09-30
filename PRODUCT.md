@@ -18,6 +18,8 @@ Technical constraints on the surface itself:
 - The page is **one responsive tree** (`site/index.html`) with its tokens in `site/tokens.css`, layout in `site/app.css` and behaviour in `site/app.js`. Desktop and phone differences are CSS only. Rebuilt from the canvas export on 29 September 2026; the original is kept at `site/index.canvas.html.bak`.
 - Scheduling is live: Calendly at `https://calendly.com/and-skur/30min`, embedded in the contact panel and loaded only on click. Every "Book a call" CTA still resolves to the contact section, where the form and the booking panel sit side by side.
 - Deploy is unresolved (see `## Stack`). Nothing currently publishes to `andskur.com`.
+- Two absolute URLs point at `andskur.github.io` and must change with the domain: the form's `_next` field, which is where Formspree returns a visitor whose browser posted natively, and the form's allowed-domain setting in Formspree itself.
+- `tools/stamp.py` writes a content hash into the asset links and must run before publishing. GitHub Pages serves assets with `max-age=600`, so without it a browser can hold an old `app.js` against a new `index.html` for ten minutes.
 - Not on the site yet, and to be added under Offers or as a fifth navigation item when they exist: the public DD framework download and the redacted DD sample. **Do not add a separate proof page.**
 
 `brand-spine.md` in the `andskur-core` plugin, under "andskur.com structure", is the built spec for this page: first screen, numbers strip, offers selector, how an engagement runs, seven systems areas, background, contact, footer, and what is deliberately left off. Read it before changing any section.
