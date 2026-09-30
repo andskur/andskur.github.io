@@ -531,20 +531,76 @@ function headerOffset() {
   }
 
   function wireForms() {
-    var forms = document.querySelectorAll('form[data-mail]');
-    for (var i = 0; i < forms.length; i++) {
-      forms[i].addEventListener('submit', function (ev) {
+  var forms = document.querySelectorAll('form[data-form]');
+  for (var i = 0; i < forms.length; i++) { wire(forms[i]); }
+
+  function wire(f) {
+    var msg = f.querySelector('.fmsg');
+    var btn = f.querySelector('button[type="submit"]');
+    var endpoint = f.getAttribute('action') || '';
+    /* Until a real endpoint is set, keep the old behaviour rather than ship a
+       form that posts into a 404. */
+    if (endpoint.indexOf('REPLACE-ME') > -1) {
+      f.setAttribute('action', 'mailto:a.skurlatov@gmail.com');
+      f.setAttribute('enctype', 'text/plain');
+      f.addEventListener('submit', function (ev) {
         ev.preventDefault();
-        var f = this;
-        if (f.company_site && f.company_site.value) { return; }
-        var what = (f.decision && f.decision.value || '').trim();
+        if (f._gotcha && f._gotcha.value) { return; }
+        var what = (f.message && f.message.value || '').trim();
         var from = (f.email && f.email.value || '').trim();
-        var body = what + '\n\n' + from;
         window.location.href = 'mailto:a.skurlatov@gmail.com?subject=' +
-          encodeURIComponent('Book a call') + '&body=' + encodeURIComponent(body);
+          encodeURIComponent('andskur.com: what needs doing') +
+          '&body=' + encodeURIComponent(what + '\n\n' + from);
       });
+      return;
     }
+
+    function say(text, kind) {
+      if (!msg) { return; }
+      msg.className = 'fmsg ' + kind;
+      msg.hidden = false;
+      if (kind === 'bad') {
+        msg.textContent = 'That did not send. Email me directly at ';
+        var a = document.createElement('a');
+        a.href = 'mailto:a.skurlatov@gmail.com';
+        a.textContent = 'a.skurlatov@gmail.com';
+        msg.appendChild(a);
+        msg.appendChild(document.createTextNode('.'));
+      } else {
+        msg.textContent = text;
+      }
+    }
+
+    f.addEventListener('submit', function (ev) {
+      if (!window.fetch || !window.FormData) { return; }   /* let it post normally */
+      if (f._gotcha && f._gotcha.value) { ev.preventDefault(); return; }
+      ev.preventDefault();
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending'; }
+      if (msg) { msg.hidden = true; }
+
+      fetch(endpoint, {
+        method: 'POST',
+        body: new FormData(f),
+        headers: { Accept: 'application/json' }
+      }).then(function (r) {
+        if (r.ok) {
+          f.classList.add('sent');
+          say('Sent. I will reply to the address you gave.', 'ok');
+          return;
+        }
+        return r.json().then(function (d) {
+          var e = d && d.errors && d.errors.length ? d.errors[0].message : null;
+          throw new Error(e || 'failed');
+        });
+      }).catch(function () {
+        say('That did not send. Email me directly at a.skurlatov@gmail.com.', 'bad');
+      }).then(function () {
+        if (btn && !f.classList.contains('sent')) { btn.disabled = false; btn.textContent = label; }
+      });
+    });
   }
+}
 
   var stack = document.querySelector('.page .stackwrap');
   var size = stack ? Math.round(stack.getBoundingClientRect().width) || 220 : 220;
