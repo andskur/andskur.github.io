@@ -333,3 +333,35 @@ Nightfall, Hermez, Miden, 18 September 2026", so Miden is covered outright.
    Platform and Yield at **October 2025**, while the shared prover sits in the
    2025 line without a month. If the prover predates October 2025, the title
    on this row is ahead of the work, as "Head of Backend" is on area 2.
+
+## The spec block's last row, all seven areas (2 October 2026)
+
+Andrew: "we have doubled info in the blocks ... we don't need the exact text
+doubled in the single block", naming the 140k+ figure, the $1B+ figure and the
+autoscaling line.
+
+The audit found it in six of the seven, not three. Every Constraint row was a
+compression of the sentence directly above it, and areas 2, 3, 4, 5 and 7
+repeated whole phrases verbatim; area 3 said "$1B+ locked" three times over,
+counting the diagram.
+
+Rather than delete the row, each one now states a limit its own sentence does
+not, taken from that row's do-not-say column in `career-and-proof.md`. The
+label reads **Limit** where the content is a limitation and stays
+**Constraint** on area 2, which is the one area with a real performance
+constraint left once the duplication went.
+
+| Area | Row | Reads | From |
+|---|---|---|---|
+| 1 Card programme chains | Limit | Not a compliance certification. | Row 1 forbids "MiCA-compliant" |
+| 2 Blockchain RPC proxy | Constraint | 50 ms average latency on the heavy requests. | Row 3 Default wording, verbatim |
+| 3 Staking infrastructure | Limit | A point-in-time figure, not a managed total. | Row 9 forbids "$1B managed", "my TVL" |
+| 4 Shared ZK proving | Limit | No cost saving claimed; none was measured. | Row 10 forbids cost-saving percentages |
+| 5 App kits for fintech | Limit | No revenue or volume figures claimed. | Row 31 forbids revenue or volume figures |
+| 6 AI network token launch | Limit | One launch; no token price outcome claimed. | Row 14 forbids token price outcomes |
+| 7 NFT launch platforms | Limit | No sales figure claimed for the platform itself. | Row 24 forbids the total as sales Andrew ran |
+
+No new claim enters this way: every line is the negation of something its row
+already forbids, so none of them can overstate. It also puts the page's own
+principle to work, that stated limits read as credibility to a senior reader,
+in the one slot that was carrying nothing.
