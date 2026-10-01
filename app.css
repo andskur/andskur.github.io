@@ -271,6 +271,12 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 .page .dgbox.on .x4{animation-delay:1.4s}
 .page .dgbox.on .x5{animation-delay:2.2s}
 .page .dgbox.on .x6{animation-delay:2.35s}
+/* A fourth node in a row the canvas drew with three, and the two wires it needs. */
+.page .dgbox.on .x7{animation-delay:1.55s}
+.page .dgbox.on .w7{animation-delay:.95s}
+.page .dgbox.on .w8{animation-delay:1.95s}
+.page .dgbox.on .p7{animation-delay:3.6s}
+.page .dgbox.on .p8{animation-delay:4.3s}
 .page .dgbox.on .pulse{animation:flow 2.6s linear 2.6s infinite,fadein .6s ease 2.6s forwards}
 .page .dgbox.on .p2{animation-delay:3s}
 .page .dgbox.on .p3{animation-delay:3.4s}
