@@ -80,6 +80,9 @@
   --section-gap: var(--sp-72);
   --container: 1440px;
   --measure: 62ch;
+  /* The system areas read beside a 520px panel, so their column is set
+     narrower than the page measure: taller, and balanced against it. */
+  --measure-entry: 52ch;
 
   /* ---- form --------------------------------------------------------- */
   --r-edge: 3px;
