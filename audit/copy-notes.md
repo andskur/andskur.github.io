@@ -236,3 +236,51 @@ and puts the firm in the value slot, so no fact is lost in the rename.
 Carried forward from area 1 and still open: the "no client named" rule in
 `brand-spine.md`, `PRODUCT.md` and `AGENTS.md` is now contradicted by two
 areas, not one.
+
+## Structure change: area 3, staking infrastructure (2 October 2026)
+
+Andrew's instruction: Gateway Yield; Lido, Gnosis, Stelar, Canton; "i was the
+department head".
+
+| Element | Before | After |
+|---|---|---|
+| Heading | Staking infrastructure | unchanged |
+| Prose | Row 9 Default wording | unchanged |
+| Spec rows | Constraint only | Role, Company, Product, Protocols, Constraint |
+| Diagram | Three identical "Validator / Signing node" boxes | Four boxes, "Protocol" over each name |
+
+Role reads **VP of Platform and Yield**, which is row 9's Responsibility column
+verbatim and says the same thing as "department head" with the title attached.
+Spelling corrected to **Stellar**. The diagram needed a fourth node in a row
+the canvas drew with three, so `.x7`, `.w7`, `.w8`, `.p7` and `.p8` joined the
+animation classes in `app.css`; the three repeated validator boxes carried one
+fact between them and now carry four.
+
+The prose is untouched. Row 9's do-not-say list forbids "I ran the
+infrastructure", and both the sentence and the diagram's bottom caption keep
+the department as the subject.
+
+### Conflicts raised by this change, for Andrew to decide
+
+1. **Row 9 records that there is no client to name.** Its Permission column
+   reads "CLEAR (no client to name; on-chain reference to confirm)". The page
+   now names four protocols against it. None of the four is recorded against
+   row 9: Lido and Stellar appear nowhere in `career-and-proof.md`; Gnosis
+   appears nowhere either, having been added to area 2 the same day under the
+   same gap; Canton appears only at **row 17**, which is the CIP-0084 talk to
+   the super-validators, a different claim from running staking infrastructure
+   for the network. Row 9 needs amending through `/proof`.
+
+2. **The diagram now implies the $1B+ is spread across those four.** It reads
+   top to bottom: locked value, then the four protocols, then the
+   infrastructure. Row 9 records "$1B+ locked in staking" with no breakdown
+   and its do-not-say list already rules out "my TVL" and any return figure. If
+   the four are not the whole of the locked value, the arrangement overstates
+   what is recorded.
+
+3. **"Gateway Yield" is not in the register.** The product name appears in no
+   reference file. Row 9 calls the area "Yield and staking infrastructure".
+
+Carried forward: "Head of Backend" on area 2 is still the 2023 title against a
+2021 system, and the "no client named" rule in `brand-spine.md`, `PRODUCT.md`
+and `AGENTS.md` is now contradicted by three areas.
