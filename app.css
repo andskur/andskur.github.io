@@ -424,11 +424,18 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
   /* ---- systems: entries scroll, the diagram holds ---- */
   .page .entry {
     display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-    column-gap: var(--sp-64); align-items: start;
-    padding: var(--sp-8) 0 var(--sp-64); gap: var(--sp-14);
+    /* A flexible row above and below the text centres it against the panel,
+       which stands 520px tall against 190px of words. The gap was a shorthand
+       here, which quietly overwrote the column gap set on the line above. */
+    grid-template-rows: 1fr auto auto auto 1fr;
+    column-gap: var(--sp-64); row-gap: var(--sp-14); align-items: start;
+    padding: var(--sp-8) 0 var(--sp-64);
   }
-  .page .entry > h3, .page .entry > .reg, .page .entry > .kv { grid-column: 1; max-width: var(--measure); }
-  .page .entry > .dgbox { grid-column: 2; grid-row: 1 / span 4; position: sticky; top: calc(var(--nav-h) + var(--sp-40)); margin-top: 0; }
+  .page .entry > h3, .page .entry > .reg, .page .entry > .kv { grid-column: 1; max-width: var(--measure-entry); }
+  .page .entry > h3 { grid-row: 2; }
+  .page .entry > .reg { grid-row: 3; }
+  .page .entry > .kv { grid-row: 4; }
+  .page .entry > .dgbox { grid-column: 2; grid-row: 1 / -1; position: sticky; top: calc(var(--nav-h) + var(--sp-40)); margin-top: 0; }
   .page .entry .reg { font-size: var(--fs-body); line-height: var(--lh-body); }
 
   /* ---- background: portrait right, timeline as a time axis ---- */
