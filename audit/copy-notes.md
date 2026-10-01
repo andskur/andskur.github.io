@@ -284,3 +284,52 @@ the department as the subject.
 Carried forward: "Head of Backend" on area 2 is still the 2023 title against a
 2021 system, and the "no client named" rule in `brand-spine.md`, `PRODUCT.md`
 and `AGENTS.md` is now contradicted by three areas.
+
+## Structure change: area 4, shared ZK proving (2 October 2026)
+
+Andrew's instruction: under Gateway, for customers and protocols Polygon
+zkEVM, erigon-cdk zk L2 chains, Miden, Iden3; "i was the bp of platform and
+yield".
+
+| Element | Before | After |
+|---|---|---|
+| Heading, prose | Row 10 Default wording | unchanged |
+| Spec rows | Constraint only | Role, Company, Protocols, Constraint |
+| Diagram | Three "Ecosystem" boxes: a zkEVM rollup, a zkVM chain, a privacy rollup | Four boxes, the anonymous description as the caption over each name |
+
+Read as VP of Platform and Yield and cdk-erigon, which is the project's own
+name. The anonymous descriptions became the captions rather than being
+discarded, so each box still says what kind of system it is: zkEVM rollup /
+Polygon zkEVM, zk L2 chains / cdk-erigon, zkVM chain / Miden, ZK identity /
+Iden3. That arrangement also works against row 10's do-not-say rule, which
+forbids presenting the prover as zkEVM only; four kinds of ZK system make the
+point better than the sentence alone.
+
+Much of this is already permitted. Row 10's Permission reads "CLEAR for EY
+Nightfall, Hermez, Miden, 18 September 2026", so Miden is covered outright.
+
+### Conflicts raised by this change, for Andrew to decide
+
+1. **Polygon zkEVM is on the page under a name the register does not use.**
+   Row 10 clears **Hermez**. Polygon Hermez was renamed Polygon zkEVM and the
+   repository moved from `0xPolygonHermez` to `0xPolygon`, so this was read as
+   the same project under its current name. If that reading is wrong, the name
+   has no permission at all.
+
+2. **Iden3 and cdk-erigon are not in the register.** Neither appears in any
+   reference file. cdk-erigon sits inside the Polygon CDK and Hermez
+   lineage that row 10 does clear, but it is not named there.
+
+3. **EY Nightfall has been dropped, and it was the one name the register asks
+   for.** Row 10's Named wording is Add "including EY Nightfall", and Permission
+   clears it explicitly. The diagram's third box, "a privacy rollup", was
+   almost certainly Nightfall in anonymous form, so naming the others while
+   removing that box takes the one CLEAR name off the page. It was left off
+   only because the instruction did not list it; it can go back at no
+   permission cost.
+
+4. **The role may be early for the work.** Row 10's Responsibility column says
+   only "Department delivery" and names no title. The timeline puts VP of
+   Platform and Yield at **October 2025**, while the shared prover sits in the
+   2025 line without a month. If the prover predates October 2025, the title
+   on this row is ahead of the work, as "Head of Backend" is on area 2.
