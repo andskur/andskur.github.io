@@ -365,3 +365,55 @@ No new claim enters this way: every line is the negation of something its row
 already forbids, so none of them can overstate. It also puts the page's own
 principle to work, that stated limits read as credibility to a senior reader,
 in the one slot that was carrying nothing.
+
+## Spec rows across all seven areas (2 October 2026)
+
+Andrew supplied material for every area. Most went up as given. Three items
+were held and put to him first, because each is named in its own row's
+do-not-say column, which makes it a decision he had already taken rather than
+a gap in the record.
+
+| Area | Held item | Rule | His decision |
+|---|---|---|---|
+| 1 | 6M users | Row 1: "any TVL or user figure not on L2BEAT" | Reword without a number. Reads "Built for consumer scale." |
+| 4 | 30% cost saving | Row 10: "Cost-saving percentages, none measured" | State the architecture instead. Reads "One shared prover across every protocol, not one per chain." |
+| 6 | $140M FDV, all major CEXs | Row 14: "FDV or RPS as fact without a source" | Put both up as stated. |
+
+Area 6's Limit row read "One launch; no token price outcome claimed", which
+the new Outcome row contradicts outright, so it now reads "One launch; FDV at
+listing, not a current valuation". The qualifier is doing the work the old
+line did, against a figure that is now on the page.
+
+### Open, for Andrew
+
+1. **Row 14 needs amending through `/proof`, with a source.** Its Permission
+   already says "Citable source still required by the Named wording" and its
+   artefact is the KuCoin announcement of 7 and 9 January 2026. The FDV is on
+   the page without one. "All major CEXs" is also a larger claim than the
+   single "exchange listing" the row's own wording records.
+
+2. **Snark.art is not on area 7.** Row 33 forbids presenting it as "Uddug or
+   practice work", and that area's sentence opens "With Uddug, which I
+   co-founded". Row 33 also forbids "Founder, co-founder or CTO of Snark.art",
+   which rules out the "technical lead / cto" role as given against that name.
+   Snark.art is CLEAR in itself and would need its own place on the page, not
+   a line inside the Uddug area.
+
+3. **No Role row on area 7.** Rows 21 to 24 record responsibility only as
+   "Uddug launch", "Uddug build" and "Uddug era", with no title. "Co-founder"
+   is already in the sentence, and the technical-lead title belongs to row 33,
+   which is a different engagement.
+
+4. **99% uptime is unrecorded, and reads low.** Row 9's evidence is STATED and
+   its artefact is "To confirm". Nothing forbids an uptime figure on that row,
+   unlike row 3. Worth noting that 99% is about three and a half days of
+   downtime a year, which a technical reader will take as a modest number
+   rather than a strong one.
+
+5. **"15+ NFT projects" is a different claim from row 32.** That row records
+   "20+ projects launched" across everything, not a count of NFT projects.
+   It is not a larger number, so it does not break row 32's rule against one,
+   but it is not recorded either.
+
+6. **Arsnl.art is not linked.** The site returned 502 and 530 on 2 October
+   2026. The name is on the page as plain text.
