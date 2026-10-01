@@ -6,10 +6,9 @@ CTO, technical due diligence, and architecture or launch reviews.
 Static HTML, CSS and JavaScript. No framework, no build step, no package
 manager, no dependencies. Four files do the whole job.
 
-Live at **https://andskur.github.io**.
-
-> The canonical URL in the markup is `andskur.com`, which currently points at
-> Vercel and does not serve this site. Moving the domain is an open decision.
+Live at **https://andskur.com**, served by GitHub Pages. The custom domain is
+set by `site/CNAME`, which has to stay in `site/` because publishing replaces
+the whole `gh-pages` branch.
 
 ## Running it
 
@@ -129,8 +128,6 @@ Two, both deliberately quiet:
 
 ## Known issues
 
-- `andskur.com` points at Vercel. Moving it needs DNS, a `CNAME`, and two URLs
-  updated in the form's configuration.
 - The wordmark SVGs are outlined paths drawn in the previous serif, so the
   lockup does not match the page's type. Regenerating them is a small job.
 - Two factual errors are live in the timeline, recorded in `audit/copy-notes.md`
