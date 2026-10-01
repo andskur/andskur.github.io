@@ -127,13 +127,13 @@ chains, is the first to carry the full set, at Andrew's instruction:
 | Row | Value |
 |---|---|
 | Role | Architect |
-| Client | Wirex |
+| Client | **Wirex**, linking to `https://www.wirexapp.com` |
 | Constraint | A live card programme on an L2 chain. |
-| Evidence | `l2beat.com`, linking to `https://l2beat.com/layer2s/projects/wirex` |
 
-The link resolves: `/layer2s/projects/wirex` returns 200 and is the
-canonical target; `/scaling/projects/wirex` redirects to it. It matches the
-artefact recorded on register row 1.
+Amended the same day, at Andrew's instruction: the link moved from a separate
+Evidence row to the client's own name, and the L2BEAT row went. The URL
+resolves; the bare host redirects to the `www` form, which is what the page
+carries.
 
 De-duplication in the same change, approved in the instruction: "built for
 MiCA alignment" appeared three times in this one area, in the paragraph, in
@@ -164,5 +164,6 @@ Reported, not patched. Both are live on the page now.
    is named on this page, even where the register would permit it". The
    instruction of 1 October supersedes all three for this area; the documents
    still say the old thing and need updating if the new rule is to hold.
-   Separately, row 1's do-not-say list forbids presenting the L2BEAT listing
-   as an endorsement, which bears on the row being labelled "Evidence".
+   The second half of this conflict is closed: the L2BEAT link is gone, so
+   row 1's do-not-say rule against presenting that listing as an endorsement
+   is no longer in play. Naming the client is still the open question.
