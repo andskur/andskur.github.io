@@ -12,9 +12,8 @@ Skurlatov: fractional CTO, technical due diligence, and architecture or launch
 reviews. Static HTML, CSS and JavaScript. No framework, no build step, no
 package manager, no dependencies.
 
-Live at **https://andskur.github.io**. The canonical URL in the markup is
-`https://andskur.com`, which currently points at Vercel and does **not** serve
-this site. Moving the domain is an open decision, not an oversight.
+Live at **https://andskur.com** (custom domain, set by `site/CNAME`), and at
+`andskur.github.io`, which serves the same build.
 
 ## Run it
 
@@ -202,8 +201,9 @@ Useful checks, all of which have caught real bugs:
 
 ## Open items
 
-- `andskur.com` points at Vercel. Moving it needs DNS, a `CNAME`, the Formspree
-  `_next` URL, and the Formspree allowed-domain setting.
+- `site/CNAME` holds the custom domain. It **must** live in `site/`: the deploy
+  wipes the `gh-pages` branch, so a `CNAME` written by GitHub's settings page
+  would be removed on the next publish and the domain would break.
 - The lockup SVGs (`as-lockup-reversed.svg`) are outlined paths drawn in the
   **old** serif. The page is IBM Plex; the wordmark is not.
 - Five factual conflicts between the page and the proof register are recorded in
