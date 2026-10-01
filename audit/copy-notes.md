@@ -179,7 +179,7 @@ carried.
 | Heading | Smart proxy system | Blockchain RPC proxy |
 | Prose | "I designed a smart proxy system, with a cache layer and rate limiting, that served 140k+ requests per second in production for a browser wallet and a DEX aggregator." | "I designed the RPC proxy, a smart proxy system with a cache layer and rate limiting, that served 140k+ requests per second in production for Opera and 1inch." |
 | Spec rows | Constraint only | Role, Company, Clients, Constraint |
-| Diagram | Client / Browser wallet; Client / DEX aggregator; "Smart proxy system, in production" | Browser wallet / Opera; DEX aggregator / 1inch; "RPC proxy, in production" |
+| Diagram | Client / Browser wallet; Client / DEX aggregator; "Smart proxy system, in production" | One client box, "Clients" over all four names; "RPC proxy, in production" |
 
 Every word of the new prose is register text. "the RPC proxy, a smart proxy
 system with a cache layer and rate limiting" is the Jun 2021 timeline line
@@ -197,13 +197,27 @@ and puts the firm in the value slot, so no fact is lost in the rename.
 
 ### Conflicts raised by this change, for Andrew to decide
 
-1. **Gnosis and the Ethereum Foundation are not on the page.** Andrew's
-   instruction named four firms. Only Opera and 1inch appear, because only
-   those two are in the register: they are named in row 3's Permission and in
-   the 2022 timeline line. Gnosis and the Ethereum Foundation appear nowhere
-   in `career-and-proof.md`, so they are at no permission state at all, and
-   the boundary rule is that only REAL proof at Permission CLEAR leaves in
-   named form. They need a `/proof` entry before they can be shown.
+1. **Gnosis and the Ethereum Foundation are on the page ahead of the
+   register.** Raised on 2 October 2026 that neither appears anywhere in
+   `career-and-proof.md`, so neither held a permission state. Andrew
+   reaffirmed the same day, "we can add Gnosis and Ethereum Foundation, they
+   used this RPC", and both were added. Row 3 still needs amending through
+   `/proof` so the register records what the page says.
+
+   One point for that entry. Row 3's Permission reads "CLEAR for naming Opera
+   and 1inch, 18 September 2026, Andrew's decision (exit deal; client-side
+   terms checked)". The parenthetical is the substance: naming those two
+   followed a check of the exit deal and the client-side terms. The two new
+   names have not had that check, which is a different question from whether
+   the fact is true.
+
+   The prose no longer names anyone. Row 3's named wording ties the 140k+
+   figure to Opera and 1inch specifically, and the 2022 timeline line does the
+   same, so extending that figure to all four would claim more than the
+   register holds. Ending the sentence at "in production" states less than the
+   register's own default wording, which is safe in a way that naming four
+   firms beside the peak figure would not be. The full list appears in the
+   spec block and in the diagram's client box instead.
 
 2. **"Head of Backend" does not match the register for this system.** Row 3's
    Responsibility column reads "Designed and built it with a team of 6", and
