@@ -1033,3 +1033,42 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 @media (max-width: 999.98px) {
   .page .menu .menu-cta { margin-top: var(--sp-16); }
 }
+
+/* The first screen on phone. The mark was taking a quarter of the viewport
+   before the headline began, and pushed the call to action below the fold on
+   every common size except the largest. Tightened so the offer, the three
+   lanes and the button all land on the first screen, without reordering
+   them: the lanes are the qualifying step and have to come before the ask. */
+@media (max-width: 999.98px) {
+  .page .hero { padding-top: calc(var(--nav-h) + var(--sp-20)); gap: var(--sp-16); }
+  .page .hero .col { gap: var(--sp-10) !important; }
+  .page .hero .routes a { padding: var(--sp-6) 0; }
+}
+
+/* A standing call to action in the phone bar. Previously the only one lived
+   inside the disclosure menu, so until a visitor opened it or scrolled past
+   the first screen the page offered no way to act. The wordmark gives up the
+   room: the hero's own eyebrow reads "Andrew Skurlatov" directly beneath it,
+   so the bar can carry the mark alone. */
+.page .nav-cta { display: none; }
+
+@media (max-width: 999.98px) {
+  .page .nav-cta {
+    display: inline-flex; margin-left: auto; margin-right: var(--sp-12);
+    height: 36px; padding: 0 var(--sp-14); width: auto; flex: none;
+    font-size: var(--fs-sm);
+  }
+}
+
+/* The header lockup, formerly inline on the images. The wordmark is clipped
+   past the mark so the mark can fade in separately as the hero's rune hands
+   over to it; on phone the clip comes off and the container crops instead. */
+.page .nav .lk-word,
+.page .nav .lk-full { height: 20px; width: auto; max-width: none; display: block; }
+.page .nav .lk-word { clip-path: inset(0 0 0 20px); }
+.page .nav .lk-full { position: absolute; left: 0; top: 0; opacity: 0; }
+@media (max-width: 999.98px) {
+  .page .nav > a:first-child { width: 26px; overflow: hidden; flex: none; }
+  .page .nav .lk-word { clip-path: none; height: 26px; }
+  .page .nav .lk-full { display: none; }
+}
