@@ -118,3 +118,51 @@ button sat below the fold on every common size except the largest.
 Not solved: 375x667 (iPhone SE and 8) still ends with the button 121px below
 the fold. Reaching it would mean a mark small enough to lose the first
 screen's character for everyone else.
+
+## Structure change: the system areas' spec block (1 October 2026)
+
+`.kv` under `.entry` became a two-column table. Area 1, Card programme
+chains, is the first to carry the full set, at Andrew's instruction:
+
+| Row | Value |
+|---|---|
+| Role | Architect |
+| Client | Wirex |
+| Constraint | A live card programme on an L2 chain. |
+| Evidence | `l2beat.com`, linking to `https://l2beat.com/layer2s/projects/wirex` |
+
+The link resolves: `/layer2s/projects/wirex` returns 200 and is the
+canonical target; `/scaling/projects/wirex` redirects to it. It matches the
+artefact recorded on register row 1.
+
+De-duplication in the same change, approved in the instruction: "built for
+MiCA alignment" appeared three times in this one area, in the paragraph, in
+the Constraint row and in the diagram's settlement caption. The paragraph is
+register wording and was not touched. The other two dropped the phrase; the
+caption also returned to the one-word form every other caption in that
+diagram uses.
+
+The remaining six areas keep the single Constraint row until Andrew supplies
+their role, client and link material.
+
+### Conflicts raised by this change, for Andrew to decide
+
+Reported, not patched. Both are live on the page now.
+
+1. **"Role: Architect" is not what row 1 records.** The register's
+   Responsibility column for row 1 reads "Led the department that delivered
+   it end to end as VP of DLT". The register does use "architected" where it
+   applies, on row 11 for the oracles, which makes "Architect" on row 1 a
+   different claim from the one on file rather than a shorter wording of it.
+   Either the register's row 1 needs amending through `/proof`, or the row
+   should read the title the register holds.
+
+2. **Naming Wirex and linking L2BEAT reverses two recorded decisions.**
+   `brand-spine.md` records "Seven areas, no client named" and "no L2BEAT
+   link" as Andrew's decisions of 25 September 2026. `PRODUCT.md` carries the
+   same rule under Brand Commitments, and `AGENTS.md` states it as "No client
+   is named on this page, even where the register would permit it". The
+   instruction of 1 October supersedes all three for this area; the documents
+   still say the old thing and need updating if the new rule is to hold.
+   Separately, row 1's do-not-say list forbids presenting the L2BEAT listing
+   as an endorsement, which bears on the row being labelled "Evidence".
