@@ -96,3 +96,25 @@ in the panel the section had three routes to the same person.
 This departs from `brand-spine.md`, which records the contact section as
 "One field ... and the email address". The address is still on the page,
 in the footer and in the form's failure message. Reported, not patched.
+
+## Structure change, 1 October 2026: the phone first screen
+
+Acting on outside feedback that the mark delayed the offer and pushed the
+call to action below the fold. Measured first: the mark took 26 to 33 per
+cent of the viewport, the headline did not begin until 370px, and the
+button sat below the fold on every common size except the largest.
+
+- The mark is 140px on phone, down from 220. The headline now begins at 266.
+- The hero's rhythm is tighter. Nothing is reordered: the three lane routes
+  stay above the button, because they are the qualifying step and a fund
+  partner should see "ten business days" before booking.
+- The bar carries a standing "Book a call" on phone. It previously existed
+  only inside the disclosure menu, so the first screen offered no way to act.
+- To make room, the phone bar shows the mark alone rather than the full
+  lockup. The hero's own eyebrow reads "Andrew Skurlatov" directly beneath
+  it. `brand-spine.md` does not specify the bar's treatment at phone width;
+  reported, not patched.
+
+Not solved: 375x667 (iPhone SE and 8) still ends with the button 121px below
+the fold. Reaching it would mean a mark small enough to lose the first
+screen's character for everyone else.
