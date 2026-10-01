@@ -167,3 +167,58 @@ Reported, not patched. Both are live on the page now.
    The second half of this conflict is closed: the L2BEAT link is gone, so
    row 1's do-not-say rule against presenting that listing as an endorsement
    is no longer in play. Naming the client is still the open question.
+
+## Structure change: area 2, the RPC proxy (2 October 2026)
+
+Andrew's instruction: make clear it is a blockchain RPC proxy and not an
+abstract one, and record the role, the company and the firms whose traffic it
+carried.
+
+| Element | Before | After |
+|---|---|---|
+| Heading | Smart proxy system | Blockchain RPC proxy |
+| Prose | "I designed a smart proxy system, with a cache layer and rate limiting, that served 140k+ requests per second in production for a browser wallet and a DEX aggregator." | "I designed the RPC proxy, a smart proxy system with a cache layer and rate limiting, that served 140k+ requests per second in production for Opera and 1inch." |
+| Spec rows | Constraint only | Role, Company, Clients, Constraint |
+| Diagram | Client / Browser wallet; Client / DEX aggregator; "Smart proxy system, in production" | Browser wallet / Opera; DEX aggregator / 1inch; "RPC proxy, in production" |
+
+Every word of the new prose is register text. "the RPC proxy, a smart proxy
+system with a cache layer and rate limiting" is the Jun 2021 timeline line
+verbatim; "served 140k+ requests per second in production for Opera and
+1inch" is row 3's Named wording. Joining them is deliberate: row 3's do-not-say
+list forbids presenting the smart proxy and the RPC proxy as two different
+systems, and a heading reading "RPC proxy" above prose reading "smart proxy
+system" would invite exactly that reading. The apposition states they are one
+system in the register's own words.
+
+Naming Opera and 1inch is covered: row 3 Permission is "CLEAR for naming Opera
+and 1inch, 18 September 2026, Andrew's decision (exit deal; client-side terms
+checked)". The diagram keeps the anonymous descriptions as the caption slot
+and puts the firm in the value slot, so no fact is lost in the rename.
+
+### Conflicts raised by this change, for Andrew to decide
+
+1. **Gnosis and the Ethereum Foundation are not on the page.** Andrew's
+   instruction named four firms. Only Opera and 1inch appear, because only
+   those two are in the register: they are named in row 3's Permission and in
+   the 2022 timeline line. Gnosis and the Ethereum Foundation appear nowhere
+   in `career-and-proof.md`, so they are at no permission state at all, and
+   the boundary rule is that only REAL proof at Permission CLEAR leaves in
+   named form. They need a `/proof` entry before they can be shown.
+
+2. **"Head of Backend" does not match the register for this system.** Row 3's
+   Responsibility column reads "Designed and built it with a team of 6", and
+   the timeline puts that at Jun 2021, where the role is **Go Team Lead, one
+   of the first hires**. Head of Backend is the 2023 line, with about 15
+   people and 100K+ RPS. The 140k+ figure on this row is the 2022 line, which
+   is also before the Head of Backend title. So the role as shown is a year or
+   two later than the work the row describes. Either the row reads Go Team
+   Lead, or it is split, or row 3's Responsibility is amended through `/proof`.
+
+3. **The heading leaves the name recorded in `brand-spine.md`.** That file
+   lists the area as "the smart proxy system (row 3 ...)". The page now says
+   Blockchain RPC proxy. The register supports the name; the spine still
+   records the old one and should be updated to match.
+
+Carried forward from area 1 and still open: the "no client named" rule in
+`brand-spine.md`, `PRODUCT.md` and `AGENTS.md` is now contradicted by two
+areas, not one.
