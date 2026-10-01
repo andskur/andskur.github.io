@@ -1072,3 +1072,20 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
   .page .nav .lk-word { clip-path: none; height: 26px; }
   .page .nav .lk-full { display: none; }
 }
+
+/* The system areas' spec block. One label/value pair was a column; several
+   are a two-column table, which is the same vocabulary as the diagram's own
+   node labels. Rows are optional: an area with only a constraint reads
+   exactly as it did before. */
+.page .entry .kv {
+  display: grid; grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: var(--sp-16); row-gap: var(--sp-6); align-items: baseline;
+}
+.page .entry .kv .lab { font-family: var(--font-mono); letter-spacing: var(--tracking-mono); }
+.page .entry .kv a {
+  color: var(--accent); text-decoration: none;
+  border-bottom: var(--bw) solid color-mix(in srgb, var(--accent) 45%, transparent);
+  padding-bottom: 1px; transition: border-color var(--dur-link), color var(--dur-link);
+}
+.page .entry .kv a:hover { color: var(--accent-hover); border-bottom-color: var(--accent-hover); }
+.page .entry .kv a::after { content: " \2197"; font-family: var(--font-mono); font-size: var(--fs-micro); }
