@@ -1025,3 +1025,11 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
   /* stand to the same height as the calendar beside it */
   .page #contact > form.sent { align-self: stretch; min-height: 0; }
 }
+
+/* The menu's call to action sits below a stacked list on phone and in a
+   centred row on desktop. The gap it needs on phone was an inline margin,
+   which a centred flex row counts as free space: it dropped the button 8px
+   below the links and nothing in the stylesheet could outrank it. */
+@media (max-width: 999.98px) {
+  .page .menu .menu-cta { margin-top: var(--sp-16); }
+}
