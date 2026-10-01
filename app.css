@@ -784,13 +784,18 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    axis the shafts use), so it tracks the rune at any width.
    ===================================================================== */
 @media (min-width: 1000px) {
+  /* Centred with margins, not translate: halobreathe animates transform, and
+     an animated transform replaces the whole property. Centring this with
+     translate(-50%, -50%) meant the halo jumped half its own width down and
+     right the moment that animation started, six seconds in. */
   .page .hero .halo,
   .page .hero .haloflash {
     left: var(--rune-x, 73.5%); right: auto; top: 50%;
     width: calc(var(--hero-mark) * 1.32);
     height: calc(var(--hero-mark) * 1.32);
     aspect-ratio: auto;
-    margin: 0; transform: translate(-50%, -50%);
+    margin: calc(var(--hero-mark) * -0.66) 0 0 calc(var(--hero-mark) * -0.66);
+    transform: none;
   }
   .page .hero .pool {
     left: var(--rune-x, 73.5%); top: auto; bottom: 6%;
