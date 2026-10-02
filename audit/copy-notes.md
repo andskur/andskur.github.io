@@ -610,23 +610,36 @@ Andrew's instruction: remove the Limit row from all seven areas and give every
 area a Constraint and an Outcome. Each now carries both, in the order Role,
 Company, Product, Client or Clients, Protocols, Launches, Constraint, Outcome.
 
-**The Limit rows were load-bearing, so their qualifiers moved rather than
-going.** Each was the negation of something its own register row forbids, which
-is why the page could carry the claim above it. Every one survives inside the
-Outcome sentence:
+**The Limit qualifiers were first folded into the Outcome sentences, then
+removed the same day.** Andrew: "these limits now providing what we did BAD it
+reads like this". He is right, and the reason is the label. Under a heading
+reading **Limit**, "no cost saving measured" is a stated limit, which is the
+page's own credibility device. Under one reading **Outcome**, the same words
+are an admission of what the work failed to produce. The text did not change
+meaning; the heading above it did.
 
-| Area | Outcome now reads | The guard it carries |
-|---|---|---|
-| 1 | Live on mainnet. Not a compliance certification. | Row 1 forbids "MiCA-compliant" |
-| 3 | $1B+ locked, a point-in-time figure, not a managed total. | Row 9 forbids "$1B managed", "my TVL" |
-| 4 | Running across all four. No cost saving measured. | Row 10 forbids cost-saving percentages |
-| 5 | In client delivery. No revenue or volume figures claimed. | Row 31 forbids revenue or volume figures |
-| 6 | $140M+ FDV, a top-5 CEX listing. FDV at listing, not a current valuation. | Row 14 forbids token price outcomes |
-| 7 | $100M+ raised across the launches. No sales figure claimed for the platform itself. | Row 24 forbids the total as sales Andrew ran |
+What the Outcomes read now, with nothing negative in any of them:
 
-Area 2 had no Limit row and needed no guard. Its latency moved from Constraint
-to Outcome, where it belongs: the traffic was the requirement, the latency was
-the result.
+| Area | Outcome |
+|---|---|
+| 1 | Live on mainnet. |
+| 2 | 50 ms average latency on the heavy requests. |
+| 3 | $1B+ locked. |
+| 4 | In production across all four. |
+| 5 | In client delivery. |
+| 6 | $140M+ FDV, a top-5 CEX listing. |
+| 7 | $100M+ raised across the launches. |
+
+**Dropping the guards costs nothing, which the first pass got wrong.** Each
+qualifier negated a claim the page does not make. Row 9 forbids "$1B managed"
+and "my TVL", and the page says "$1B+ locked", which is the register's own
+wording. Row 10 forbids cost-saving percentages, and no percentage appears.
+Row 31 forbids revenue or volume figures, and none appears. Row 14's approved
+wording is what area 6 now carries verbatim. A disclaimer is only needed where
+something was overclaimed, and nothing here was.
+
+Area 4's Constraint also lost "not one per chain", the last negative
+construction left in the rows.
 
 ### Open, for Andrew
 
