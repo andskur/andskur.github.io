@@ -1108,3 +1108,8 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    does. It was the one block still on the body default, 16px sans, which is
    what made it read as a wall under a 40px serif heading. */
 .page #background .reg + .reg { margin-top: var(--sp-6); }
+/* The portrait stands 435px against five lines of text, so the column
+   centres on it rather than hanging from the top with a void beneath. */
+.page #background > .rv.t1 { align-self: center; }
+/* Keeps "enough." off a line of its own; ignored where unsupported. */
+.page #background .reg { text-wrap: pretty; }
