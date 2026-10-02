@@ -479,3 +479,26 @@ evidence gap, the founder at a launch date.
    chapter and nowhere else. If that story should carry more weight than one
    chapter gives it, the place for it is the chapter, not a second telling
    above.
+
+## Background paragraph, settled (2 October 2026)
+
+Three rewrites were rejected before the brief was pinned down by asking
+rather than drafting. Andrew's answers: the paragraph exists to establish
+**that he is senior enough**; the voice is **warm and personal**, not the
+terse operator register of the earlier attempts; it names **nothing specific**,
+no domain, number, company or role; and it runs to **one short paragraph**.
+
+Live text: "I have been writing software since I was a student and I have
+never wanted to do anything else. What keeps me here now is the moment a
+system that could have failed quietly does not, because somebody asked the
+right question early enough."
+
+44 words, two sentences of 19 and 25. The constraint worth recording is that
+seniority normally rests on facts, and this brief rules facts out, so the rank
+has to come from bearing: the length of the run is implied rather than counted,
+and the thing he says he values is a system not failing rather than a system
+being clever, which is a thing only someone a long way in tends to say.
+
+It carries no claim, so nothing here needs clearing. The conflicts with
+`brand-spine.md` recorded above still stand: the spine still specifies the
+Uddug paragraph this replaced, and still expects Felag to be named here.
