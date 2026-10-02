@@ -392,12 +392,16 @@ line did, against a figure that is now on the page.
    the page without one. "All major CEXs" is also a larger claim than the
    single "exchange listing" the row's own wording records.
 
-2. **Snark.art is not on area 7.** Row 33 forbids presenting it as "Uddug or
-   practice work", and that area's sentence opens "With Uddug, which I
-   co-founded". Row 33 also forbids "Founder, co-founder or CTO of Snark.art",
-   which rules out the "technical lead / cto" role as given against that name.
-   Snark.art is CLEAR in itself and would need its own place on the page, not
-   a line inside the Uddug area.
+2. **Snark.art is on area 7, in its own row.** Raised on 2 October 2026 that
+   row 33 forbids presenting it as "Uddug or practice work" while that area's
+   sentence opens "With Uddug, which I co-founded". Andrew asked for it the
+   same day, so it went in on a separate row reading **Earlier - Snark.art, as
+   technical lead with a team of five**, which keeps every one of row 33's
+   rules: the title is the one that row records, the team is named as it
+   requires, no artist name or sales figure appears, and the row stands apart
+   from the Uddug clients rather than joining them. The "cto" half of the role
+   as given is not used; row 33 forbids "Founder, co-founder or CTO of
+   Snark.art" outright.
 
 3. **No Role row on area 7.** Rows 21 to 24 record responsibility only as
    "Uddug launch", "Uddug build" and "Uddug era", with no title. "Co-founder"
