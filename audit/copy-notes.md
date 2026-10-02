@@ -598,3 +598,47 @@ section and a nav item called "How it runs".
 3. **`offer-card.md`'s "What the site shows" section is now out of date.** It
    describes the offers as they stood on 26 September. The labels have changed
    and the retainer names two artefacts.
+
+## Systems spec rows: Limit out, Constraint and Outcome on every area (3 October 2026)
+
+Andrew's instruction: remove the Limit row from all seven areas and give every
+area a Constraint and an Outcome. Each now carries both, in the order Role,
+Company, Product, Client or Clients, Protocols, Launches, Constraint, Outcome.
+
+**The Limit rows were load-bearing, so their qualifiers moved rather than
+going.** Each was the negation of something its own register row forbids, which
+is why the page could carry the claim above it. Every one survives inside the
+Outcome sentence:
+
+| Area | Outcome now reads | The guard it carries |
+|---|---|---|
+| 1 | Live on mainnet. Not a compliance certification. | Row 1 forbids "MiCA-compliant" |
+| 3 | $1B+ locked, a point-in-time figure, not a managed total. | Row 9 forbids "$1B managed", "my TVL" |
+| 4 | Running across all four. No cost saving measured. | Row 10 forbids cost-saving percentages |
+| 5 | In client delivery. No revenue or volume figures claimed. | Row 31 forbids revenue or volume figures |
+| 6 | $140M+ FDV, a top-5 CEX listing. FDV at listing, not a current valuation. | Row 14 forbids token price outcomes |
+| 7 | $100M+ raised across the launches. No sales figure claimed for the platform itself. | Row 24 forbids the total as sales Andrew ran |
+
+Area 2 had no Limit row and needed no guard. Its latency moved from Constraint
+to Outcome, where it belongs: the traffic was the requirement, the latency was
+the result.
+
+### Open, for Andrew
+
+1. **Two Constraints are inferred, not copied.** Area 6's "Ten months, to a
+   fixed launch date" takes the ten months from row 14's Responsibility column,
+   which is new to the page, but the fixed date is a reading of the engagement
+   rather than a recorded fact. Area 7's "Drop-day load, on-chain and
+   off-chain" comes from that area's own diagram nodes, minting and allowlists
+   over contracts, metadata, an indexer and a storefront, and appears in no
+   register row at all.
+
+2. **Area 2's Constraint uses "exchange-scale"**, which is `brand-spine.md`'s
+   phrase for this system, not row 3's. Row 3 says only 140k+ RPS, which is
+   already in the sentence above the row.
+
+3. **Three Outcomes repeat a figure from their own paragraph**, on areas 3, 6
+   and 7. The figure is the outcome in each case, so the repetition is hard to
+   avoid; what makes the row earn its place is the qualifier after it. If the
+   repetition reads badly, the fix is to drop the figure from the row and keep
+   the qualifier alone.
