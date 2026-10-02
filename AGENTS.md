@@ -211,6 +211,11 @@ Useful checks, all of which have caught real bugs:
   and the Lomonosov naming.
 - `.cal` and `.calgrid` in `app.css` are orphaned, left from the canvas's dashed
   calendar placeholder.
+- Four of the five primary buttons are `<a>`, not `<button>`: the header CTA
+  on each width, the hero CTA and the booking panel's "Pick a time". A rule
+  written for links reaches all four and a rule written for buttons reaches
+  none of them. `.page a:hover` had been repainting them at 1.24:1 this way.
+  Check any new link-as-button in hover, focus-visible and active.
 - Spacing set only inside the desktop grid leaves phone with none. Three blocks
   ran together this way: the Background portrait against its own eyebrow, the
   timeline against the paragraph's last line, and the booking panel against the
