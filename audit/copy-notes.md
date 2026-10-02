@@ -549,3 +549,52 @@ And "$140M" dropped the plus the register carries, against the hard rule in
    today and the FDV half could not.
 
 4. **The one-month claim stays by instruction.** It appears in no register row.
+
+## Outside review of the offer cards (3 October 2026)
+
+A reviewer asked for clearer wording on four points. Andrew's decisions:
+
+| Point | Decision |
+|---|---|
+| "Shape" is an unusual label | **"Terms"**, which is `offer-card.md`'s own column name for this content |
+| "Named artefacts every month" is unpicturable | **Name examples**, drawn from the card's own Work line |
+| "separate and walled" is ambiguous | **Keep it**, the register's wording |
+| Availability unclear on the retainer | **Not same-business-day**, see below |
+
+The retainer's Terms line now reads: "The day, or two, is spread over the week
+as the work needs it. I do not count hours; I am there when it matters. Named
+artefacts every month, agreed before the start: a board or investor update and
+a written architecture decision. 30-day notice."
+
+The two named artefacts are inferred, not copied. `offer-card.md` says only
+"Named artefacts per month" for both retainer tiers and lists nothing, where
+it does list the diligence and review outputs in full. Both come from the same
+card's Scope column for this SKU, which promises board and investor technical
+reporting and architecture ownership. Andrew approved the inference.
+
+"How we work", the reviewer's first suggestion for the label, was not an
+option: `voice-and-editorial.md` holds that the practice is "I" and that "we"
+appears only where Andrew describes a team he led, and the page already has a
+section and a nav item called "How it runs".
+
+### Open, for Andrew
+
+1. **The retainer still states no response time.** `offer-card.md` records
+   "same-business-day response on named channels" in the retainer's Terms, and
+   Andrew's answer was that the real response is much faster than that and
+   that the slower figure should not go up. No faster figure was given, so
+   nothing was written: a response commitment invented here would bind him.
+   The card's existing "I am there when it matters" is the only availability
+   line on the page, and it already promises more than the contractual floor
+   does. Two things follow. The page can carry a number as soon as Andrew
+   names one, and if that number is faster than same-business-day then
+   `offer-card.md`'s Terms column is the thing that needs changing, since it
+   is the authority every proposal quotes.
+
+2. **Incident cover is on neither the site nor the card's public face.** The
+   register records it as best effort with no response-time commitment. It was
+   offered and not taken.
+
+3. **`offer-card.md`'s "What the site shows" section is now out of date.** It
+   describes the offers as they stood on 26 September. The labels have changed
+   and the retainer names two artefacts.
