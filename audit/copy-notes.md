@@ -502,3 +502,50 @@ being clever, which is a thing only someone a long way in tends to say.
 It carries no claim, so nothing here needs clearing. The conflicts with
 `brand-spine.md` recorded above still stand: the spine still specifies the
 Uddug paragraph this replaced, and still expects Felag to be named here.
+
+## Outside review of claim precision (3 October 2026)
+
+A reviewer challenged three claims for ambiguity: the uptime figure, "all
+major CEXs" and the one-month route to market, and asked for a dated source
+on the FDV. Two of the three had already been raised here when they went up.
+Andrew's decisions:
+
+| Claim | Was | Now |
+|---|---|---|
+| Staking uptime | 99% | **99.99%** |
+| Token launch outcome | $140M FDV, listed on all major CEXs. | **$140M+ FDV, a top-5 CEX listing.** |
+| One month to market | unchanged | unchanged, at Andrew's instruction |
+| FDV source | none | none, at Andrew's instruction |
+
+The token-launch row is now the register's own approved wording. Row 14's
+Named column reads: add "at $140M+ FDV with a top-5 CEX listing and about
+5,000 RPS at launch" only with the client's permission and a citable source.
+Two faults were corrected against it. "Listed on all major CEXs" was an
+absolute with no list behind it, where the register records a top-5 listing.
+And "$140M" dropped the plus the register carries, against the hard rule in
+`voice-and-editorial.md` that numbers are copied exactly.
+
+### Open, for Andrew
+
+1. **99.99% is a stronger claim than 99% on the same absent evidence.** Row 9's
+   Evidence is STATED and its artefact reads "To confirm". 99% is 7h12m of
+   downtime a month; 99.99% is about four and a half minutes. The reviewer's
+   question was not only the number but its scope and its period, and neither
+   is on the page: which service, measured over what window, and whether
+   planned maintenance counts. A figure at four nines invites that question
+   more sharply than one at two. One clause would close it, for example
+   "99.99% uptime, on the validator fleet, measured over 2025".
+
+2. **Row 3 bans uptime figures outright.** That ban belongs to the RPC proxy,
+   not to staking, so it does not bind row 9. It is worth noting as the
+   nearest recorded decision on this class of claim.
+
+3. **The FDV stays unsourced by instruction.** Row 14 requires a citable
+   source in two separate columns, and its Permission also requires the
+   client's permission for this wording, which is a second condition and not
+   the same as a link. Its artefact is the KuCoin announcement of 7 and 9
+   January 2026. The Evidence column marks the KuCoin listing PUBLIC while
+   the FDV and the CEX rank are STATED, so the listing half could be sourced
+   today and the FDV half could not.
+
+4. **The one-month claim stays by instruction.** It appears in no register row.
