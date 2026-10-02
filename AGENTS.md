@@ -211,3 +211,8 @@ Useful checks, all of which have caught real bugs:
   and the Lomonosov naming.
 - `.cal` and `.calgrid` in `app.css` are orphaned, left from the canvas's dashed
   calendar placeholder.
+- Spacing set only inside the desktop grid leaves phone with none. Three blocks
+  ran together this way: the Background portrait against its own eyebrow, the
+  timeline against the paragraph's last line, and the booking panel against the
+  Send button. When a gap comes from `gap`, `column-gap` or a grid row in the
+  `min-width: 1000px` layer, phone needs its own rule.
