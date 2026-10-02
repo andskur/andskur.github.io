@@ -423,3 +423,59 @@ line did, against a figure that is now on the page.
 
 6. **Arsnl.art is not linked.** The site returned 502 and 530 on 2 October
    2026. The name is on the page as plain text.
+
+## Rewrite: the Background paragraph (2 October 2026)
+
+Andrew: "the text just duplicated what we have on the timeline. it is not
+good, please rewrite the big text to something different and powerful".
+
+He is right about the extent of it. The old paragraph repeated the 2018
+chapter (co-founded, 15 people), the 2024 chapter (acquired, two departments)
+and the 2026 chapter (Felag and the practice) almost phrase for phrase, and
+its middle clause restated the whole Systems section and four of the five
+numbers in the strip above it. Nothing in it was unavailable elsewhere on the
+page.
+
+Before: "I co-founded Uddug and grew it to 15 people; Gateway.fm acquired it
+in 2024 and I ran two departments there. Along the way: a live card-programme
+chain, RPC at 140k+ requests per second, $1B+ in staking, a token launch
+through to its listing, and NFT projects that raised $100M+. In 2026 I started
+again: Felag, an engineering studio, and this practice."
+
+After: "What I sell is judgement under time pressure. It comes from having
+been wrong in production and having had to fix it on a Sunday, which is a
+different education from reading the architecture back afterwards. Most of the
+systems I have been handed were competently built. They were built for a
+company that had changed shape by the time I saw them, and nobody had been
+given a week to go back and say so. That gap is where the work is now: a term
+sheet that needs a technical read before anyone signs, a licence application
+with an evidence hole in it, a launch date that will not move."
+
+It carries no proof, no number and no name, so it adds no claim to check. What
+it adds is the one thing the page had nowhere: a position, in the voice
+`voice-and-editorial.md` asks for. That file wants a stated opinion, says to
+admit being wrong ahead of hedging, bans the "not X, but Y" shape, the
+rule-of-three adjective, the closing line that restates the opening, and warns
+that evenly balanced prose reads as generated; the five sentences run 8, 28,
+11, 29 and 35 words. The closing three name the trigger for each buyer lane
+without naming a persona: the fund at a term sheet, the licensed entity at an
+evidence gap, the founder at a launch date.
+
+### Conflicts raised by this change, for Andrew to decide
+
+1. **`brand-spine.md` specifies the paragraph this replaced.** Under
+   "Background, 'Fifteen years of building.'" it reads: "one paragraph telling
+   the Uddug story (co-founded, grown to 15 people, acquired by Gateway.fm in
+   2024, two departments run there, then Felag and the practice in 2026) with
+   the outcomes in register wording". That is the duplication, written into
+   the spec. The spine needs rewriting to match the page.
+
+2. **Felag is named once on the site now, not twice.** The same spine entry
+   says "Felag is named in the paragraph, as an engineering studio, and in the
+   2026 chapter". Only the 2026 chapter carries it. Putting it back in the
+   paragraph would repeat that chapter, which is what this change undid.
+
+3. **The Uddug acquisition is now only in the timeline.** It is in the 2024
+   chapter and nowhere else. If that story should carry more weight than one
+   chapter gives it, the place for it is the chapter, not a second telling
+   above.
