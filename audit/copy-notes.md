@@ -561,16 +561,21 @@ A reviewer asked for clearer wording on four points. Andrew's decisions:
 | "separate and walled" is ambiguous | **Keep it**, the register's wording |
 | Availability unclear on the retainer | **Not same-business-day**, see below |
 
-The retainer's Terms line now reads: "The day, or two, is spread over the week
-as the work needs it. I do not count hours; I am there when it matters. Named
-artefacts every month, agreed before the start: a board or investor update and
-a written architecture decision. 30-day notice."
+The named artefacts were added and then **reverted the same day**: "now they
+are overloaded". The retainer's Terms line is back to "The day, or two, is
+spread over the week as the work needs it. I do not count hours; I am there
+when it matters. Named artefacts every month, 30-day notice."
 
-The two named artefacts are inferred, not copied. `offer-card.md` says only
-"Named artefacts per month" for both retainer tiers and lists nothing, where
-it does list the diligence and review outputs in full. Both come from the same
-card's Scope column for this SKU, which promises board and investor technical
-reporting and architecture ownership. Andrew approved the inference.
+The label change to **Terms** stands. Only the artefacts expansion came out.
+
+So the reviewer's point about unpicturable outputs is open again, and the
+reason the first attempt failed is worth keeping: the retainer's Terms line
+was already the longest of the three, and naming two artefacts inside the same
+sentence as the day pattern, the hours and the notice period made it longer
+than the card could carry. If the artefacts are to be named, they need their
+own row rather than a clause, which is a card-layout change and not a wording
+one. `offer-card.md` still lists nothing for either retainer tier, where it
+lists the diligence and review outputs in full.
 
 "How we work", the reviewer's first suggestion for the label, was not an
 option: `voice-and-editorial.md` holds that the practice is "I" and that "we"
