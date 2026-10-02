@@ -882,13 +882,21 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
   .page .n6 { animation: nebB 92s ease-in-out infinite; }
 }
 
-/* The Background text block carried an inline margin-top of -40px: a phone
-   tightening for when the portrait sits directly above it. On desktop the
-   portrait is a side column, so the negative margin only pulled the section's
-   eyebrow up out of its own box and under the fixed header on an anchor jump.
-   Phone keeps the tightening; desktop does not. */
+/* The Background text block carried an inline margin-top of -40px from the
+   canvas. Desktop never wanted it: the portrait is a side column there, and
+   the negative margin only pulled the section's eyebrow out of its own box
+   and under the fixed header on an anchor jump. Phone did not want it either.
+   It cancelled the portrait's own 24px and took 16px more, so the eyebrow sat
+   inside the photo's fade. The portrait's margin sets the distance now.
+
+   The same section and the contact panel both ran their blocks together on
+   phone: the timeline started on the paragraph's last line, and the booking
+   panel's top edge met the Send button. Neither gap existed because both are
+   set in the desktop grid, which phone never enters. */
 @media (max-width: 999.98px) {
-  .page #background > .bgtext { margin-top: -40px; }
+  .page #background > .bgtext { margin-top: 0; }
+  .page #background > .tline { margin-top: var(--sp-40); }
+  .page #contact > .cvis { margin-top: var(--sp-32); }
 }
 
 /* =====================================================================
