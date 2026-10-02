@@ -1121,3 +1121,23 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 .page #background > .rv.t1 { align-self: center; }
 /* Keeps "enough." off a line of its own; ignored where unsupported. */
 .page #background .reg { text-wrap: pretty; }
+
+/* The booking button is a link, and `.page a:hover` repaints every link in
+   accent-hover. That selector scores (0,2,1) against `.page .btn-primary`'s
+   (0,2,0), so it won: the primary button lost its dark label on hover and sat
+   at 1.24:1 against its own background, under the 4.5:1 minimum and near
+   invisible. The label stays dark and the background lightens instead, which
+   is the feedback the button should have had in the first place. Four links
+   carry this class; Send is a real button and `a:hover` never reached it. */
+.page .btn-primary:hover,
+.page .btn-primary:active,
+.page .btn-primary:focus-visible {
+  color: var(--on-accent);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* No button had a focus ring. The form fields' accent ring would sit
+   invisibly on a button that is already accent, so this one lands on the
+   dark ground just outside it. */
+.page .btn:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
