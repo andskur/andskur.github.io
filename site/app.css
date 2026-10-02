@@ -1102,3 +1102,9 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 }
 .page .entry .kv a:hover { color: var(--accent-hover); border-bottom-color: var(--accent-hover); }
 .page .entry .kv a::after { content: " \2197"; font-family: var(--font-mono); font-size: var(--fs-micro); }
+
+/* The background paragraph is prose, so it takes the voice the page gives
+   prose: serif at the lead size, as every other paragraph carrying an idea
+   does. It was the one block still on the body default, 16px sans, which is
+   what made it read as a wall under a 40px serif heading. */
+.page #background .reg + .reg { margin-top: var(--sp-6); }
