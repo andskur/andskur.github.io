@@ -392,16 +392,18 @@ line did, against a figure that is now on the page.
    the page without one. "All major CEXs" is also a larger claim than the
    single "exchange listing" the row's own wording records.
 
-2. **Snark.art is on area 7, in its own row.** Raised on 2 October 2026 that
-   row 33 forbids presenting it as "Uddug or practice work" while that area's
-   sentence opens "With Uddug, which I co-founded". Andrew asked for it the
-   same day, so it went in on a separate row reading **Earlier - Snark.art, as
-   technical lead with a team of five**, which keeps every one of row 33's
-   rules: the title is the one that row records, the team is named as it
-   requires, no artist name or sales figure appears, and the row stands apart
-   from the Uddug clients rather than joining them. The "cto" half of the role
-   as given is not used; row 33 forbids "Founder, co-founder or CTO of
-   Snark.art" outright.
+2. **Snark.art is in area 7's Clients row.** Row 33 forbids presenting
+   Snark.art as "Uddug or practice work". Area 7's sentence opens "With Uddug,
+   which I co-founded", so a name in its Clients row reads as Uddug work and
+   as a client rather than the employer it was. Raised twice on 2 October 2026
+   and settled by Andrew both times: first "you forget to add snark.art", then
+   "just add snark.art to Clients, without this 'as technical lead...'". It is
+   listed plainly alongside OG:Crystals and Arsnl.art.
+
+   Two things row 33 records are therefore not on the page: the technical lead
+   title and the team of five. The row's ban on "Founder, co-founder or CTO of
+   Snark.art" is not breached, since no title is shown at all. Row 33 needs
+   amending through `/proof` to match what the page now says.
 
 3. **No Role row on area 7.** Rows 21 to 24 record responsibility only as
    "Uddug launch", "Uddug build" and "Uddug era", with no title. "Co-founder"
