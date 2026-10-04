@@ -35,14 +35,17 @@ function headerOffset() {
           try {
             var gc = document.createElement('canvas');
             gc.width = 192; gc.height = 192;
-            var g2 = gc.getContext('2d');
+            var g2 = gc.getContext('2d', { willReadFrequently: true });
             var img = g2.createImageData(192, 192);
             var px = img.data;
             var seed = 11;
             var rnd = function () { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
             for (var i = 0; i < px.length; i += 4) { var v = 88 + Math.floor(rnd() * 80); var dk = v < 128; px[i] = px[i + 1] = px[i + 2] = dk ? 0 : 255; px[i + 3] = dk ? Math.round((128 - v) / 40 * 14) : Math.round((v - 128) / 40 * 3); }
             g2.putImageData(img, 0, 0);
-            if (grain) { grain.style.backgroundImage = 'url(' + gc.toDataURL() + ')'; }
+            /* Both phone initialisers reach this, and the texture is identical, so the
+               second one keeps the first. willReadFrequently keeps the canvas off the
+               GPU, so turning it into an image does not stall on a pixel read. */
+            if (grain && !grain.style.backgroundImage) { grain.style.backgroundImage = 'url(' + gc.toDataURL() + ')'; }
           } catch (e) {}
 
           var sc = root.querySelector('.stars');
@@ -152,14 +155,17 @@ function headerOffset() {
           try {
             var gc = document.createElement('canvas');
             gc.width = 192; gc.height = 192;
-            var g2 = gc.getContext('2d');
+            var g2 = gc.getContext('2d', { willReadFrequently: true });
             var img = g2.createImageData(192, 192);
             var px = img.data;
             var seed = 11;
             var rnd = function () { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
             for (var i = 0; i < px.length; i += 4) { var v = 88 + Math.floor(rnd() * 80); var dk = v < 128; px[i] = px[i + 1] = px[i + 2] = dk ? 0 : 255; px[i + 3] = dk ? Math.round((128 - v) / 40 * 14) : Math.round((v - 128) / 40 * 3); }
             g2.putImageData(img, 0, 0);
-            if (grain) { grain.style.backgroundImage = 'url(' + gc.toDataURL() + ')'; }
+            /* Both phone initialisers reach this, and the texture is identical, so the
+               second one keeps the first. willReadFrequently keeps the canvas off the
+               GPU, so turning it into an image does not stall on a pixel read. */
+            if (grain && !grain.style.backgroundImage) { grain.style.backgroundImage = 'url(' + gc.toDataURL() + ')'; }
           } catch (e) {}
           var mbtn = root.querySelector('.mbtn');
   /* The export ran one init per phone root. Both now resolve to the same
