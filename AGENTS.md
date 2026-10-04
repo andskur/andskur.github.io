@@ -34,12 +34,15 @@ not used.
 # 1. always stamp first, or a deploy can be half-applied (see Gotchas)
 python3 tools/stamp.py
 
-# 2. commit the source
+# 2. build the minified publish copy into dist/ (never edit dist/ by hand)
+python3 tools/build.py
+
+# 3. commit the source
 git add -A && git commit && git push origin rebuild
 
-# 3. publish site/ to the gh-pages root
+# 4. publish dist/, not site/, to the gh-pages root
 git worktree add -f /tmp/ghp gh-pages
-cd /tmp/ghp && git rm -rq . && cp -R /path/to/repo/site/. .
+cd /tmp/ghp && git rm -rq . && cp -R /path/to/repo/dist/. .
 git add -A && git commit -m "Publish: ..." && git push origin gh-pages
 cd - && git worktree remove /tmp/ghp --force && git worktree prune
 ```
@@ -61,6 +64,7 @@ gh api repos/andskur/andskur.github.io/pages/builds/latest
 | `site/tokens.css` | Every design value. 104 tokens. The only place colours, type, space, form, depth and motion are defined. |
 | `site/app.css` | Mobile-first base, then one `@media (min-width: 1000px)` layer. |
 | `site/app.js` | Reveal, odometers, diagrams, menu, hero exit, Calendly, the form. |
+| `tools/build.py` | Copies `site/` to `dist/` and minifies the CSS and JS with a pinned esbuild. `site/` keeps its comments; `dist/` is what is published, and is gitignored. |
 | `tools/stamp.py` | Writes a content hash into the asset links and the date into `sitemap.xml`. Run before every publish. |
 | `site/robots.txt` | Allows everything, assistants included, and points at the sitemap. |
 | `site/sitemap.xml` | One URL. The anchors are not URLs and must stay out of it. |

@@ -27,10 +27,11 @@ GitHub Pages publishes the **`gh-pages` branch root**. Source lives on
 
 ```bash
 python3 tools/stamp.py        # always, see below
+python3 tools/build.py        # minified copy into dist/; publish that, not site/
 git add -A && git commit && git push origin rebuild
 
 git worktree add -f /tmp/ghp gh-pages
-cd /tmp/ghp && git rm -rq . && cp -R ../path/to/site/. .
+cd /tmp/ghp && git rm -rq . && cp -R ../path/to/dist/. .
 git add -A && git commit -m "Publish: ..." && git push origin gh-pages
 cd - && git worktree remove /tmp/ghp --force
 ```
@@ -56,6 +57,7 @@ site/
   app.js         reveal, odometers, diagrams, menu, hero exit, Calendly, form
   assets/        marks, portrait, and the self-hosted IBM Plex family
 tools/stamp.py   writes a content hash into the asset links
+tools/build.py   builds dist/: site/ with the CSS and JS minified
 ```
 
 Plus four documents, each with a different job:

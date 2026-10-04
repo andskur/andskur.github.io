@@ -7,3 +7,6 @@ node_modules/
 
 # screenshot archive from the rebuild; large and reproducible
 audit/shots/
+
+# minified publish copy, built by tools/build.py
+dist/

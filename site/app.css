@@ -111,7 +111,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 .page .routes .lane{font-family:var(--font-mono);font-size:var(--fs-lab);font-weight:500;letter-spacing:.02em;color:var(--text-secondary)}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 .page .cue{display:block;width:44px;height:var(--control-h);color:var(--text-secondary)}
-.page .cue svg{display:block;width:44px;height:var(--control-h);animation:bob 2.6s ease-in-out infinite}
+.page .cue svg{display:block;width:44px;height:var(--control-h)}
 /* sections */
 .page .sec{position:relative;z-index:1;padding:0 24px}
 .page .lab{font-family:var(--font-mono);font-size:var(--fs-lab);line-height:var(--lh-lab);font-weight:500;letter-spacing:.02em;color:var(--text-secondary)}
@@ -1215,3 +1215,15 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    of the page look like it was dropping into place. A fixed header is chrome,
    not an entrance, so it is simply there from the first frame. */
 .page .nav.in { animation: none; opacity: 1; transform: none; }
+
+/* 6. The scroll arrow bobbed by animating its SVG, and the browser cannot
+   composite a transform on an SVG element, so every frame of a loop that never
+   ends was painted on the main thread. The same movement now runs on the
+   wrapper, which composites. The script only ever sets the wrapper's opacity,
+   so the two never meet. */
+.page .cue { animation: bob 2.6s ease-in-out infinite; }
+
+/* 4. The footer carries .sec, and took its top gap from `.sec + .sec` because
+   it directly followed the contact section. Inside <main> the sections are no
+   longer its siblings, so the gap is restated here. */
+.page main + .foot { margin-top: var(--section-gap); }
