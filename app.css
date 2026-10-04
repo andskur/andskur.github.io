@@ -1172,51 +1172,18 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    reported. Nothing here starts at zero opacity. The text comes out of a blur
    instead, which paints from the first frame and keeps the h1 as the LCP
    element at about 180ms. */
-@keyframes heroin {
-  from { opacity: .05; transform: translateY(28px); }
-  to   { opacity: 1;   transform: none; }
-}
-/* No blur. Blurring a serif at display size smears the strokes and the whole
-   thing reads as cheap. A reveal is a fade and a rise, and what makes it feel
-   considered is the curve: it travels most of the distance immediately and
-   then takes its time arriving. The start opacity is .05 and not 0 on purpose.
-   At exactly 0 the headline stops being an LCP candidate and the metric falls
-   back to a link on phones and an image on desktop; at .05 it stays the
-   candidate, and five per cent on this ground is invisible anyway. */
+@keyframes heroin { from { opacity: .05; } to { opacity: 1; } }
+/* A fade, half a second, everything at once. The start opacity is .05 and not
+   0 on purpose: at exactly 0 the headline stops being an LCP candidate and the
+   metric falls back to a link on phones and an image on desktop, where at .05
+   it stays the candidate. Five per cent on this ground is invisible. */
 .page .hero .in {
-  animation-name: heroin; animation-duration: 1.1s;
-  animation-timing-function: var(--ease-reveal); opacity: 1;
+  animation-name: heroin; animation-duration: .5s;
+  animation-delay: 0s; animation-timing-function: ease-out; opacity: 1;
 }
-.page .hero .in.d1 { animation-delay: 0s; }
-.page .hero .in.d2 { animation-delay: .09s; }
-.page .hero .in.d3 { animation-delay: .18s; }
-.page .hero .in.d4 { animation-delay: .27s; }
-.page .hero .in.d5 { animation-delay: .36s; }
-.page .hero .in.d6 { animation-delay: .70s; }
 
 /* The bar itself carried `rise`: it started invisible, 18px low, and took
    1.2s to settle. That is what made the lockup arrive late and the whole top
    of the page look like it was dropping into place. A fixed header is chrome,
    not an entrance, so it is simply there from the first frame. */
 .page .nav.in { animation: none; opacity: 1; transform: none; }
-
-/* The headline reveals a line at a time, each one rising from behind its own
-   edge. That is the whole effect: no blur, no scale, a mask and a curve. The
-   wrapper clips and the inner rises through it. padding-bottom with a matching
-   negative margin gives the descenders room to be clipped against without
-   moving the layout a pixel. Only applies once the script has measured the
-   line breaks, so with no JavaScript the headline keeps its plain fade. */
-.page .hero h1[data-split] { animation: none; opacity: 1; transform: none; }
-.page .hero h1 .ln { display: block; overflow: hidden; padding-bottom: .18em; margin-bottom: -.18em; }
-@keyframes lnrise { from { transform: translateY(105%); } to { transform: none; } }
-.page .hero h1 .ln-i { display: block; transform: translateY(105%); animation: lnrise 1.05s var(--ease-reveal) both; }
-.page .hero h1.done .ln-i { animation: none; transform: none; }
-
-/* The rest of the hero arrives around the headline rather than with it. */
-.page .hero .in.d3 { animation-delay: .28s; }
-.page .hero .in.d4 { animation-delay: .38s; }
-.page .hero .in.d5 { animation-delay: .48s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .page .hero h1 .ln-i { transform: none; }
-}
