@@ -1199,3 +1199,24 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    of the page look like it was dropping into place. A fixed header is chrome,
    not an entrance, so it is simply there from the first frame. */
 .page .nav.in { animation: none; opacity: 1; transform: none; }
+
+/* The headline reveals a line at a time, each one rising from behind its own
+   edge. That is the whole effect: no blur, no scale, a mask and a curve. The
+   wrapper clips and the inner rises through it. padding-bottom with a matching
+   negative margin gives the descenders room to be clipped against without
+   moving the layout a pixel. Only applies once the script has measured the
+   line breaks, so with no JavaScript the headline keeps its plain fade. */
+.page .hero h1[data-split] { animation: none; opacity: 1; transform: none; }
+.page .hero h1 .ln { display: block; overflow: hidden; padding-bottom: .18em; margin-bottom: -.18em; }
+@keyframes lnrise { from { transform: translateY(105%); } to { transform: none; } }
+.page .hero h1 .ln-i { display: block; transform: translateY(105%); animation: lnrise 1.05s var(--ease-reveal) both; }
+.page .hero h1.done .ln-i { animation: none; transform: none; }
+
+/* The rest of the hero arrives around the headline rather than with it. */
+.page .hero .in.d3 { animation-delay: .28s; }
+.page .hero .in.d4 { animation-delay: .38s; }
+.page .hero .in.d5 { animation-delay: .48s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .page .hero h1 .ln-i { transform: none; }
+}

@@ -221,6 +221,12 @@ Useful checks, all of which have caught real bugs:
   phones and an image on desktop, while `opacity: .05` keeps the `h1` as the
   candidate at about 180ms. The hero fades from `.05`, which is invisible on
   this ground and costs nothing. Never start an LCP candidate at a flat 0.
+- The headline is **split into lines by `app.js`** so each can rise from behind
+  its own mask. The browser chooses the breaks, so the split measures them, and
+  it reruns on `fonts.ready` and on resize because both move them. After the
+  first pass it rebuilds without replaying. With no JavaScript the `h1` keeps
+  the plain fade and never gets `data-split`. Anything that rewrites the
+  headline must go through that function, or the reveal silently stops.
 - `aria-label` on a `<span>` does nothing. ARIA does not name a generic
   element, so the attribute is inert and the subtree stays exposed. The five
   counters carried one each and still put 440 single-digit nodes into the
