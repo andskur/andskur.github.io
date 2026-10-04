@@ -302,7 +302,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 .page .on .st3 .c5{animation-delay:1.9s}
 .page .on .st3 .a1{animation:draw .9s var(--ease) 2s forwards}
 .page .on .st3 .pulse{animation:flow 2.4s linear 2.8s infinite,fadein .5s ease 2.8s forwards}
-.page .por{position:relative;width:280px;aspect-ratio:4/5;pointer-events:none;margin-bottom:var(--sp-24)}
+.page .por{position:relative;width:280px;aspect-ratio:720/746;pointer-events:none;margin-bottom:var(--sp-24)}
 .page .por img{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transform:translateY(14px);transition:opacity 1.4s var(--ease) .25s,transform 1.4s var(--ease) .25s}
 .page .on .por img{opacity:1;transform:none}
 .page .pgl{position:absolute;left:50%;top:22%;width:420px;height:420px;margin-left:-210px;border-radius:var(--r-round);background:radial-gradient(circle,color-mix(in srgb,var(--blueprint) 62%,transparent) 0%,color-mix(in srgb,var(--blueprint) 28%,transparent) 36%,color-mix(in srgb,var(--blueprint) 8%,transparent) 56%,transparent 70%);opacity:0;transition:opacity 1.8s var(--ease) .1s}
@@ -1227,3 +1227,8 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    it directly followed the contact section. Inside <main> the sections are no
    longer its siblings, so the gap is restated here. */
 .page main + .foot { margin-top: var(--section-gap); }
+
+/* The phone's portrait box was 4:5 while the cut-out is 720 by 746, and the
+   image is stretched to fill its box, so on phones the face was squeezed about
+   18% narrower. The box now takes the image's own proportions, as desktop's
+   already did. */

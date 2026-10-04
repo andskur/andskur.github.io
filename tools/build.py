@@ -38,4 +38,21 @@ for name in ('tokens.css', 'app.css', 'app.js'):
     total_in += a; total_out += b
     print(f'{name:11} {a:>7,} -> {b:>7,} bytes')
 
+# Inline both stylesheets into the published HTML. They block the first render
+# either way, and on a phone the two extra round trips cost about 120 ms. A
+# separate file would normally earn its keep through the browser cache, but
+# GitHub Pages caches everything for ten minutes, so it earns almost nothing
+# here. site/index.html keeps its <link> tags; only dist/ is inlined.
+import re
+html_path = dist / 'index.html'
+html = html_path.read_text(encoding='utf-8')
+css = ''.join((dist / n).read_text(encoding='utf-8') for n in ('tokens.css', 'app.css'))
+assert '</style' not in css.lower(), 'stylesheet would close the inline <style> early'
+links = re.findall(r'<link rel="stylesheet" href="/(?:tokens|app)\.css\?v=[0-9a-f]+">\n?', html)
+if len(links) != 2:
+    sys.exit(f'expected 2 stylesheet links in index.html, found {len(links)}')
+html = html.replace(links[0], '<style>' + css + '</style>\n', 1).replace(links[1], '', 1)
+html_path.write_text(html, encoding='utf-8')
+print(f'inlined {len(css):,} bytes of CSS into dist/index.html')
+
 print(f'{"total":11} {total_in:>7,} -> {total_out:>7,} bytes; dist/ ready to publish')
