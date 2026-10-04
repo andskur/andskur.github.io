@@ -152,6 +152,10 @@
 <link rel="preload" href="/assets/fonts/plex-serif-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
+<!-- The first screen renders all five of these; the two below were left out
+     and arrived last on the critical path, at 544 and 677 ms. -->
+<link rel="preload" href="/assets/fonts/plex-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/tokens.css?v=d482bce1">
 <link rel="stylesheet" href="/app.css?v=05f75603">
 </head>
@@ -465,7 +469,7 @@
     <div class="por" aria-hidden="true">
       <div class="pgl"></div>
       <div class="pgrid2"></div>
-      <img src="/assets/portrait.webp" alt="">
+      <img src="/assets/portrait.webp" srcset="/assets/portrait-420.webp 420w, /assets/portrait.webp 720w" sizes="(min-width: 1000px) 420px, 280px" width="720" height="746" alt="">
     </div>
     <div class="rv t1 bgtext" style="position: relative; display: flex; flex-direction: column; gap: 14px">
       <span class="lab">Background</span>

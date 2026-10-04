@@ -241,6 +241,12 @@ Useful checks, all of which have caught real bugs:
   the page the first time a band moved. The markup carries the entity and the
   service catalogue, nothing priced. `knowsAbout` is absent for the same kind of
   reason: `brand-spine.md` rejects any positioning that lists domains.
+- **The portrait has two sizes.** `portrait.webp` (720px) is a processed
+  cut-out: transparent background, feathered edges, warm tone. It is not a
+  crop of the original photo. `portrait-420.webp` is generated from it with
+  `cwebp -resize 420 0 -q 85 -alpha_q 90 -exact -m 6`, and `srcset` gives it
+  to 1x screens. If the portrait ever changes, regenerate both from the same
+  cut-out, or the two sizes will show different images.
 - `aria-label` on a `<span>` does nothing. ARIA does not name a generic
   element, so the attribute is inert and the subtree stays exposed. The five
   counters carried one each and still put 440 single-digit nodes into the
