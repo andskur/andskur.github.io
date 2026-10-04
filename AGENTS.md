@@ -211,14 +211,16 @@ Useful checks, all of which have caught real bugs:
   and the Lomonosov naming.
 - `.cal` and `.calgrid` in `app.css` are orphaned, left from the canvas's dashed
   calendar placeholder.
-- **An entrance that fades from `opacity: 0` destroys LCP.** Chrome does not
-  accept an element first painted at zero opacity as a largest-contentful-paint
-  candidate, and does not reconsider it later. The hero text faded in, so it
-  never qualified at any width: above 1000px the metric fell through to the
-  header button, and below 1000px that button is `display: none`, so PageSpeed
-  returned NO_LCP. The hero now rises on `transform` alone and the `h1` is the
-  LCP element at about 180ms. Animate transform, not opacity, on anything that
-  should be the LCP candidate.
+- **An entrance that fades from exactly `opacity: 0` destroys LCP.** Chrome
+  does not accept an element first painted at zero opacity as a
+  largest-contentful-paint candidate, and does not reconsider it later. The
+  hero text faded in, so it never qualified at any width: above 1000px the
+  metric fell through to the header button, and below 1000px that button is
+  `display: none`, so PageSpeed returned NO_LCP. The threshold is **zero, not
+  low**: measured on this page, `opacity: 0` loses the `h1` to a link on
+  phones and an image on desktop, while `opacity: .05` keeps the `h1` as the
+  candidate at about 180ms. The hero fades from `.05`, which is invisible on
+  this ground and costs nothing. Never start an LCP candidate at a flat 0.
 - `aria-label` on a `<span>` does nothing. ARIA does not name a generic
   element, so the attribute is inert and the subtree stays exposed. The five
   counters carried one each and still put 440 single-digit nodes into the

@@ -1173,16 +1173,21 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    instead, which paints from the first frame and keeps the h1 as the LCP
    element at about 180ms. */
 @keyframes heroin {
-  from { transform: translateY(12px) scale(.985); filter: blur(10px); }
-  to   { transform: none; filter: blur(0); }
+  from { opacity: .05; transform: translateY(24px) scale(.98); filter: blur(12px); }
+  to   { opacity: 1;   transform: none;                        filter: blur(0);    }
 }
-.page .hero .in { animation-name: heroin; animation-duration: .75s; opacity: 1; }
+/* The start opacity is .05 and not 0 on purpose. At exactly 0 the headline
+   stops being an LCP candidate and the metric falls back to a link on phones
+   and an image on desktop; at .05 it stays the candidate, and five per cent on
+   this ground is invisible anyway. That one value is the whole reason this can
+   be a real fade rather than a slide. */
+.page .hero .in { animation-name: heroin; animation-duration: .9s; opacity: 1; }
 .page .hero .in.d1 { animation-delay: 0s; }
-.page .hero .in.d2 { animation-delay: .07s; }
-.page .hero .in.d3 { animation-delay: .14s; }
-.page .hero .in.d4 { animation-delay: .21s; }
-.page .hero .in.d5 { animation-delay: .28s; }
-.page .hero .in.d6 { animation-delay: .5s; }
+.page .hero .in.d2 { animation-delay: .10s; }
+.page .hero .in.d3 { animation-delay: .20s; }
+.page .hero .in.d4 { animation-delay: .30s; }
+.page .hero .in.d5 { animation-delay: .40s; }
+.page .hero .in.d6 { animation-delay: .70s; }
 
 /* The bar itself carried `rise`: it started invisible, 18px low, and took
    1.2s to settle. That is what made the lockup arrive late and the whole top
