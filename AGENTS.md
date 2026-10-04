@@ -61,7 +61,9 @@ gh api repos/andskur/andskur.github.io/pages/builds/latest
 | `site/tokens.css` | Every design value. 104 tokens. The only place colours, type, space, form, depth and motion are defined. |
 | `site/app.css` | Mobile-first base, then one `@media (min-width: 1000px)` layer. |
 | `site/app.js` | Reveal, odometers, diagrams, menu, hero exit, Calendly, the form. |
-| `tools/stamp.py` | Writes a content hash into the asset links. Run before every publish. |
+| `tools/stamp.py` | Writes a content hash into the asset links and the date into `sitemap.xml`. Run before every publish. |
+| `site/robots.txt` | Allows everything, assistants included, and points at the sitemap. |
+| `site/sitemap.xml` | One URL. The anchors are not URLs and must stay out of it. |
 | `DESIGN.md` | The design system, with named rules. `.impeccable/design.json` is its machine-readable sidecar. |
 | `PRODUCT.md` | Product and design context, the buyer lanes, and the scope rules. |
 | `audit/copy-notes.md` | Copy authority, the proof-register rules, and open factual conflicts. |
@@ -233,6 +235,12 @@ Useful checks, all of which have caught real bugs:
   word cascade costs exactly that: on phones the metric moves to the supporting
   paragraph and from about 50ms to about 180ms. Both are far inside target, and
   the word opacity makes no difference to it, so do not go hunting there.
+- **Prices are deliberately absent from the JSON-LD.** `offer-card.md` is the
+  only place prices live and the site is the only copy of them; a third copy in
+  structured data would be a fourth thing to keep in step and would contradict
+  the page the first time a band moved. The markup carries the entity and the
+  service catalogue, nothing priced. `knowsAbout` is absent for the same kind of
+  reason: `brand-spine.md` rejects any positioning that lists domains.
 - `aria-label` on a `<span>` does nothing. ARIA does not name a generic
   element, so the attribute is inert and the subtree stays exposed. The five
   counters carried one each and still put 440 single-digit nodes into the

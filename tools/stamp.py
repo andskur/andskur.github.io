@@ -22,4 +22,16 @@ for asset in ('tokens.css', 'app.css', 'app.js'):
                   lambda m: f'{m.group(1)}/{asset}?v={h}{m.group(1)}', html)
 
 (site / 'index.html').write_text(html, encoding='utf-8')
+
+# The sitemap's only real job on a one-page site is to say when the page last
+# changed, so the date is written here rather than by hand, where it would go
+# stale the first time someone forgot.
+import datetime
+sitemap = site / 'sitemap.xml'
+if sitemap.exists():
+    today = datetime.date.today().isoformat()
+    xml = sitemap.read_text(encoding='utf-8')
+    xml = re.sub(r'<lastmod>[^<]*</lastmod>', f'<lastmod>{today}</lastmod>', xml)
+    sitemap.write_text(xml, encoding='utf-8')
+    print('sitemap lastmod:', today)
 print('stamped:', ', '.join(f'{a}?v={digest(a)}' for a in ('tokens.css', 'app.css', 'app.js')))
