@@ -20,7 +20,7 @@ Technical constraints on the surface itself:
 - Deploy is unresolved (see `## Stack`). Nothing currently publishes to `andskur.com`.
 - The custom domain lives in `site/CNAME` and must stay there: publishing replaces the whole `gh-pages` branch, so a `CNAME` written through GitHub's settings page would be deleted on the next deploy.
 - `tools/stamp.py` writes a content hash into the asset links and must run before publishing. GitHub Pages serves assets with `max-age=600`, so without it a browser can hold an old `app.js` against a new `index.html` for ten minutes.
-- Not on the site yet, and to be added under Offers or as a fifth navigation item when they exist: the public DD framework download and the redacted DD sample. **Do not add a separate proof page.**
+- Not on the site yet: the public DD framework download, the redacted DD sample, and case-study pages, one per system area, plus further pages. The earlier rule "Do not add a separate proof page" was reversed by Andrew on 5 October 2026. Detailed measurement context (request mix, measurement point, targets, who did what) belongs on the case-study pages, not on the homepage.
 
 `brand-spine.md` in the `andskur-core` plugin, under "andskur.com structure", is the built spec for this page: first screen, numbers strip, offers selector, how an engagement runs, seven systems areas, background, contact, footer, and what is deliberately left off. Read it before changing any section.
 
