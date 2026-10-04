@@ -871,7 +871,7 @@ function headerOffset() {
     var s = document.createElement('span');
     s.className = 'w';
     s.textContent = word;
-    s.style.animationDelay = (0.08 + i * 0.045).toFixed(3) + 's';
+    s.style.animationDelay = (0.16 + i * 0.09).toFixed(3) + 's';
     h.appendChild(s);
     if (i < words.length - 1) h.appendChild(document.createTextNode(' '));
   });
