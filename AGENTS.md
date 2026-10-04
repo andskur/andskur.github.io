@@ -211,6 +211,12 @@ Useful checks, all of which have caught real bugs:
   and the Lomonosov naming.
 - `.cal` and `.calgrid` in `app.css` are orphaned, left from the canvas's dashed
   calendar placeholder.
+- `aria-label` on a `<span>` does nothing. ARIA does not name a generic
+  element, so the attribute is inert and the subtree stays exposed. The five
+  counters carried one each and still put 440 single-digit nodes into the
+  accessibility tree: a browse-mode reader walked "0123456789...k+requests per
+  second". Decoration needs `aria-hidden`, and the real value needs to be real
+  text, which is what `.vh` is for.
 - Four of the five primary buttons are `<a>`, not `<button>`: the header CTA
   on each width, the hero CTA and the booking panel's "Pick a time". A rule
   written for links reaches all four and a rule written for buttons reaches

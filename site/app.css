@@ -1141,3 +1141,14 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    invisibly on a button that is already accent, so this one lands on the
    dark ground just outside it. */
 .page .btn:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+
+/* The counters animate on strips of 0 to 9, which are real text: 440 single
+   digit nodes reached the accessibility tree, and a browse-mode reader walked
+   "0123456789...k+requests per second". The aria-label on .num suppressed
+   none of it, because ARIA does not name a generic span. The odometer is
+   hidden outright now and the value is spoken once, in words, before its
+   own label. */
+.page .vh {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
