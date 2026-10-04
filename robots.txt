@@ -1,0 +1,26 @@
+# andskur.com
+# Everything here is public and meant to be found. Nothing is disallowed.
+
+User-agent: *
+Allow: /
+
+# Assistants are allowed on purpose. A fund partner increasingly asks an
+# assistant who does this work before they open a search engine, and the
+# practice would rather be in that answer than absent from it. To reverse
+# this, change Allow to Disallow for the agents below.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://andskur.com/sitemap.xml
