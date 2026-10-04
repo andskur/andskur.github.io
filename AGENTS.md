@@ -90,7 +90,7 @@ are not.
 **Never in any copy: em dashes.** Also banned: "passionate", "cutting-edge",
 "world-class", "seamless", "leverage", "unlock", "empower", "game-changing",
 "10x", "20x", "solutions" as a noun, exclamation marks, emoji. Prices are USD.
-No client is named on this page, even where the register would permit it.
+Clients and protocols are named in the systems areas, by Andrew's decisions of 1 to 5 October 2026. Several names are on the page ahead of the register; `audit/register-amendments-2026-10-05.md` lists them and the rows that need amending in andskur-hq.
 
 ## How it is built
 
