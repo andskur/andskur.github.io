@@ -1184,7 +1184,27 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    stays the candidate, and five per cent on this ground is invisible. */
 .page .hero .in { animation: none; opacity: 1; }
 .js .page .hero .in { opacity: .05; }
-.js.revealed .page .hero .in { animation: heroin 1s ease-out forwards; }
+.js.revealed .page .hero .in { animation: heroin .7s ease-out forwards; }
+
+/* The headline cascades word by word, so the element itself holds still and
+   only its words animate. Without the script it keeps the plain block fade. */
+/* inline, not inline-block: only opacity animates, and keeping the words in
+   the headline's own inline flow keeps the h1 the LCP element instead of
+   splitting its text across nine separate boxes. */
+.js .page .hero h1[data-words] .w { opacity: .05; }
+.js.revealed .page .hero h1[data-words].in { animation: none; opacity: 1; }
+.js.revealed .page .hero h1[data-words] .w { animation: heroin .6s ease-out forwards; }
+
+/* The rest follows the headline rather than racing it. */
+.js.revealed .page .hero .in.d1 { animation-delay: 0s; }
+.js.revealed .page .hero .in.d3 { animation-delay: .42s; }
+.js.revealed .page .hero .in.d4 { animation-delay: .52s; }
+.js.revealed .page .hero .in.d5 { animation-delay: .62s; }
+.js.revealed .page .hero .in.d6 { animation-delay: .9s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .page .hero h1[data-words] .w { opacity: 1; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .js .page .hero .in { opacity: 1; }
