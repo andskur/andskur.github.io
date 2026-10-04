@@ -1173,7 +1173,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    instead, which paints from the first frame and keeps the h1 as the LCP
    element at about 180ms. */
 @keyframes heroin { from { opacity: .05; } to { opacity: 1; } }
-/* A fade, half a second, everything at once, started on the first frame after
+/* A fade, one second, everything at once, started on the first frame after
    paint rather than when this file parses. Begun at parse time most of it was
    over before anything reached the screen, which is why it read as static.
 
@@ -1184,7 +1184,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    stays the candidate, and five per cent on this ground is invisible. */
 .page .hero .in { animation: none; opacity: 1; }
 .js .page .hero .in { opacity: .05; }
-.js.revealed .page .hero .in { animation: heroin .5s ease-out forwards; }
+.js.revealed .page .hero .in { animation: heroin 1s ease-out forwards; }
 
 @media (prefers-reduced-motion: reduce) {
   .js .page .hero .in { opacity: 1; }
