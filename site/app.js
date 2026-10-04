@@ -856,3 +856,24 @@ function headerOffset() {
     io.observe(panel);
   }
 })();
+
+/* The headline arrives a word at a time. Nothing is masked or clipped: each
+   word fades up where it already sits, so the browser keeps its own line
+   breaks and there is nothing to re-measure when the font lands or the width
+   changes. The spaces stay real text nodes, so the sentence still reads as one
+   string to a screen reader and to anyone copying it. */
+(function () {
+  var h = document.querySelector('.hero h1');
+  if (!h) return;
+  var words = h.textContent.trim().split(/\s+/);
+  h.textContent = '';
+  words.forEach(function (word, i) {
+    var s = document.createElement('span');
+    s.className = 'w';
+    s.textContent = word;
+    s.style.animationDelay = (0.08 + i * 0.045).toFixed(3) + 's';
+    h.appendChild(s);
+    if (i < words.length - 1) h.appendChild(document.createTextNode(' '));
+  });
+  h.setAttribute('data-words', '');
+})();

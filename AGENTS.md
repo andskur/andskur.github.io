@@ -227,6 +227,12 @@ Useful checks, all of which have caught real bugs:
   look static: its `js` cue was wiped before the stylesheet could act on it.
   Both use `classList` now, and the root carries `js m-desk as revealed`
   together. Neither `as` nor `m-desk`/`m-phone` is referenced in any stylesheet.
+- **Wrapping a heading's words in spans moves its LCP.** Chrome measures text
+  LCP from an element's own text nodes, so once every word sits in a `.w` span
+  the `h1` is left holding only the spaces and stops being the candidate. The
+  word cascade costs exactly that: on phones the metric moves to the supporting
+  paragraph and from about 50ms to about 180ms. Both are far inside target, and
+  the word opacity makes no difference to it, so do not go hunting there.
 - `aria-label` on a `<span>` does nothing. ARIA does not name a generic
   element, so the attribute is inert and the subtree stays exposed. The five
   counters carried one each and still put 440 single-digit nodes into the
