@@ -221,6 +221,12 @@ Useful checks, all of which have caught real bugs:
   phones and an image on desktop, while `opacity: .05` keeps the `h1` as the
   candidate at about 180ms. The hero fades from `.05`, which is invisible on
   this ground and costs nothing. Never start an LCP candidate at a flat 0.
+- **The root class is shared, so add to it, never assign.** Both `app.js` and
+  the inline fit script in `<head>` used `documentElement.className = ...`, and
+  the later one silently erased the earlier. That is what made the hero reveal
+  look static: its `js` cue was wiped before the stylesheet could act on it.
+  Both use `classList` now, and the root carries `js m-desk as revealed`
+  together. Neither `as` nor `m-desk`/`m-phone` is referenced in any stylesheet.
 - `aria-label` on a `<span>` does nothing. ARIA does not name a generic
   element, so the attribute is inert and the subtree stays exposed. The five
   counters carried one each and still put 440 single-digit nodes into the

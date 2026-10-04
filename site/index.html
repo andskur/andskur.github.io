@@ -6,6 +6,11 @@
 <title>Andrew Skurlatov, independent CTO and technical due diligence</title>
 <meta name="description" content="Independent CTO and technical due diligence for complex systems: fractional CTO from one day a week, technical due diligence in ten business days, and two-week architecture or launch reviews.">
 <link rel="canonical" href="https://andskur.com/">
+<script>/* Marks that scripting is on, then cues the hero reveal on the first
+   frame after paint, so the whole fade happens on screen instead of
+   half of it running while the page is still blank. The timeout is a
+   floor: the text is never left faint if a frame never arrives. */
+(function(){var d=document.documentElement;d.className+=" js";var done=false;function go(){if(done)return;done=true;d.classList.add("revealed");}if(window.requestAnimationFrame){requestAnimationFrame(function(){requestAnimationFrame(go);});}else{go();}setTimeout(go,1200);})();</script>
 <meta name="theme-color" content="#17140f">
 <meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
@@ -56,7 +61,9 @@
     if (!st) { st = document.createElement('style'); st.id = 'as-fit'; document.head.appendChild(st); }
     st.textContent = c;
     window.__AS = { mode: d ? 'desk' : 'phone', Z: Z, side: side, fit: fit, mq: MQ };
-    document.documentElement.className = d ? 'm-desk' : 'm-phone';
+    var r = document.documentElement;
+    r.classList.remove('m-desk', 'm-phone');
+    r.classList.add(d ? 'm-desk' : 'm-phone');
   }
   fit();
 })();
@@ -73,7 +80,7 @@
 <link rel="preload" href="/assets/fonts/plex-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plex-mono-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/tokens.css?v=d482bce1">
-<link rel="stylesheet" href="/app.css?v=d8e9f7b1">
+<link rel="stylesheet" href="/app.css?v=cb277b56">
 </head>
 <body>
 <div class="page">
@@ -450,6 +457,6 @@
     </div>
   </footer>
 </div>
-<script src="/app.js?v=9be3c588" defer></script>
+<script src="/app.js?v=754e6982" defer></script>
 </body>
 </html>

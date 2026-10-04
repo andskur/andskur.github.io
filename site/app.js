@@ -10,7 +10,8 @@ function headerOffset() {
 /* andskur. One responsive tree: no zoom, no canvas fitting. */
 (function () {
   window.__AS = { mode: 'one', Z: 1, fit: function () {}, mq: '(min-width: 1000px)' };
-  document.documentElement.className = 'as';
+  /* add, never assign: the root class is shared with the inline head script */
+  document.documentElement.classList.add('as');
 })();
 
 
