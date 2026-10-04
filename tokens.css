@@ -111,6 +111,9 @@
 
   /* ---- motion ------------------------------------------------------- */
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  /* Near-exponential ease out: moves at once, then a long quiet settle.
+     The weight of a reveal comes from this curve, not from an effect. */
+  --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-control: 0.35s;
   --dur-field: 0.3s;
   --dur-link: 0.3s;
