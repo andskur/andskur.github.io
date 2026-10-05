@@ -239,6 +239,13 @@ Useful checks, all of which have caught real bugs:
   word cascade costs exactly that: on phones the metric moves to the supporting
   paragraph and from about 50ms to about 180ms. Both are far inside target, and
   the word opacity makes no difference to it, so do not go hunting there.
+- **The structured data models the practice as it is legally.** The practice is
+  Andrew's sole proprietorship (ZZP), so the services name **Andrew, the
+  Person,** as provider, each linked to its card's anchor. "andskur" is an
+  `Organization` he founded, with the rune avatar as its logo, and it publishes
+  the site. The Person's image is the portrait, never the rune. Do not bring
+  back `ProfessionalService`, which schema.org has deprecated, or switch to
+  `LocalBusiness`, which implies premises and opening hours.
 - **Prices are deliberately absent from the JSON-LD.** `offer-card.md` is the
   only place prices live and the site is the only copy of them; a third copy in
   structured data would be a fourth thing to keep in step and would contradict
