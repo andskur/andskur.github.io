@@ -764,6 +764,11 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 /* footer: the practice line and the domain row need air between them */
 .page .foot .rv.t3 { margin-top: var(--sp-32) !important; padding-bottom: var(--sp-24); }
 .page .foot > div:last-child { margin-top: var(--sp-24) !important; padding-top: var(--sp-16); }
+/* The domain row sits in the flow, on the same centred container as the rest
+   of the footer. It was pinned with left and right at 80px, which matched the
+   container only at 1440: wider screens stretched it edge to edge, phones
+   inset it against a 24px gutter, and the practice line ran into its rule. */
+.page .foot .fbar { display: flex; justify-content: space-between; align-items: center; border-top: var(--bw) solid var(--rule-nav); }
 
 /* the pulse that runs the length of the timeline rule: the piece that
    makes the ruler read as live rather than drawn */
@@ -783,7 +788,7 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    it read as a smudge. */
 .page .foot { overflow: hidden; }
 .page .foot .fmark {
-  display: block; position: absolute; right: var(--gutter); top: var(--sp-40);
+  display: block; position: absolute; right: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))); top: var(--sp-40);
   width: 40px; height: 40px; opacity: .07; pointer-events: none; z-index: 0;
 }
 .page .foot > * { position: relative; z-index: 1; }
