@@ -556,7 +556,7 @@ function headerOffset() {
     if (/[?&]sent=1(&|$)/.test(window.location.search)) {
       f.classList.add('sent');
       var m0 = f.querySelector('.fmsg');
-      if (m0) { m0.textContent = 'Sent. I will reply to the address you gave.'; m0.className = 'fmsg ok'; m0.hidden = false; }
+      if (m0) { m0.textContent = "Sent. I'll reply to the address you gave."; m0.className = 'fmsg ok'; m0.hidden = false; }
     }
     var btn = f.querySelector('button[type="submit"]');
     var endpoint = f.getAttribute('action') || '';
@@ -582,7 +582,7 @@ function headerOffset() {
       msg.className = 'fmsg ' + kind;
       msg.hidden = false;
       if (kind === 'bad') {
-        msg.textContent = 'That did not send. Email me directly at ';
+        msg.textContent = "That didn't send. Email me directly at ";
         var a = document.createElement('a');
         a.href = 'mailto:a.skurlatov@gmail.com';
         a.textContent = 'a.skurlatov@gmail.com';
@@ -608,7 +608,7 @@ function headerOffset() {
       }).then(function (r) {
         if (r.ok) {
           f.classList.add('sent');
-          say('Sent. I will reply to the address you gave.', 'ok');
+          say("Sent. I'll reply to the address you gave.", 'ok');
           return;
         }
         return r.json().then(function (d) {
@@ -616,7 +616,7 @@ function headerOffset() {
           throw new Error(e || 'failed');
         });
       }).catch(function () {
-        say('That did not send. Email me directly at a.skurlatov@gmail.com.', 'bad');
+        say("That didn't send. Email me directly at a.skurlatov@gmail.com.", 'bad');
       }).then(function () {
         if (btn && !f.classList.contains('sent')) { btn.disabled = false; btn.textContent = label; }
       });
