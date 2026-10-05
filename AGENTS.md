@@ -94,7 +94,7 @@ are not.
 **Never in any copy: em dashes.** Also banned: "passionate", "cutting-edge",
 "world-class", "seamless", "leverage", "unlock", "empower", "game-changing",
 "10x", "20x", "solutions" as a noun, exclamation marks, emoji. Prices are USD.
-Clients and protocols are named in the systems areas, by Andrew's decisions of 1 to 5 October 2026. Several names are on the page ahead of the register; `audit/register-amendments-2026-10-05.md` lists them and the rows that need amending in andskur-hq.
+Clients and protocols are named in the systems areas, by Andrew's decisions of 1 to 5 October 2026. On 5 October 2026 Andrew confirmed the live page as matching the real situation. The andskur-core files are private and are never committed here: this repository is public.
 
 ## How it is built
 
@@ -212,9 +212,8 @@ Useful checks, all of which have caught real bugs:
   would be removed on the next publish and the domain would break.
 - The lockup SVGs (`as-lockup-reversed.svg`) are outlined paths drawn in the
   **old** serif. The page is IBM Plex; the wordmark is not.
-- Five factual conflicts between the page and the proof register are recorded in
-  `audit/copy-notes.md`. Two are live and wrong: the 2021 timeline chapter's role
-  and the Lomonosov naming.
+- The factual conflicts recorded in `audit/copy-notes.md` were closed on
+  5 October 2026 in favour of the page, by Andrew's decision.
 - `.cal` and `.calgrid` in `app.css` are orphaned, left from the canvas's dashed
   calendar placeholder.
 - **An entrance that fades from exactly `opacity: 0` destroys LCP.** Chrome
