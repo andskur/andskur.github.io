@@ -10,3 +10,9 @@ audit/shots/
 
 # minified publish copy, built by tools/build.py
 dist/
+
+# andskur-core and andskur-hq files are private; this repository is public
+audit/andskur-hq*/
+*career-and-proof*.md
+*core-facts*.md
+*offer-card*.md
