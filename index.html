@@ -15,7 +15,7 @@
       "@id": "https://andskur.com/#andrew",
       "name": "Andrew Skurlatov",
       "url": "https://andskur.com/",
-      "image": "https://andskur.com/assets/as-avatar-400.png",
+      "image": "https://andskur.com/assets/portrait.webp",
       "jobTitle": "Independent CTO",
       "address": {
         "@type": "PostalAddress",
@@ -25,17 +25,7 @@
         "https://www.linkedin.com/in/andrew-skurlatov",
         "https://github.com/andskur",
         "https://x.com/Andskur1"
-      ]
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://andskur.com/#practice",
-      "name": "andskur",
-      "url": "https://andskur.com/",
-      "description": "Independent CTO and technical due diligence for complex systems.",
-      "founder": {
-        "@id": "https://andskur.com/#andrew"
-      },
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Engagements",
@@ -44,27 +34,58 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "@id": "https://andskur.com/#fractional-cto",
               "name": "Fractional CTO",
-              "description": "Architecture ownership, technical hiring, board and investor technical reporting, launch and listing readiness, from one day a week."
+              "description": "Architecture ownership, technical hiring, board and investor technical reporting, launch and listing readiness, from one day a week.",
+              "url": "https://andskur.com/#fractional-cto",
+              "provider": {
+                "@id": "https://andskur.com/#andrew"
+              }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "@id": "https://andskur.com/#due-diligence",
               "name": "Technical due diligence",
-              "description": "A two-page decision brief, then the investment-committee memo, the evidence annex and the cost to remediate in engineer-weeks and money. Ten business days; a red-flag read in five."
+              "description": "A two-page decision brief, then the investment-committee memo, the evidence annex and the cost to remediate in engineer-weeks and money. Ten business days; a red-flag read in five.",
+              "url": "https://andskur.com/#due-diligence",
+              "provider": {
+                "@id": "https://andskur.com/#andrew"
+              }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
+              "@id": "https://andskur.com/#decision",
               "name": "Architecture or launch review",
-              "description": "One decision area in a fixed two-week sprint: evidence review, the options, a written recommendation and a debrief."
+              "description": "One decision area in a fixed two-week sprint: evidence review, the options, a written recommendation and a debrief.",
+              "url": "https://andskur.com/#decision",
+              "provider": {
+                "@id": "https://andskur.com/#andrew"
+              }
             }
           }
         ]
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://andskur.com/#practice",
+      "name": "andskur",
+      "url": "https://andskur.com/",
+      "description": "The independent practice of Andrew Skurlatov: fractional CTO, technical due diligence and architecture reviews.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://andskur.com/assets/as-avatar-400.png",
+        "width": 400,
+        "height": 400
+      },
+      "founder": {
+        "@id": "https://andskur.com/#andrew"
       }
     },
     {
@@ -73,7 +94,7 @@
       "url": "https://andskur.com/",
       "name": "andskur",
       "publisher": {
-        "@id": "https://andskur.com/#andrew"
+        "@id": "https://andskur.com/#practice"
       }
     }
   ]
