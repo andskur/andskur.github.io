@@ -268,6 +268,14 @@ Useful checks, all of which have caught real bugs:
   written for links reaches all four and a rule written for buttons reaches
   none of them. `.page a:hover` had been repainting them at 1.24:1 this way.
   Check any new link-as-button in hover, focus-visible and active.
+- **Timeline chapters are placed by share, never by pixel.** Each `.ch` carries
+  `--x` (its left edge on the 2011 to Now axis) and `--cl` (its year as a share
+  of its own 16.4% width); the connector and node sit at `--cl`. The rebuild
+  had kept the canvas's pixel offsets, set `left: auto !important` on the
+  nodes, and given chapters `min-width: 196px`: every node sat at its box's
+  edge instead of its year at all widths, connectors drifted up to 1.3 years
+  below 1440, and neighbouring chapters overlapped by up to 50px from 1000 to
+  1366. A fixed width or pixel offset here breaks all three again.
 - Spacing set only inside the desktop grid leaves phone with none. Three blocks
   ran together this way: the Background portrait against its own eyebrow, the
   timeline against the paragraph's last line, and the booking panel against the

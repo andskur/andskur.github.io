@@ -562,15 +562,18 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
   .page .sec.on .tline .sweep::after { animation: sweep 2.2s var(--ease) .2s forwards; }
   .page .tline > svg.tlpz { display: block; position: absolute; left: 0; top: 179px; width: 100%; height: 3px; overflow: visible; }
 
-  .page .tline .ch { position: absolute; left: var(--x); width: 16.4%; min-width: 196px; padding-bottom: 0; }
+  .page .tline .ch { position: absolute; left: var(--x); width: 16.4%; padding-bottom: 0; }
   .page .tline .ch.up { bottom: 192px; top: auto; transform: translateY(14px); }
   .page .tline .ch.dn { top: 220px; bottom: auto; transform: translateY(-14px); text-align: right; }
   .page .sec.on .tline .ch { transform: none; }
-  .page .tline .ch .cn { display: block; position: absolute; width: 1px; height: 28px; background: var(--accent); opacity: .55; transform: scaleY(0); transition: transform .7s var(--ease); }
+  .page .tline .ch .cn { display: block; position: absolute; left: var(--cl); width: 1px; height: 28px; background: var(--accent); opacity: .55; transform: scaleY(0); transition: transform .7s var(--ease); }
   .page .tline .ch.up .cn { bottom: -30px; top: auto; transform-origin: bottom; }
   .page .tline .ch.dn .cn { top: -30px; bottom: auto; transform-origin: top; }
   .page .sec.on .tline .ch .cn { transform: none; }
-  .page .tline .ch .nd2 { left: auto !important; }
+  /* --cl is each chapter's year as a share of its own width, so the connector
+     and its node land on the year at every width; a fixed min-width would
+     push both off it and run neighbouring chapters together below 1366px. */
+  .page .tline .ch .nd2 { left: calc(var(--cl) - 4px) !important; }
   .page .tline .ch.up .nd2 { bottom: -37px; top: auto; }
   .page .tline .ch.dn .nd2 { top: -44px; bottom: auto; }
   .page .tline .ch.big .nd2 { margin-left: -2px; }
