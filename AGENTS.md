@@ -70,7 +70,6 @@ gh api repos/andskur/andskur.github.io/pages/builds/latest
 | `site/sitemap.xml` | One URL. The anchors are not URLs and must stay out of it. |
 | `DESIGN.md` | The design system, with named rules. `.impeccable/design.json` is its machine-readable sidecar. |
 | `PRODUCT.md` | Product and design context, the buyer lanes, and the scope rules. |
-| `audit/copy-notes.md` | Copy authority, the proof-register rules, and open factual conflicts. |
 | `audit/index.canvas.html.bak` | The original canvas export. The reference for anything that looks lost. |
 
 ## Who owns what
@@ -212,8 +211,11 @@ Useful checks, all of which have caught real bugs:
   would be removed on the next publish and the domain would break.
 - The lockup SVGs (`as-lockup-reversed.svg`) are outlined paths drawn in the
   **old** serif. The page is IBM Plex; the wordmark is not.
-- The factual conflicts recorded in `audit/copy-notes.md` were closed on
+- The factual conflicts between the page and the register were closed on
   5 October 2026 in favour of the page, by Andrew's decision.
+- **This repository is public.** Copy notes, register material and anything
+  from andskur-core or andskur-hq are kept outside it, in Andrew's private
+  andskur-hq folder, and are never committed here.
 - `.cal` and `.calgrid` in `app.css` are orphaned, left from the canvas's dashed
   calendar placeholder.
 - **An entrance that fades from exactly `opacity: 0` destroys LCP.** Chrome

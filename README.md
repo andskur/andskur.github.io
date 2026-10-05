@@ -67,7 +67,6 @@ Plus four documents, each with a different job:
 | **[AGENTS.md](AGENTS.md)** | The working notes, including the failure modes this codebase keeps producing. Written for an AI agent, useful to anyone. |
 | **[DESIGN.md](DESIGN.md)** | The design system: palette, type, spacing, and the named rules that keep it coherent. |
 | **[PRODUCT.md](PRODUCT.md)** | Who the page is for, the three buyer lanes, and what each must and must not see. |
-| **[audit/copy-notes.md](audit/copy-notes.md)** | Where the words come from, and the factual conflicts still open. |
 
 ## How it is built
 
@@ -132,7 +131,5 @@ Two, both deliberately quiet:
 
 - The wordmark SVGs are outlined paths drawn in the previous serif, so the
   lockup does not match the page's type. Regenerating them is a small job.
-- Two factual errors are live in the timeline, recorded in `audit/copy-notes.md`
-  along with three smaller conflicts.
 - The Formspree endpoint has no domain restriction, and its free tier allows 50
   submissions a month.

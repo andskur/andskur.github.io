@@ -72,7 +72,7 @@ Contact has two doors. The form is one field, "What needs doing", which opens th
 - Self-hosted typefaces, committed as woff2: **IBM Plex Serif** (serif), **IBM Plex Sans** (sans), **IBM Plex Mono**. Replaced Newsreader / Geist / Geist Mono on 30 September 2026, chosen from five rendered options.
 - The footer stays as built: the lockup, the four profiles in a row (LinkedIn, GitHub, X, email), the single practice line and the year. No registration numbers, no availability line, no disclosure line, no conflict statement.
 - The Background section carries the portrait, one paragraph and an animated timeline from 2011 to now in ten chapters.
-- The Systems section carries seven areas, each with its sentence, a diagram and a spec block: role, client or company, protocols, constraint and outcome. Clients and protocols are named and linked, by Andrew's decisions of 1 to 5 October 2026; names not yet cleared in the register are listed in `audit/register-amendments-2026-10-05.md`.
+- The Systems section carries seven areas, each with its sentence, a diagram and a spec block: role, client or company, protocols, constraint and outcome. Clients and protocols are named and linked, by Andrew's decisions of 1 to 5 October 2026.
 
 ## Product Principles
 
