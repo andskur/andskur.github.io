@@ -129,7 +129,5 @@ Two, both deliberately quiet:
 
 ## Known issues
 
-- The wordmark SVGs are outlined paths drawn in the previous serif, so the
-  lockup does not match the page's type. Regenerating them is a small job.
 - The Formspree endpoint has no domain restriction, and its free tier allows 50
   submissions a month.
