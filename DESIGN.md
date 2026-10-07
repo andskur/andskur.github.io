@@ -173,13 +173,13 @@ Plex is one superfamily, so the serif, sans and mono share skeletons: that is wh
 **Character:** One engineering superfamily in three registers: the serif talks, the sans explains, the mono counts. IBM Plex Serif is set at 500 with -0.01em tightening: sturdy, slab-leaning, authoritative without turning into a display face, and it never appears below headline size. The pairing reads as a written document rather than a product page, which is the point: the reader is being handed an argument, not a feature list.
 
 ### Hierarchy
-- **Display** (Newsreader 500, 56px / 60px, -0.01em): The name at the top of the page. One instance. Drops to 32px / 38px on phone.
-- **Headline** (Newsreader 500, 40px / 46px, -0.01em): Section headings. Drops to 28px / 34px on phone.
-- **Numeral** (Geist Mono 500, 48px / 56px, -0.01em, tabular lining): The five counters in the numbers strip, animated as odometers. Drops to 36px / 44px on phone. Digits are tabular so the strip does not jitter while counting.
-- **Lead** (Geist 400, 17px / 26px): The three hero routes. One step above body, used only where a line must be read before the body is.
-- **Body** (Geist 400, 16px / 26px, tabular lining): Everything else. Tabular figures are set globally on `body`, so an inline number inside a sentence stays aligned with the strip above it.
-- **Label** (Geist 500, 14px / 22px): Navigation links, form labels, footer links.
-- **Tag** (Geist Mono 500, 12px / 16px, +0.02em): Section eyebrows and the bordered capsules that name a node's role in a diagram ("Product", "Edge", "Upstream").
+- **Display** (IBM Plex Serif 500, 56px / 60px, -0.01em): The name at the top of the page. One instance. Drops to 32px / 38px on phone.
+- **Headline** (IBM Plex Serif 500, 40px / 46px, -0.01em): Section headings. Drops to 28px / 34px on phone.
+- **Numeral** (IBM Plex Mono 500, 48px / 56px, -0.01em, tabular lining): The five counters in the numbers strip, animated as odometers. Drops to 36px / 44px on phone. Digits are tabular so the strip does not jitter while counting.
+- **Lead** (IBM Plex Sans 400, 17px / 26px): The three hero routes. One step above body, used only where a line must be read before the body is.
+- **Body** (IBM Plex Sans 400, 16px / 26px, tabular lining): Everything else. Tabular figures are set globally on `body`, so an inline number inside a sentence stays aligned with the strip above it.
+- **Label** (IBM Plex Sans 500, 14px / 22px): Navigation links, form labels, footer links.
+- **Tag** (IBM Plex Mono 500, 12px / 16px, +0.02em): Section eyebrows and the bordered capsules that name a node's role in a diagram ("Product", "Edge", "Upstream").
 
 ### Named Rules
 
@@ -251,7 +251,7 @@ The component register is deliberately quiet and technical: hairline strokes, ne
 
 ### Buttons
 - **Shape:** Near-square (3px radius), 48px tall, 1px transparent border reserving the space a border would take.
-- **Primary:** Starlight fill with Night Ground text (#8db4dc on #17140f), 24px horizontal padding, Geist 500 at 15px with -0.005em. Carries a Starlight bloom at rest.
+- **Primary:** Starlight fill with Night Ground text (#8db4dc on #17140f), 24px horizontal padding, IBM Plex Sans 500 at 15px with -0.005em. Carries a Starlight bloom at rest.
 - **Hover:** Steps to Starlight Bright, lifts 2px, and the bloom deepens. All properties transition together over 0.35s on the house easing.
 - **Compact:** In the header the same button drops to 40px tall with 20px padding. On phone it goes full width at 48px with 20px padding.
 - There is no secondary or ghost button in the system. Where a second action exists, it is a text link with a sliding Starlight underline, not a button.
@@ -260,24 +260,24 @@ The component register is deliberately quiet and technical: hairline strokes, ne
 - **Style:** Surface Raised fill, 1px Hairline Strong border, 3px radius, 44px tall for single-line and 120px for the textarea, 12px horizontal padding.
 - **Focus:** Border becomes Starlight and a 2px 35%-opacity Starlight ring appears outside it, over 0.3s. Native outline is suppressed and replaced, not removed.
 - **Phone:** Font size steps from 15px to 16px, which is deliberate: it prevents iOS from zooming the viewport on focus.
-- **Labels:** Geist 500 at 14px / 22px, sitting above the field.
+- **Labels:** IBM Plex Sans 500 at 14px / 22px, sitting above the field.
 
 ### Tags
-- **Style:** 22px capsule, 3px radius, 1px Starlight border, transparent fill, Starlight text in Geist Mono 12px with +0.02em.
+- **Style:** 22px capsule, 3px radius, 1px Starlight border, transparent fill, Starlight text in IBM Plex Mono 12px with +0.02em.
 - **Role:** Naming a node's function inside a diagram ("Product", "Edge", "Hot path", "Upstream") and marking a constraint. Self-aligned to flex-start so it never stretches to its container.
 
 ### Navigation
-- **Desktop:** 72px fixed bar, 80px side padding, links in Geist 500 14px at Chalk Dim. Each link carries a Starlight hairline 6px below it that scales in from the left over 0.35s on hover while the label steps up to Warm Chalk. The bar's translucent blurred ground and its border only appear once `.scrolled` is set.
+- **Desktop:** 72px fixed bar, 80px side padding, links in IBM Plex Sans 500 14px at Chalk Dim. Each link carries a Starlight hairline 6px below it that scales in from the left over 0.35s on hover while the label steps up to Warm Chalk. The bar's translucent blurred ground and its border only appear once `.scrolled` is set.
 - **Phone:** 64px bar with the blur always on, and a disclosure menu whose items are 17px, full width, divided by 1px Hairline rules.
 
 ### Signature: the blueprint diagram
 The defining component. Each of the seven system areas is drawn as an SVG schematic: 9px square nodes in Night Ground with Hairline Strong borders, connected by 1px wires in the same colour, over a masked 40px blueprint grid. On entering view the wires draw themselves using a `stroke-dasharray` sweep over 1.1s, nodes fade in, and then a 1.5px Starlight pulse (`stroke-dasharray: 8 92`) travels each wire on a 2.4 to 3.2s linear loop while live nodes ignite with an 18px halo. Every node is labelled with a Tag above its name. Animations are gated on the section's `.inview` state and paused otherwise.
 
 ### Signature: the odometer counters
-Five figures in the numbers strip. Each digit is a 56px clipped window (44px on phone) holding a column of 0 to 9 in Geist Mono, translated upward to land on its target, with a glow pass at 1.9s. Tabular figures keep the strip from reflowing mid-count, and the window height is locked to the numeral line height so the roll never shifts the baseline. Each figure carries a Chalk Dim caption beneath it that qualifies it.
+Five figures in the numbers strip. Each digit is a 56px clipped window (44px on phone) holding a column of 0 to 9 in IBM Plex Mono, translated upward to land on its target, with a glow pass at 1.9s. Tabular figures keep the strip from reflowing mid-count, and the window height is locked to the numeral line height so the roll never shifts the baseline. Each figure carries a Chalk Dim caption beneath it that qualifies it.
 
 ### Signature: the timeline
-A 340px horizontal ruler running 2011 to 2026, drawn as a 1px track in Warm Chalk at 12% with a 30px band of ticks beneath it. On reveal the ruler fills: a Starlight line with a 12px glow scales in from the left over 2.6s while the tick band is uncovered by a matching `clip-path` sweep on the same curve, so the measure and its graduations arrive together. Chapters are 210px blocks alternating above and below the line, each fading and rising in over 0.9s, headed by a year in Geist Mono 12px Starlight. The final chapter is closed by a hand-drawn Starlight check mark (1.5px, round caps) that draws itself over 0.7s once the fill has finished.
+A 340px horizontal ruler running 2011 to 2026, drawn as a 1px track in Warm Chalk at 12% with a 30px band of ticks beneath it. On reveal the ruler fills: a Starlight line with a 12px glow scales in from the left over 2.6s while the tick band is uncovered by a matching `clip-path` sweep on the same curve, so the measure and its graduations arrive together. Chapters are 210px blocks alternating above and below the line, each fading and rising in over 0.9s, headed by a year in IBM Plex Mono 12px Starlight. The final chapter is closed by a hand-drawn Starlight check mark (1.5px, round caps) that draws itself over 0.7s once the fill has finished.
 
 ### Named Rules
 

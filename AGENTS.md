@@ -209,8 +209,6 @@ Useful checks, all of which have caught real bugs:
 - `site/CNAME` holds the custom domain. It **must** live in `site/`: the deploy
   wipes the `gh-pages` branch, so a `CNAME` written by GitHub's settings page
   would be removed on the next publish and the domain would break.
-- The lockup SVGs (`as-lockup-reversed.svg`) are outlined paths drawn in the
-  **old** serif. The page is IBM Plex; the wordmark is not.
 - The factual conflicts between the page and the register were closed on
   5 October 2026 in favour of the page, by Andrew's decision.
 - **This repository is public.** Copy notes, register material and anything
