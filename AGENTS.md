@@ -170,8 +170,9 @@ Useful checks, all of which have caught real bugs:
   panel height was scrolling because nobody asked.
 - **Check from a cold cache.** Playwright always starts cold, which is why it
   passed while the real browser failed.
-- **Count third-party requests on load.** It must be zero before the contact
-  section is reached.
+- **Count third-party requests on load.** Before the contact section is
+  reached there must be exactly two, both to `plausible.io`: the script and its
+  pageview event. Anything else is a regression.
 
 ## Third-party integrations
 
@@ -195,14 +196,22 @@ Useful checks, all of which have caught real bugs:
 **Formspree** (`formspree.io/f/mnpnrwgw`), the contact form.
 - Their plain `action`/`method`, so it posts without JavaScript, plus our own
   handler for the in-page confirmation. **Not** `@formspree/ajax`: it loads a
-  script from unpkg on every page view and would break the zero-third-party
-  rule above for no gain.
+  script from unpkg on every page view and would break the third-party rule
+  above for no gain.
 - `_next` returns a native post to `?sent=1#contact`, which the script reads on
   load to show the same confirmation. It is an **absolute URL** and must change
   with the domain.
 - Free tier is 50 submissions a month. The endpoint has no domain restriction,
   so anyone can post to it.
 - Honeypot is `_gotcha`, which Formspree also filters server-side.
+
+**Plausible** (`plausible.io`), page analytics, in `<head>` of `index.html`
+and `404.html`.
+- The only third-party request on load, by Andrew's decision of 22 October
+  2026. It sets no cookie and stores no personal data, so it needs no consent
+  banner, which is why it is allowed where Calendly is not.
+- The snippet is Plausible's own, pasted unchanged; the script id in its URL
+  ties it to the andskur.com site in the Plausible dashboard.
 
 ## Open items
 
