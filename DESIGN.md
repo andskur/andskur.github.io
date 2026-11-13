@@ -279,6 +279,9 @@ Five figures in the numbers strip. Each digit is a 56px clipped window (44px on 
 ### Signature: the timeline
 A 340px horizontal ruler running 2011 to 2026, drawn as a 1px track in Warm Chalk at 12% with a 30px band of ticks beneath it. On reveal the ruler fills: a Starlight line with a 12px glow scales in from the left over 2.6s while the tick band is uncovered by a matching `clip-path` sweep on the same curve, so the measure and its graduations arrive together. Chapters are 210px blocks alternating above and below the line, each fading and rising in over 0.9s, headed by a year in IBM Plex Mono 12px Starlight. The final chapter is closed by a hand-drawn Starlight check mark (1.5px, round caps) that draws itself over 0.7s once the fill has finished.
 
+### Signature: the recommendations ledger
+Three recommendations from people Andrew worked for, between Background and Contact. Each entry is headed by a 1px rule with a 9px node at its start. On reaching view the rule draws out of its node over 2.6s, a single Starlight pulse runs along it once (the node ignites with it, then settles lit without its halo), and the words are laid down from the top under a soft mask edge over 2.2s, the way ink takes on paper. The attribution follows last, as a signature does. The quote is IBM Plex Serif 400 at lead size on phone and h3 size on desktop, where the attribution takes a 280px column of its own on the left. Each entry reveals on its own as it is reached. With reduced motion or no JavaScript, every entry is simply there.
+
 ### Named Rules
 
 **The Draw Then Flow Rule.** Diagram motion happens in two beats and one order: the structure draws itself first, then light moves through it. A pulse that runs before its wire exists, or a wire that appears fully formed, breaks the conceit that the page is being authored in front of the reader.
@@ -307,6 +310,6 @@ A 340px horizontal ruler running 2011 to 2026, drawn as a 1px track in Warm Chal
 - **Don't** add a rounded corner between 3px and a circle, or a soft-filled card, or a glassy panel. Surfaces are flat, bounded by a line, and sit on the ground.
 - **Don't** drift toward crypto or web3 visual language: neon gradients, glitch treatments, hexagon motifs, pumped saturation. The readers include compliance officers and fund partners.
 - **Don't** drift toward terminal or hacker language: monospace as atmosphere, phosphor green, scanlines, ASCII. The mono is for numbers and labels only.
-- **Don't** drift toward corporate consultancy language: stock photography, pill buttons, testimonial carousels, logo walls. The page carries no logos and no testimonials by design.
+- **Don't** drift toward corporate consultancy language: stock photography, pill buttons, testimonial carousels, logo walls. The page carries no logos. Its recommendations are a ledger, never a carousel: every one is on the page at once, attributed in full, with no quote-mark graphics, avatars or star ratings.
 - **Don't** let a pulse animate before its wire has drawn.
 - **Don't** add a second accent colour. The system has one, and one is the argument.

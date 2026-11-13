@@ -59,6 +59,7 @@
   --fs-suf: 24px;                            /* numeral suffix: k+, B+, M+ */
   --fs-alt: 13px;       --lh-alt: 20px;     /* price footnote */
   --fs-dg: 15px;                             /* diagram node label */
+  --lh-quote: var(--lh-lead);                /* recommendation quote */
   --lh-micro-tight: 14px;
 
   --tracking-tight: -0.01em;
@@ -134,6 +135,7 @@
     --fs-route: 17px;    --lh-route: 26px;
     --fs-title: 22px;    --lh-title: 30px;
     --fs-amt: 34px;      --lh-amt: 40px;
+    --lh-quote: 38px;
 
     --gutter: var(--sp-80);
     --section-gap: var(--sp-96);

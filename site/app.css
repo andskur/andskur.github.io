@@ -1240,3 +1240,87 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
    image is stretched to fill its box, so on phones the face was squeezed about
    18% narrower. The box now takes the image's own proportions, as desktop's
    already did. */
+
+/* Recommendations. A ledger, not a carousel: each entry is entered in the
+   order the page draws everything else. The rule draws out of its node, a
+   single pulse of light runs along it, and then the words are laid down from
+   the top under a soft edge, the way ink takes on paper. The attribution
+   arrives last, as a signature does. Each entry is its own .rv, so they run
+   as the reader reaches them rather than all at once. Without JavaScript, or
+   with reduced motion, the entries are simply there. */
+.page .recs { margin: var(--sp-40) 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: var(--sp-48); }
+.page .rec.rv { opacity: 1; transform: none; transition: none; }
+.page .rec { position: relative; padding-top: var(--sp-28); }
+.page .rec figure { margin: 0; display: flex; flex-direction: column; gap: var(--sp-20); }
+.page .rec blockquote { margin: 0; }
+.page .rq p { font-family: var(--font-serif); font-size: var(--fs-lead); line-height: var(--lh-quote); font-weight: var(--weight-regular); font-optical-sizing: auto; color: var(--text); text-wrap: pretty; }
+.page .rby { display: flex; flex-direction: column; gap: var(--sp-2); }
+.page .rnm { font-weight: var(--weight-medium); color: var(--text); }
+.page .rrl, .page .rwh { font-size: var(--fs-sm); line-height: var(--lh-sm); color: var(--text-secondary); }
+.page .rwh { margin-top: var(--sp-6); display: flex; align-items: baseline; gap: var(--sp-10); }
+.page .ryr { font-family: var(--font-mono); font-size: var(--fs-lab); line-height: var(--lh-lab); font-weight: var(--weight-medium); letter-spacing: var(--tracking-mono); }
+.page .rsrc { margin-top: var(--sp-48); }
+
+/* the rule, its node and the pulse */
+.page .rrule { position: absolute; left: 0; right: 0; top: 0; height: var(--bw); clip-path: inset(calc(var(--node) * -1) 0); }
+.page .rrule::before { content: ""; position: absolute; inset: 0; background: var(--rule-soft); transform-origin: left; }
+.page .rrule::after { content: ""; position: absolute; left: 0; top: 0; width: 28%; height: var(--bw); background: linear-gradient(90deg, transparent, var(--accent-hover), transparent); opacity: 0; pointer-events: none; }
+.page .rnd { position: absolute; left: 0; top: calc((var(--node) - var(--bw)) / -2); width: var(--node); height: var(--node); background: var(--bg); border: var(--bw) solid var(--line-strong); z-index: 1; }
+
+.js .page .rec:not(.on) .rrule::before { transform: scaleX(0); }
+.js .page .rec:not(.on) .rnd { opacity: 0; }
+.js .page .rec:not(.on) .rq p { -webkit-mask-position: 0 100%; mask-position: 0 100%; }
+.js .page .rec:not(.on) .rby { opacity: 0; }
+.js .page .rec .rq p {
+  -webkit-mask-image: linear-gradient(180deg, #000 40%, transparent 60%); mask-image: linear-gradient(180deg, #000 40%, transparent 60%);
+  -webkit-mask-size: 100% 250%; mask-size: 100% 250%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-position: 0 0; mask-position: 0 0;
+}
+
+.page .rec.on .rnd { animation: fadein .5s var(--ease) both, rignite 2.4s var(--ease) .9s both; }
+.page .rec.on .rrule::before { animation: rdraw var(--dur-fill) var(--ease-reveal) .15s both; }
+.page .rec.on .rrule::after { animation: rpulse 1.8s cubic-bezier(.45, 0, .25, 1) .9s both; }
+.page .rec.on .rq p { animation: rink 2.2s var(--ease-reveal) .55s both; }
+.page .rec.on .rby { animation: rsign var(--dur-reveal) var(--ease-reveal) 1.5s both; }
+
+@keyframes rdraw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes rpulse { 0% { opacity: 0; transform: translateX(-60%); } 15% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; transform: translateX(360%); } }
+@keyframes rignite {
+  0% { background: var(--bg); border-color: var(--line-strong); box-shadow: none; }
+  18% { background: var(--accent); border-color: var(--accent); box-shadow: var(--glow-node); }
+  100% { background: var(--accent); border-color: var(--accent); box-shadow: none; }
+}
+@keyframes rink {
+  from { -webkit-mask-position: 0 100%; mask-position: 0 100%; transform: translateY(var(--sp-6)); }
+  to { -webkit-mask-position: 0 0; mask-position: 0 0; transform: none; }
+}
+@keyframes rsign { from { opacity: 0; transform: translateY(var(--sp-6)); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .page .rec .rq p { -webkit-mask-image: none; mask-image: none; }
+  .js .page .rec .rby, .js .page .rec .rnd { opacity: 1; }
+  .page .rec .rrule::before, .js .page .rec.on .rrule::before { animation: none; transform: none; }
+  .page .rec .rrule::after { display: none; }
+  .page .rec .rnd { background: var(--accent); border-color: var(--accent); }
+}
+
+/* Desktop: the attribution takes a column of its own on the left, so the
+   names read down the page as a list of signatories and the words carry the
+   width. The source line sits under the words it vouches for. */
+@media (min-width: 1000px) {
+  .page .recs { margin-top: var(--sp-56); gap: var(--sp-56); }
+  .page .rec { padding-top: var(--sp-36); }
+  .page .rec figure { display: grid; grid-template-columns: 280px minmax(0, 1fr); column-gap: var(--sp-64); align-items: start; }
+  .page .rby { grid-column: 1; grid-row: 1; }
+  .page .rec blockquote { grid-column: 2; grid-row: 1; }
+  .page .rq p { font-size: var(--fs-h3); max-width: 30em; }
+  .page .rsrc { margin-left: calc(280px + var(--sp-64)); }
+}
+
+/* Five navigation links and the button need about 700px beside the lockup.
+   At the narrowest desktop widths the 32px gap ran the first link into the
+   name, so the gap closes up until there is room for it. */
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .page .menu { gap: var(--sp-20); }
+}
