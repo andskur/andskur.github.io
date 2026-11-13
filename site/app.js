@@ -883,3 +883,118 @@ function headerOffset() {
   });
   h.setAttribute('data-words', '');
 })();
+
+/* Recommendations: the stage. The quotes are split into words once, with the
+   spaces left as real text, so the sentence still reads and copies as one
+   string. The stage is used only with motion allowed and only when the
+   tallest quote fits the screen; otherwise the class comes off and the
+   section is the static ledger. Scroll position alone drives it: no timers,
+   and scrolling back reverses it exactly. */
+(function () {
+  var sec = document.getElementById('recommendations');
+  if (!sec || sec.getAttribute('data-wired')) return;
+  sec.setAttribute('data-wired', '1');
+  var reduce = false;
+  try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  if (reduce) return;
+
+  var run = sec.querySelector('.rrun');
+  var stage = sec.querySelector('.rstage');
+  var recs = [].slice.call(sec.querySelectorAll('.rec'));
+  var n = recs.length;
+  if (!run || !stage || !n) return;
+
+  var words = recs.map(function (rec) {
+    var p = rec.querySelector('.rq p');
+    var parts = p.textContent.trim().split(/\s+/);
+    p.textContent = '';
+    return parts.map(function (word, i) {
+      var s = document.createElement('span');
+      s.className = 'w';
+      s.textContent = word;
+      p.appendChild(s);
+      if (i < parts.length - 1) p.appendChild(document.createTextNode(' '));
+      return s;
+    });
+  });
+
+  var rail = document.createElement('div');
+  rail.className = 'rrail';
+  rail.setAttribute('aria-hidden', 'true');
+  rail.innerHTML = '<span class="rtr"></span><span class="rfl"></span>';
+  var items = recs.map(function (rec) {
+    var it = document.createElement('span');
+    it.className = 'rit';
+    it.innerHTML = '<span class="rnd2"></span><span class="rlb"><span class="rnm"></span><span class="ryr"></span></span>';
+    it.querySelector('.rnm').textContent = rec.querySelector('.rnm').textContent;
+    it.querySelector('.ryr').textContent = rec.querySelector('.ryr').textContent;
+    rail.appendChild(it);
+    return it;
+  });
+  stage.insertBefore(rail, stage.querySelector('.recs'));
+  sec.style.setProperty('--rn', n);
+
+  var pinned = false, cur = -1, ticking = false;
+  var clamp = function (v, a, b) { return v < a ? a : (v > b ? b : v); };
+
+  function clear() {
+    for (var i = 0; i < n; i++) {
+      recs[i].classList.remove('cur', 'past');
+      for (var j = 0; j < words[i].length; j++) { words[i][j].style.opacity = ''; words[i][j].classList.remove('lead'); }
+    }
+    cur = -1;
+  }
+
+  var steps = ['', 'rt1', 'rt2'];
+  function fit() {
+    sec.classList.add('rpin');
+    pinned = false;
+    for (var s = 0; s < steps.length && !pinned; s++) {
+      sec.classList.remove('rt1', 'rt2');
+      if (steps[s]) sec.classList.add(steps[s]);
+      pinned = stage.scrollHeight <= stage.clientHeight + 1;
+    }
+    if (!pinned) { sec.classList.remove('rpin', 'rt1', 'rt2'); clear(); }
+    update();
+  }
+
+  function update() {
+    ticking = false;
+    if (!pinned) return;
+    var nav = parseFloat(getComputedStyle(stage).top) || 0;
+    var span = Math.max(1, run.offsetHeight - stage.offsetHeight);
+    var p = clamp((nav - run.getBoundingClientRect().top) / span, 0, 1);
+    var f = p * n;
+    var k = Math.min(n - 1, Math.floor(f));
+    var t = f - k;
+    if (k !== cur) {
+      for (var i = 0; i < n; i++) {
+        recs[i].classList.toggle('cur', i === k);
+        recs[i].classList.toggle('past', i < k);
+        items[i].classList.toggle('cur', i === k);
+        items[i].classList.toggle('seen', i < k);
+      }
+      cur = k;
+    }
+    sec.style.setProperty('--rp', (n > 1 ? (k + clamp(t / 0.8, 0, 1)) / (n - 1) : 1).toFixed(4));
+    /* the reading runs over the first 80% of each quote's share of the
+       scroll, so every quote is held fully lit before the next one comes */
+    var ws = words[k], m = ws.length;
+    var r = clamp(t / 0.8, 0, 1) * (m + 2);
+    for (var w = 0; w < m; w++) {
+      var d = r - w;
+      ws[w].style.opacity = d <= 0 ? '' : (d >= 1 ? '1' : (0.16 + 0.84 * d).toFixed(3));
+      ws[w].classList.toggle('lead', d > 0 && d < 3);
+    }
+    for (var o = 0; o < n; o++) {
+      if (o === k) continue;
+      var full = o < k;
+      for (var q = 0; q < words[o].length; q++) { words[o][q].style.opacity = full ? '1' : ''; words[o][q].classList.remove('lead'); }
+    }
+  }
+
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fit); }
+  fit();
+})();

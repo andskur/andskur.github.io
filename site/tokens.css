@@ -60,6 +60,7 @@
   --fs-alt: 13px;       --lh-alt: 20px;     /* price footnote */
   --fs-dg: 15px;                             /* diagram node label */
   --lh-quote: var(--lh-lead);                /* recommendation quote */
+  --fs-pull: 22px;      --lh-pull: 31px;    /* recommendation quote, on the stage */
   --lh-micro-tight: 14px;
 
   --tracking-tight: -0.01em;
@@ -136,6 +137,7 @@
     --fs-title: 22px;    --lh-title: 30px;
     --fs-amt: 34px;      --lh-amt: 40px;
     --lh-quote: 38px;
+    --fs-pull: 38px;     --lh-pull: 52px;
 
     --gutter: var(--sp-80);
     --section-gap: var(--sp-96);

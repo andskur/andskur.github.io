@@ -1324,3 +1324,75 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-sans
 @media (min-width: 1000px) and (max-width: 1199px) {
   .page .menu { gap: var(--sp-20); }
 }
+
+/* Recommendations, the stage. With motion allowed, and only when the longest
+   quote fits the screen, the section holds still while the reader scrolls
+   through it, and the scroll reads the quotes aloud: one at a time, set large,
+   each word lit as the reading reaches it. The front of the reading is
+   Starlight and settles to chalk behind it, which is the page's draw then
+   flow at the scale of a sentence. The rail on the left names who is
+   speaking and fills as the reading moves on. Everything here hangs off
+   .rpin, which the script sets and removes; without it the section is the
+   static ledger above. */
+.page .rhead { display: flex; flex-direction: column; gap: var(--sp-12); }
+.page .rrail { display: none; }
+
+.page .rpin .rrun { height: calc(100svh - var(--nav-h) + var(--rn, 3) * 90svh); }
+.page .rpin .rstage {
+  position: sticky; top: var(--nav-h); height: calc(100svh - var(--nav-h));
+  display: flex; flex-direction: column; justify-content: center; gap: var(--sp-28);
+  padding-block: var(--sp-24);
+}
+.page .rpin .rstage::before {
+  content: ""; position: absolute; inset: 0 calc(var(--gutter) * -1); z-index: -1; pointer-events: none;
+  background-image: linear-gradient(var(--grid-ink) 1px, transparent 1px), linear-gradient(90deg, var(--grid-ink) 1px, transparent 1px);
+  background-size: var(--grid-pitch) var(--grid-pitch);
+  -webkit-mask-image: radial-gradient(ellipse 55% 50% at 62% 50%, #000 0%, transparent 100%); mask-image: radial-gradient(ellipse 55% 50% at 62% 50%, #000 0%, transparent 100%);
+  opacity: 0; transition: opacity 1.6s var(--ease-reveal);
+}
+.page .rpin.on .rstage::before { opacity: .55; }
+
+.page .rpin .recs { display: grid; margin: 0; gap: 0; }
+.page .rpin .rec { grid-area: 1 / 1; padding: 0; opacity: 0; visibility: hidden; transform: translateY(var(--sp-24)); transition: opacity .7s var(--ease-reveal), transform 1s var(--ease-reveal), visibility 0s linear .7s; }
+.page .rpin .rec.past { transform: translateY(calc(var(--sp-24) * -1)); }
+.page .rpin .rec.cur { opacity: 1; visibility: visible; transform: none; transition: opacity .9s var(--ease-reveal) .15s, transform 1.1s var(--ease-reveal) .15s, visibility 0s; }
+.page .rpin .rrule { display: none; }
+.page .rpin .rec figure { gap: var(--sp-24); }
+.js .page .rpin .rec .rq p, .js .page .rpin .rec:not(.on) .rq p { animation: none; -webkit-mask-image: none; mask-image: none; transform: none; }
+.page .rpin .rq p { font-size: var(--fs-pull); line-height: var(--lh-pull); letter-spacing: var(--tracking-tight); }
+/* the quote steps down until the longest one fits; past the last step the
+   stage is not used */
+.page .rpin.rt1 { --fs-pull: 20px; --lh-pull: 28px; }
+.page .rpin.rt2 { --fs-pull: 18px; --lh-pull: 26px; }
+.page .rpin .rsrc { margin-top: var(--sp-24); }
+.page .rpin .rq .w { opacity: .16; transition: opacity .35s linear, color .6s var(--ease); }
+.page .rpin .rq .w.lead { color: var(--accent-hover); }
+
+/* the rail: a node per speaker on a track that fills as the reading moves */
+.page .rpin .rrail { display: flex; position: relative; justify-content: space-between; height: var(--node); }
+.page .rrail .rtr, .page .rrail .rfl { position: absolute; left: calc(var(--node) / 2); right: calc(var(--node) / 2); top: calc((var(--node) - var(--bw)) / 2); height: var(--bw); background: var(--rule-soft); }
+.page .rrail .rfl { background: var(--accent); box-shadow: var(--glow-node-sm); transform-origin: left; transform: scaleX(var(--rp, 0)); }
+.page .rrail .rit { position: relative; z-index: 1; }
+.page .rrail .rnd2 { display: block; width: var(--node); height: var(--node); background: var(--bg); border: var(--bw) solid var(--line-strong); transition: background .5s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease); }
+.page .rrail .rit.seen .rnd2 { background: var(--accent); border-color: var(--accent); }
+.page .rrail .rit.cur .rnd2 { background: var(--accent); border-color: var(--accent); box-shadow: var(--glow-node); }
+.page .rrail .rlb { display: none; }
+
+@media (min-width: 1000px) {
+  .page .rpin .rstage { display: grid; grid-template-columns: 280px minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: var(--sp-64); row-gap: var(--sp-48); align-content: center; padding-block: var(--sp-48); }
+  .page .rpin .rhead { grid-column: 1; grid-row: 1; }
+  .page .rpin .rrail { grid-column: 1; grid-row: 2; align-self: start; flex-direction: column; justify-content: flex-start; gap: var(--sp-40); height: auto; }
+  .page .rpin .recs { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+  .page .rpin .rec figure { display: flex; flex-direction: column; }
+  .page .rpin .rq p { max-width: 24em; }
+  .page .rpin.rt1 { --fs-pull: 32px; --lh-pull: 44px; }
+  .page .rpin.rt2 { --fs-pull: 27px; --lh-pull: 38px; }
+  .page .rpin .rby { order: 2; }
+  .page .rrail .rtr, .page .rrail .rfl { left: calc((var(--node) - var(--bw)) / 2); right: auto; top: calc(var(--node) / 2); bottom: calc(var(--node) / 2); width: var(--bw); height: auto; }
+  .page .rrail .rfl { transform-origin: top; transform: scaleY(var(--rp, 0)); }
+  .page .rrail .rit { display: flex; align-items: flex-start; gap: var(--sp-16); }
+  .page .rrail .rnd2 { flex: none; margin-top: var(--sp-6); }
+  .page .rrail .rlb { display: flex; flex-direction: column; font-size: var(--fs-sm); line-height: var(--lh-sm); color: var(--text-secondary); transition: color .5s var(--ease); }
+  .page .rrail .rlb .ryr { margin-top: var(--sp-2); }
+  .page .rrail .rit.cur .rlb { color: var(--text); }
+}
